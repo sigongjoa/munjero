@@ -17,19 +17,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # 1) configure the Pages environment (sets up OIDC, protection rules, etc.)
+      # Configure the Pages environment (sets up OIDC, protection rules, etc.)
       - uses: actions/configure-pages@v3
 
-      # 2) build your site however you normally would
+      # Install dependencies and build the site
       - name: Install & build
         run: |
           npm install --legacy-peer-deps
           npm run build
 
-      # 3) package & upload the output
+      # Package & upload the output as a Pages artifact
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
 
-      # 4) deploy the artifact to Pages
+      # Deploy the artifact to GitHub Pages
       - uses: actions/deploy-pages@v1
