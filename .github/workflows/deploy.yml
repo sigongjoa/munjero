@@ -16,17 +16,20 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install & Build at dynamic path
+      - name: Install dependencies
         run: |
-          pkg_dir=$(dirname "$(find . -type f -name package.json | head -n1)")
-          echo "Found package.json in: $pkg_dir"
-          npm install --legacy-peer-deps --prefix "$pkg_dir"
-          npm run build --prefix "$pkg_dir"
+          cd munjero
+          npm install --legacy-peer-deps
+
+      - name: Build
+        run: |
+          cd munjero
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./munjero/dist"
+          path: ./munjero/dist
 
   deploy:
     needs: build
