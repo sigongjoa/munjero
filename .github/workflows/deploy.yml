@@ -11,32 +11,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 1) package.json 위치 찾기
-      - name: Find package.json directory
-        id: find_pkg
-        run: |
-          pkg_dir=$(dirname "$(find . -type f -name package.json | head -n1)")
-          echo "pkg_dir=$pkg_dir" >> $GITHUB_OUTPUT
-
-      # 2) Node.js 세팅
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      # 3) deps 설치 (찾은 디렉터리에서)
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps --prefix "${{ steps.find_pkg.outputs.pkg_dir }}"
+      - name: Install & Build at dynamic path
+        run: |
+          pkg_dir=$(dirname "$(find . -type f -name package.json | head -n1)")
+          echo "Found package.json in: $pkg_dir"
+          npm install --legacy-peer-deps --prefix "$pkg_dir"
+          npm run build --prefix "$pkg_dir"
 
-      # 4) 빌드
-      - name: Build
-        run: npm run build --prefix "${{ steps.find_pkg.outputs.pkg_dir }}"
-
-      # 5) 결과물 업로드
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "${{ steps.find_pkg.outputs.pkg_dir }}/dist"
+          path: "./munjero/dist"
 
   deploy:
     needs: build
