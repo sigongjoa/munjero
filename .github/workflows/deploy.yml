@@ -17,19 +17,15 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: |
-          cd munjero
-          npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps
 
       - name: Build
-        run: |
-          cd munjero
-          npm run build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./munjero/dist
+          path: ./dist
 
   deploy:
     needs: build
