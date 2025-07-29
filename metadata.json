@@ -1,0 +1,6 @@
+{
+  "name": "AI Quiz List",
+  "description": "A web application to browse, manage, and download AI-generated quizzes.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
