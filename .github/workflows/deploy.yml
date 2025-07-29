@@ -23,16 +23,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./munjero
 
       - name: Build
         run: npm run build
-        working-directory: ./munjero
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./munjero/dist
+          path: dist
 
   deploy:
     needs: build
