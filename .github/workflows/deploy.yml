@@ -7,12 +7,17 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: write    # ← 필수
+  id-token: write
 
 jobs:
   pages:
     runs-on: ubuntu-latest
-    environment: github-pages   # ← 필수
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment: github-pages
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
