@@ -21,8 +21,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: .
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -30,12 +28,14 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
+        working-directory: ./munjero
       - name: Build
         run: npm run build
+        working-directory: ./munjero
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./munjero/dist
 
   deploy:
     environment:
