@@ -24,5 +24,18 @@ export const quizzes: Quiz[] = [
       "쉬움",
       "개념"
     ]
+  },
+  {
+    "id": 2,
+    "title": "도황 화법과 언어",
+    "examType": "모의고사",
+    "subject": "국어",
+    "size": "2.8 MB",
+    "date": "2025-08-03",
+    "fileUrl": "/files/%EB%8F%84%ED%99%A9_%ED%99%94%EB%B2%95%EA%B3%BC%20%EC%96%B8%EC%96%B4.pdf",
+    "tags": [
+      "신규",
+      "언어"
+    ]
   }
 ];
