@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ContactUs from './components/ContactUs';
+import DocumentPreview from './components/DocumentPreview';
 import { quizzes as initialQuizzes, Quiz } from './data/quizzes';
 import JSZip from 'jszip';
 
@@ -27,12 +28,32 @@ const App: React.FC = () => {
   const [selectedIds, setSelectedIds] = useState(new Set<number>());
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [route, setRoute] = useState(window.location.hash || '#/');
+  const [selectedQuizForPreview, setSelectedQuizForPreview] = useState<Quiz | null>(null);
 
   useEffect(() => {
     const handleHashChange = () => {
-      setRoute(window.location.hash || '#/');
+      const hash = window.location.hash;
+      setRoute(hash || '#/');
+      
+      const quizMatch = hash.match(/^#\/quiz\/(\d+)$/);
+      if (quizMatch) {
+        const quizId = parseInt(quizMatch[1], 10);
+        const quiz = initialQuizzes.find(q => q.id === quizId);
+        if (quiz) {
+          setSelectedQuizForPreview(quiz);
+        } else {
+          // If quiz not found, redirect to the main page
+          window.location.hash = '#/';
+        }
+      } else {
+        setSelectedQuizForPreview(null);
+      }
+      
       window.scrollTo(0, 0);
     };
+
+    // Initial check
+    handleHashChange();
 
     window.addEventListener('hashchange', handleHashChange);
     return () => {
@@ -135,6 +156,44 @@ const App: React.FC = () => {
   const subjects = useMemo(() => ['전체', ...Array.from(new Set(initialQuizzes.map(q => q.subject)))], []);
 
   const renderContent = () => {
+    // The main content is always rendered, and the modal is shown on top of it.
+    const mainContent = (
+      <div className="w-full flex flex-col lg:flex-row gap-8 mt-8">
+        <Sidebar
+          isOpen={isSidebarOpen}
+          filters={filters}
+          onFilterChange={handleFilterChange}
+          examTypes={examTypes}
+          subjects={subjects}
+          onClose={() => setSidebarOpen(false)}
+        />
+        <main className="flex-1">
+          <Toolbar 
+            onToggleSidebar={() => setSidebarOpen(!isSidebarOpen)}
+            searchTerm={searchTerm}
+            onSearchChange={handleSearchChange}
+            selectedCount={selectedIds.size}
+            isAllSelected={isAllSelectedOnPage}
+            onSelectAll={handleSelectAll}
+            onBulkDownload={handleBulkDownload}
+          />
+          <div className="mt-6">
+            <QuizList 
+                quizzes={paginatedQuizzes}
+                selectedIds={selectedIds}
+                onSelectQuiz={handleSelectQuiz} 
+            />
+          </div>
+          <Pagination 
+            totalCount={filteredQuizzes.length}
+            currentPage={currentPage}
+            itemsPerPage={ITEMS_PER_PAGE}
+            onPageChange={handlePageChange}
+          />
+        </main>
+      </div>
+    );
+
     switch (route) {
       case '#/terms':
         return <TermsOfService />;
@@ -144,47 +203,15 @@ const App: React.FC = () => {
         return <ContactUs />;
       case '#/':
       default:
-        if (route !== '#/') {
-            // For any unknown hash, redirect to the main page.
-            window.location.hash = '#/';
-            // Render the main content immediately to prevent a blank page flash.
+        // Check if the route is for a quiz. If so, the main content is still shown.
+        if (route.startsWith('#/quiz/')) {
+          return mainContent;
         }
-        return (
-          <div className="w-full flex flex-col lg:flex-row gap-8 mt-8">
-            <Sidebar
-              isOpen={isSidebarOpen}
-              filters={filters}
-              onFilterChange={handleFilterChange}
-              examTypes={examTypes}
-              subjects={subjects}
-              onClose={() => setSidebarOpen(false)}
-            />
-            <main className="flex-1">
-              <Toolbar 
-                onToggleSidebar={() => setSidebarOpen(!isSidebarOpen)}
-                searchTerm={searchTerm}
-                onSearchChange={handleSearchChange}
-                selectedCount={selectedIds.size}
-                isAllSelected={isAllSelectedOnPage}
-                onSelectAll={handleSelectAll}
-                onBulkDownload={handleBulkDownload}
-              />
-              <div className="mt-6">
-                <QuizList 
-                    quizzes={paginatedQuizzes}
-                    selectedIds={selectedIds}
-                    onSelectQuiz={handleSelectQuiz} 
-                />
-              </div>
-              <Pagination 
-                totalCount={filteredQuizzes.length}
-                currentPage={currentPage}
-                itemsPerPage={ITEMS_PER_PAGE}
-                onPageChange={handlePageChange}
-              />
-            </main>
-          </div>
-        );
+        // For any other unknown hash, redirect to the main page.
+        if (route !== '#/') {
+            window.location.hash = '#/';
+        }
+        return mainContent;
     }
   };
 
@@ -197,6 +224,16 @@ const App: React.FC = () => {
         </div>
       </div>
       <Footer />
+      
+      {selectedQuizForPreview && (
+        <DocumentPreview
+          quiz={selectedQuizForPreview}
+          onClose={() => {
+            setSelectedQuizForPreview(null);
+            window.location.hash = '#/';
+          }}
+        />
+      )}
     </div>
   );
 };

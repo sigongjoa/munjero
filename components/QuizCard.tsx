@@ -23,12 +23,17 @@ const CardActions: React.FC<{ fileUrl?: string; shortsLink?: string }> = ({ file
 };
 
 
-const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void; }> = ({ quiz, isSelected, onSelect }) => {
+const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void; onPreview: () => void; }> = ({ quiz, isSelected, onSelect, onPreview }) => {
     return (
         <div className={`bg-white border rounded-xl shadow-md hover:shadow-lg transition-all duration-200 flex flex-col h-full ${isSelected ? 'ring-2 ring-blue-500 border-blue-500' : 'border-gray-200'}`}>
             <div className="p-4 flex-grow">
                 <div className="flex items-start justify-between">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 pr-2">{quiz.title}</h3>
+                    <h3 
+                        className="text-lg font-bold text-gray-900 mb-2 pr-2 cursor-pointer hover:text-blue-600 transition-colors"
+                        onClick={onPreview}
+                    >
+                        {quiz.title}
+                    </h3>
                     <input 
                         type="checkbox" 
                         className="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 mt-1 flex-shrink-0"

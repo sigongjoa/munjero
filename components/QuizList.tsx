@@ -20,12 +20,17 @@ const QuizList: React.FC<QuizListProps> = ({ quizzes, selectedIds, onSelectQuiz 
     );
   }
 
+  const handlePreview = (id: number) => {
+    window.location.hash = `#/quiz/${id}`;
+  };
+
   const items = quizzes.map(quiz => 
     <QuizCard 
       key={quiz.id} 
       quiz={quiz}
       isSelected={selectedIds.has(quiz.id)}
       onSelect={() => onSelectQuiz(quiz.id)}
+      onPreview={() => handlePreview(quiz.id)}
     />
   );
 

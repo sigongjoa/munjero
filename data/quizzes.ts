@@ -13,29 +13,16 @@ export interface Quiz {
 export const quizzes: Quiz[] = [
   {
     "id": 1,
-    "title": "샘플 퀴즈",
-    "examType": "모의고사",
-    "subject": "국어",
-    "size": "0 KB",
-    "date": "2025-07-29",
-    "fileUrl": "/files/sample_quiz.pdf",
-    "shortsLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "tags": [
-      "쉬움",
-      "개념"
-    ]
-  },
-  {
-    "id": 2,
     "title": "도황 화법과 언어",
     "examType": "모의고사",
-    "subject": "국어",
+    "subject": "화법과 언어",
     "size": "2.8 MB",
     "date": "2025-08-03",
-    "fileUrl": "/files/%EB%8F%84%ED%99%A9_%ED%99%94%EB%B2%95%EA%B3%BC%20%EC%96%B8%EC%96%B4.pdf",
+    "fileUrl": "/files/%EB%8F%84%ED%99%A9.pdf",
     "tags": [
-      "신규",
-      "언어"
+      "화법과 언어",
+      "도황",
+      "공동체적 의견교환"
     ]
   }
 ];
