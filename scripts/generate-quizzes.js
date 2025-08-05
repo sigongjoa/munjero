@@ -75,6 +75,9 @@ fs.readdir(filesDirectory, (err, files) => {
     }
   });
 
+  // Sort quizzes by date in descending order (newest first)
+  quizzes.sort((a, b) => new Date(b.date) - new Date(a.date));
+
   const fileContent = `
 export interface Quiz {
   id: number;
