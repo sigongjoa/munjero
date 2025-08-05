@@ -36,28 +36,31 @@ fs.readdir(filesDirectory, (err, files) => {
     return console.error('Unable to scan directory: ' + err);
   }
 
-  const quizzes = [];
-  let idCounter = 1;
+  const orderFilePath = path.join(filesDirectory, 'quiz-order.json');
+  let orderedFiles = [];
+  try {
+    orderedFiles = JSON.parse(fs.readFileSync(orderFilePath, 'utf8'));
+  } catch (err) {
+    console.error('Could not read or parse quiz-order.json:', err);
+    // Fallback to reading all json files if order file is missing or invalid
+    orderedFiles = files.filter(file => file.endsWith('.json')).map(file => path.basename(file, '.json'));
+  }
 
-  // Filter for JSON files
-  const jsonFiles = files.filter(file => file.endsWith('.json'));
-
-  jsonFiles.forEach(jsonFile => {
-    const baseName = path.basename(jsonFile, '.json');
+  const quizzes = orderedFiles.map((orderedFile, index) => {
+    const baseName = path.basename(orderedFile, path.extname(orderedFile));
+    const jsonFile = `${baseName}.json`;
     const jsonFilePath = path.join(filesDirectory, jsonFile);
 
     try {
       const metadata = JSON.parse(fs.readFileSync(jsonFilePath, 'utf8'));
-
-      // Find the corresponding data file (e.g., PDF, ZIP) with the same base name
       const dataFile = files.find(f => f.startsWith(baseName) && f !== jsonFile);
 
       if (dataFile) {
         const dataFilePathFull = path.join(filesDirectory, dataFile);
         const stats = fs.statSync(dataFilePathFull);
 
-        quizzes.push({
-          id: idCounter++,
+        return {
+          id: index + 1,
           title: metadata.title || baseName,
           examType: metadata.examType || '기타',
           subject: metadata.subject || '기타',
@@ -66,17 +69,16 @@ fs.readdir(filesDirectory, (err, files) => {
           fileUrl: `/files/${encodeURIComponent(dataFile)}`,
           shortsLink: metadata.shortsLink || undefined,
           tags: metadata.tags || []
-        });
+        };
       } else {
         console.warn(`No corresponding data file found for ${jsonFile}`);
+        return null;
       }
     } catch (parseError) {
-      console.error(`Error parsing JSON file ${jsonFile}:`, parseError);
+      console.error(`Error processing file ${jsonFile}:`, parseError);
+      return null;
     }
-  });
-
-  // Sort quizzes by date in descending order (newest first)
-  quizzes.sort((a, b) => new Date(b.date) - new Date(a.date));
+  }).filter(Boolean); // Filter out nulls from missing files
 
   const fileContent = `
 export interface Quiz {
