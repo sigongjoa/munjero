@@ -1,28 +1,26 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import Header from './components/Header';
 import Toolbar from './components/Toolbar';
 import QuizList from './components/QuizList';
-import Pagination from './components/Pagination';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ContactUs from './components/ContactUs';
 import DocumentPreview from './components/DocumentPreview';
+import PremiumCard from './components/PremiumCard';
 import { quizzes as initialQuizzes, Quiz } from './data/quizzes';
 import JSZip from 'jszip';
 
 type Filters = {
   exam: string;
   subject: string;
+  difficulty: string;
 };
-
-const ITEMS_PER_PAGE = 5;
 
 const App: React.FC = () => {
   const [quizzes, setQuizzes] = useState<Quiz[]>(initialQuizzes);
-  const [filters, setFilters] = useState<Filters>({ exam: '전체', subject: '전체' });
+  const [filters, setFilters] = useState<Filters>({ exam: '전체', subject: '전체', difficulty: '전체' });
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedIds, setSelectedIds] = useState(new Set<number>());
@@ -42,7 +40,6 @@ const App: React.FC = () => {
         if (quiz) {
           setSelectedQuizForPreview(quiz);
         } else {
-          // If quiz not found, redirect to the main page
           window.location.hash = '#/';
         }
       } else {
@@ -52,7 +49,6 @@ const App: React.FC = () => {
       window.scrollTo(0, 0);
     };
 
-    // Initial check
     handleHashChange();
 
     window.addEventListener('hashchange', handleHashChange);
@@ -85,18 +81,14 @@ const App: React.FC = () => {
     quizzes.filter(quiz => {
       const examMatch = filters.exam === '전체' || quiz.examType === filters.exam;
       const subjectMatch = filters.subject === '전체' || quiz.subject === filters.subject;
+      const difficultyMatch = filters.difficulty === '전체' || quiz.difficulty === filters.difficulty;
       const searchMatch = searchTerm === '' || quiz.title.toLowerCase().includes(searchTerm.toLowerCase());
-      return examMatch && subjectMatch && searchMatch;
+      return examMatch && subjectMatch && difficultyMatch && searchMatch;
     }),
     [quizzes, filters, searchTerm]
   );
   
-  const paginatedQuizzes = useMemo(() => {
-      const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-      return filteredQuizzes.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-  }, [filteredQuizzes, currentPage]);
-
-  const currentIdsOnPage = useMemo(() => new Set(paginatedQuizzes.map(q => q.id)), [paginatedQuizzes]);
+  const currentIdsOnPage = useMemo(() => new Set(filteredQuizzes.map(q => q.id)), [filteredQuizzes]);
   const isAllSelectedOnPage = currentIdsOnPage.size > 0 && Array.from(currentIdsOnPage).every(id => selectedIds.has(id));
 
   const handleSelectQuiz = (id: number) => {
@@ -150,13 +142,11 @@ const App: React.FC = () => {
     });
   };
   
-  
-  
   const examTypes = useMemo(() => ['전체', ...Array.from(new Set(initialQuizzes.map(q => q.examType)))], []);
   const subjects = useMemo(() => ['전체', ...Array.from(new Set(initialQuizzes.map(q => q.subject)))], []);
+  const difficulties = useMemo(() => ['전체', '쉬움', '보통', '어려움'], []);
 
   const renderContent = () => {
-    // The main content is always rendered, and the modal is shown on top of it.
     const mainContent = (
       <div className="w-full flex flex-col lg:flex-row gap-8 mt-8">
         <Sidebar
@@ -165,32 +155,32 @@ const App: React.FC = () => {
           onFilterChange={handleFilterChange}
           examTypes={examTypes}
           subjects={subjects}
+          difficulties={difficulties}
+          searchTerm={searchTerm} // Pass searchTerm to Sidebar
+          onSearchChange={handleSearchChange} // Pass onSearchChange to Sidebar
           onClose={() => setSidebarOpen(false)}
         />
         <main className="flex-1">
           <Toolbar 
             onToggleSidebar={() => setSidebarOpen(!isSidebarOpen)}
-            searchTerm={searchTerm}
-            onSearchChange={handleSearchChange}
             selectedCount={selectedIds.size}
             isAllSelected={isAllSelectedOnPage}
             onSelectAll={handleSelectAll}
             onBulkDownload={handleBulkDownload}
+            // searchTerm and onSearchChange are removed from Toolbar here
           />
           <div className="mt-6">
             <QuizList 
-                quizzes={paginatedQuizzes}
+                quizzes={filteredQuizzes}
                 selectedIds={selectedIds}
                 onSelectQuiz={handleSelectQuiz} 
+                // Toolbar related props are removed from QuizList
             />
           </div>
-          <Pagination 
-            totalCount={filteredQuizzes.length}
-            currentPage={currentPage}
-            itemsPerPage={ITEMS_PER_PAGE}
-            onPageChange={handlePageChange}
-          />
         </main>
+        <div className="hidden lg:block w-64 flex-shrink-0">
+          <PremiumCard />
+        </div>
       </div>
     );
 
@@ -203,11 +193,9 @@ const App: React.FC = () => {
         return <ContactUs />;
       case '#/':
       default:
-        // Check if the route is for a quiz. If so, the main content is still shown.
         if (route.startsWith('#/quiz/')) {
           return mainContent;
         }
-        // For any other unknown hash, redirect to the main page.
         if (route !== '#/') {
             window.location.hash = '#/';
         }

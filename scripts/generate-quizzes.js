@@ -68,7 +68,8 @@ fs.readdir(filesDirectory, (err, files) => {
           date: new Date(stats.mtime).toISOString().split('T')[0],
           fileUrl: `/files/${encodeURIComponent(dataFile)}`,
           shortsLink: metadata.shortsLink || undefined,
-          tags: metadata.tags || []
+          tags: metadata.tags || [],
+          difficulty: metadata.difficulty || undefined // difficulty 속성 추가
         };
       } else {
         console.warn(`No corresponding data file found for ${jsonFile}`);
@@ -91,6 +92,7 @@ export interface Quiz {
   fileUrl?: string;
   shortsLink?: string;
   tags?: string[];
+  difficulty?: string; // Quiz 인터페이스에 difficulty 속성 추가
 }
 
 export const quizzes: Quiz[] = ${JSON.stringify(quizzes, null, 2)};
