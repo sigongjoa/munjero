@@ -1,11 +1,13 @@
 import React from 'react';
 
 interface ToolbarProps {
-    onToggleSidebar: () => void;
-    selectedCount: number;
-    isAllSelected: boolean;
-    onSelectAll: () => void;
-    onBulkDownload: () => void;
+  onToggleSidebar: () => void;
+  searchTerm?: string; 
+  onSearchChange?: (term: string) => void;
+  selectedCount: number;
+  isAllSelected: boolean;
+  onSelectAll: () => void;
+  onBulkDownload: () => Promise<void>;
 }
 
 const Toolbar: React.FC<ToolbarProps> = ({

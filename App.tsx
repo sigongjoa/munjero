@@ -11,12 +11,8 @@ import DocumentPreview from './components/DocumentPreview';
 import PremiumCard from './components/PremiumCard';
 import { quizzes as initialQuizzes, Quiz } from './data/quizzes';
 import JSZip from 'jszip';
-
-type Filters = {
-  exam: string;
-  subject: string;
-  difficulty: string;
-};
+import Pagination from './components/Pagination';
+import { QUIZZES_PER_PAGE } from './constants';
 
 const App: React.FC = () => {
   const [quizzes, setQuizzes] = useState<Quiz[]>(initialQuizzes);
@@ -87,6 +83,10 @@ const App: React.FC = () => {
     }),
     [quizzes, filters, searchTerm]
   );
+
+  const startIndex = (currentPage - 1) * QUIZZES_PER_PAGE;
+  const endIndex = startIndex + QUIZZES_PER_PAGE;
+  const currentQuizzes = filteredQuizzes.slice(startIndex, endIndex);
   
   const currentIdsOnPage = useMemo(() => new Set(filteredQuizzes.map(q => q.id)), [filteredQuizzes]);
   const isAllSelectedOnPage = currentIdsOnPage.size > 0 && Array.from(currentIdsOnPage).every(id => selectedIds.has(id));
@@ -163,20 +163,26 @@ const App: React.FC = () => {
         <main className="flex-1">
           <Toolbar 
             onToggleSidebar={() => setSidebarOpen(!isSidebarOpen)}
+            searchTerm={searchTerm}
+            onSearchChange={handleSearchChange}
             selectedCount={selectedIds.size}
             isAllSelected={isAllSelectedOnPage}
             onSelectAll={handleSelectAll}
             onBulkDownload={handleBulkDownload}
-            // searchTerm and onSearchChange are removed from Toolbar here
           />
           <div className="mt-6">
             <QuizList 
-                quizzes={filteredQuizzes}
+                quizzes={currentQuizzes}
                 selectedIds={selectedIds}
                 onSelectQuiz={handleSelectQuiz} 
-                // Toolbar related props are removed from QuizList
             />
           </div>
+          <Pagination 
+            totalCount={filteredQuizzes.length} 
+            currentPage={currentPage}
+            itemsPerPage={QUIZZES_PER_PAGE} 
+            onPageChange={handlePageChange}
+          />
         </main>
         <div className="hidden lg:block w-64 flex-shrink-0">
           <PremiumCard />

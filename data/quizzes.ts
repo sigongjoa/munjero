@@ -72,5 +72,39 @@ export const quizzes: Quiz[] = [
       "스마일 열매"
     ],
     "difficulty": "보통"
+  },
+  {
+    "id": 5,
+    "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_쉬움",
+    "examType": "AI 생성 모의고사",
+    "subject": "국어",
+    "size": "4.7 MB",
+    "date": "2025-08-06",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%82%98%ED%83%9C%ED%95%9C_%EC%A0%95%EC%9D%98%EC%9D%98_%EC%A7%84%EC%A7%9C_%EC%96%BC%EA%B5%B4_%EC%95%84%EC%98%A4%ED%82%A4%EC%A7%80_%EC%BF%A0%EC%9E%94%EC%9D%98_%EB%8D%95_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EC%84%A0%ED%83%9D_%EC%89%AC%EC%9B%80.pdf",
+    "tags": [
+      "아오키지 쿠잔",
+      "덕 윤리",
+      "나태한 정의",
+      "유연한 도덕적 판단",
+      "리더십"
+    ],
+    "difficulty": "쉬움"
+  },
+  {
+    "id": 6,
+    "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_어려움",
+    "examType": "AI 생성 모의고사",
+    "subject": "국어",
+    "size": "8.4 MB",
+    "date": "2025-08-06",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%82%98%ED%83%9C%ED%95%9C_%EC%A0%95%EC%9D%98%EC%9D%98_%EC%A7%84%EC%A7%9C_%EC%96%BC%EA%B5%B4_%EC%95%84%EC%98%A4%ED%82%A4%EC%A7%80_%EC%BF%A0%EC%9E%94%EC%9D%98_%EB%8D%95_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EC%84%A0%ED%83%9D_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "tags": [
+      "덕 윤리",
+      "아오키지 쿠잔",
+      "나태한 정의",
+      "윤리적 판단",
+      "캐릭터 분석"
+    ],
+    "difficulty": "어려움"
   }
 ];

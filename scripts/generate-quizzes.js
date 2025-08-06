@@ -47,7 +47,8 @@ fs.readdir(filesDirectory, (err, files) => {
   }
 
   const quizzes = orderedFiles.map((orderedFile, index) => {
-    const baseName = path.basename(orderedFile, path.extname(orderedFile));
+    console.log(orderedFile);
+    const baseName = orderedFile.replace(/\.pdf$/, '');
     const jsonFile = `${baseName}.json`;
     const jsonFilePath = path.join(filesDirectory, jsonFile);
 
