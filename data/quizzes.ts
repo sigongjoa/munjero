@@ -123,5 +123,56 @@ export const quizzes: Quiz[] = [
       "실천적 지혜"
     ],
     "difficulty": "중간"
+  },
+  {
+    "id": 8,
+    "title": "키자루의 행동과 정의관에 대한 윤리적 분석_쉬움",
+    "examType": "AI 생성 모의고사",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-08",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%89%AC%EC%9B%80.pdf",
+    "tags": [
+      "키자루",
+      "애매한정의",
+      "의무론",
+      "상황주의윤리",
+      "원피스"
+    ],
+    "difficulty": "쉬움"
+  },
+  {
+    "id": 9,
+    "title": "키자루의 행동과 정의관에 대한 윤리적 분석_어려움",
+    "examType": "AI 생성 모의고사",
+    "subject": "국어",
+    "size": "12.0 MB",
+    "date": "2025-08-08",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "tags": [
+      "키자루",
+      "애매한정의",
+      "의무론",
+      "상황주의윤리",
+      "원피스"
+    ],
+    "difficulty": "어려움"
+  },
+  {
+    "id": 10,
+    "title": "키자루의 행동과 정의관에 대한 윤리적 분석_중간",
+    "examType": "AI 생성 모의고사",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-08",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%A4%91%EA%B0%84.pdf",
+    "tags": [
+      "키자루",
+      "애매한 정의",
+      "의무론",
+      "상황주의 윤리",
+      "원피스"
+    ],
+    "difficulty": "중간"
   }
 ];
