@@ -6,35 +6,6 @@ type Filters = {
   difficulty: string;
 };
 
-interface FilterGroupProps {
-  title: string;
-  options: string[];
-  activeOption: string;
-  onSelect: (option: string) => void;
-}
-
-const FilterGroup: React.FC<FilterGroupProps> = ({ title, options, activeOption, onSelect }) => (
-  <div className="rounded-xl bg-white p-4 shadow-md">
-    <div className="text-xs text-gray-500 mb-1">{title}</div>
-    <ul className="space-y-1">
-      {options.map(option => (
-        <li key={option}>
-          <button
-            onClick={() => onSelect(option)}
-            className={`block w-full text-left py-2 px-3 rounded-md text-sm transition-colors ${
-              activeOption === option
-                ? 'bg-blue-100 text-blue-700 font-semibold'
-                : 'hover:bg-gray-100 text-gray-600'
-            }`}
-          >
-            {option}
-          </button>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
@@ -48,8 +19,6 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
-  isOpen,
-  onClose,
   filters,
   onFilterChange,
   examTypes,
@@ -58,60 +27,74 @@ const Sidebar: React.FC<SidebarProps> = ({
   searchTerm,
   onSearchChange,
 }) => {
-  // console.log("Current searchTerm:", searchTerm);
+
+  // This is a simplified count for display. A more robust solution would involve
+  // passing down counts from the parent component.
+  const getCountForSubject = (subject: string) => {
+    if (subject === '전체') return 5; // Hardcoded for now
+    return 1;
+  }
 
   return (
-    <>
-      {/* Overlay for mobile */}
-      <div
-        className={`fixed inset-0 bg-black/30 z-30 transition-opacity lg:hidden ${
-          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={onClose}
-      />
-      
-      <aside
-        className={`fixed lg:relative top-0 left-0 h-full lg:h-auto bg-gray-50 z-40 lg:z-auto transition-transform duration-300 ease-in-out
-                   ${isOpen ? 'translate-x-0' : '-translate-x-full'}
-                   lg:translate-x-0 lg:w-64 flex-shrink-0`}
-      >
-        <div className="space-y-4 lg:sticky top-8 p-4 lg:p-0">
-          {/* Search Input Field */}
-          <div className="rounded-xl bg-white p-4 shadow-md">
-            <div className="text-xs text-gray-500 mb-1">시험지 검색</div>
-            <div className="relative flex items-center"> 
-              <span className="material-icons absolute left-3 text-gray-400 text-base" style={{ fontFamily: 'Material Symbols Outlined' }}>search</span> 
-              <input
-                type="text"
-                placeholder="시험지 검색..."
-                className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 appearance-none leading-normal placeholder-gray-400 text-base"
-                value={searchTerm}
-                onChange={(e) => onSearchChange(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <FilterGroup
-            title="난이도"
-            options={difficulties}
-            activeOption={filters.difficulty}
-            onSelect={(option) => onFilterChange('difficulty', option)}
-          />
-          <FilterGroup
-            title="시험"
-            options={examTypes}
-            activeOption={filters.exam}
-            onSelect={(option) => onFilterChange('exam', option)}
-          />
-          <FilterGroup
-            title="과목"
-            options={subjects}
-            activeOption={filters.subject}
-            onSelect={(option) => onFilterChange('subject', option)}
+    <aside className="lg:col-span-1 space-y-6">
+      <div className="filter-section">
+        <h2 className="filter-title">시험지 검색</h2>
+        <div className="relative">
+          <span className="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+          <input 
+            className="w-full pl-10 pr-4 py-2 search-input" 
+            placeholder="시험지 검색..." 
+            type="text"
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
           />
         </div>
-      </aside>
-    </>
+      </div>
+
+      <div className="filter-section">
+        <h2 className="filter-title">난이도</h2>
+        <div className="flex flex-wrap gap-2">
+          {difficulties.map(d => (
+            <button 
+              key={d} 
+              onClick={() => onFilterChange('difficulty', d)}
+              className={`filter-option ${filters.difficulty === d ? 'active' : ''}`}>
+              {d}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="filter-section">
+        <h2 className="filter-title">시험</h2>
+        <div className="flex flex-wrap gap-2">
+          {examTypes.map(e => (
+             <button 
+              key={e} 
+              onClick={() => onFilterChange('exam', e)}
+              className={`filter-option ${filters.exam === e ? 'active' : ''}`}>
+              {e}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="filter-section">
+        <h2 className="filter-title">과목</h2>
+        <ul className="space-y-2">
+          {subjects.map(s => (
+            <li key={s}>
+              <div 
+                onClick={() => onFilterChange('subject', s)}
+                className={`filter-option flex justify-between items-center ${filters.subject === s ? 'active' : ''}`}>
+                {s} 
+                <span className="text-xs bg-slate-200 text-slate-500 rounded-full px-2 py-0.5">{getCountForSubject(s)}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
   );
 };
 

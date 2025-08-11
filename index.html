@@ -10,23 +10,116 @@
 
       gtag('config', 'G-9N9HNHL77W');
     </script>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="문제로: AI로 손쉽게 맞춤형 시험지를 만들고, 관리하고, 다운로드하세요.">
-    <title>문제로 - 목록</title>
+    <title>문제로</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"/>
     <style type="text/tailwindcss">
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
         body {
-            font-family: 'Pretendard', sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8f9fa;
         }
-        .material-symbols-outlined {
-            font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 20
+        .filter-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .filter-title {
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 16px;
+        }
+        .filter-option {
+            @apply px-4 py-2 rounded-full cursor-pointer transition-all duration-200 ease-in-out text-sm font-medium border border-slate-200 text-slate-500;
+        }
+        .filter-option.active {
+            @apply bg-blue-500 text-white border-blue-500;
+        }
+        .filter-option:not(.active):hover {
+            @apply bg-slate-100 border-slate-300;
+        }
+        .search-input {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-tag {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .tag-gray {
+            background-color: #f1f5f9;
+            color: #475569;
+        }
+        .tag-purple {
+            background-color: #f5f3ff;
+            color: #7c3aed;
+        }
+        .tag-blue {
+            background-color: #eff6ff;
+            color: #3b82f6;
+        }
+        .tag-pink {
+            background-color: #fdf2f8;
+            color: #db2777;
+        }
+        .tag-green {
+            background-color: #f0fdf4;
+            color: #16a34a;
+        }
+        .download-button {
+            @apply bg-sky-500 text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out w-full;
+        }
+        .download-button:hover {
+            @apply bg-sky-600 shadow-md;
+        }
+        .ad-banner {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            border-radius: 20px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .ad-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #0ea5e9;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
         }
     </style>
     <script type="importmap">
@@ -40,7 +133,7 @@
     </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 p-8">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>
