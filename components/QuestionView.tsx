@@ -5,13 +5,20 @@ interface QuestionViewProps {
   question: Question;
   userAnswer: number | null;
   onSelectAnswer: (answerIndex: number) => void;
+  passage?: string;
 }
 
-const QuestionView: React.FC<QuestionViewProps> = ({ question, userAnswer, onSelectAnswer }) => {
+const QuestionView: React.FC<QuestionViewProps> = ({ question, userAnswer, onSelectAnswer, passage }) => {
   return (
     <div className="p-6 h-full flex flex-col">
       <h3 className="text-lg font-semibold mb-4">문제 {question.questionNumber}.</h3>
       <div>
+        {passage && (
+          <div className="bg-gray-100 p-4 rounded-lg border border-gray-200 mb-6 whitespace-pre-wrap">
+            <p className="font-bold text-gray-700 mb-2">[제시문]</p>
+            <p className="text-gray-700">{passage}</p>
+          </div>
+        )}
         <p className="text-gray-700 whitespace-pre-wrap mb-6">{question.questionText}</p>
         
         <div className="space-y-3">

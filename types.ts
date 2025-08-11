@@ -3,6 +3,7 @@ export interface QuizData {
   id: string;
   title: string;
   description: string;
+  passage?: string;
   createdAt: string;
   sourceType: 'AI_GENERATED' | 'COMMUNITY_CREATED';
   author: {

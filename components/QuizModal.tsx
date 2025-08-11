@@ -89,6 +89,7 @@ const QuizModal: React.FC<QuizModalProps> = ({ jsonUrl, onClose }) => {
                 question={currentQuestion} 
                 userAnswer={userAnswers[currentQuestionIndex]}
                 onSelectAnswer={handleSelectAnswer}
+                passage={quizData.passage}
             />
         </div>
         <div className="p-4 border-t flex justify-between items-center">

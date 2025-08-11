@@ -268,7 +268,7 @@ export const quizzes: Quiz[] = [
       "마키아벨리",
       "아카이누",
       "통치술",
-      "개념이해"
+      "공포심유발"
     ],
     "difficulty": "중간"
   }
