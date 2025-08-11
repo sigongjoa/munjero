@@ -31,6 +31,7 @@ if (!fs.existsSync(filesDirectory)) {
     fs.mkdirSync(filesDirectory, { recursive: true });
 }
 
+console.log('Starting generate-quizzes.js...');
 fs.readdir(filesDirectory, (err, files) => {
   if (err) {
     return console.error('Unable to scan directory: ' + err);
@@ -50,6 +51,7 @@ fs.readdir(filesDirectory, (err, files) => {
     const baseName = path.basename(orderedFile, path.extname(orderedFile));
     const jsonFile = `${baseName}.json`;
     const jsonFilePath = path.join(filesDirectory, jsonFile);
+    console.log(`Processing quiz: ${baseName}`);
 
     try {
       const metadata = JSON.parse(fs.readFileSync(jsonFilePath, 'utf8'));
