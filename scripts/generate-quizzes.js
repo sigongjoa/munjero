@@ -53,31 +53,45 @@ fs.readdir(filesDirectory, (err, files) => {
 
     try {
       const metadata = JSON.parse(fs.readFileSync(jsonFilePath, 'utf8'));
-      const dataFile = files.find(f => f.startsWith(baseName) && f !== jsonFile);
+      const dataFile = files.find(f => f.startsWith(baseName) && f.endsWith('.pdf'));
+      const dataFilePathFull = dataFile ? path.join(filesDirectory, dataFile) : null;
+      const stats = dataFilePathFull ? fs.statSync(dataFilePathFull) : null;
 
-      if (dataFile) {
-        const dataFilePathFull = path.join(filesDirectory, dataFile);
-        const stats = fs.statSync(dataFilePathFull);
-
-        return {
-          id: index + 1,
-          title: metadata.title || baseName,
-          examType: metadata.examType || '기타',
-          subject: metadata.subject || '기타',
-          size: getFileSize(dataFilePathFull),
-          date: new Date(stats.mtime).toISOString().split('T')[0],
-          fileUrl: `/files/${encodeURIComponent(dataFile)}`,
-          shortsLink: metadata.shortsLink || undefined,
-          tags: metadata.tags || [],
-          difficulty: metadata.difficulty || undefined // difficulty 속성 추가
-        };
-      } else {
-        console.warn(`No corresponding data file found for ${jsonFile}`);
-        return null;
-      }
+      return {
+        id: index + 1,
+        title: metadata.title || baseName,
+        examType: metadata.sourceType === 'AI_GENERATED' ? 'AI 생성' : (metadata.examType || '기타'),
+        subject: metadata.subject?.main || metadata.subject || '기타',
+        size: dataFilePathFull ? getFileSize(dataFilePathFull) : 'N/A',
+        date: stats ? new Date(stats.mtime).toISOString().split('T')[0] : new Date(metadata.createdAt).toISOString().split('T')[0],
+        fileUrl: dataFile ? `/files/${encodeURIComponent(dataFile)}` : undefined,
+        jsonUrl: `/files/${encodeURIComponent(jsonFile)}`,
+        shortsLink: metadata.shortsLink || undefined,
+        tags: metadata.tags || [],
+        difficulty: metadata.difficulty || undefined
+      };
     } catch (parseError) {
       console.error(`Error processing file ${jsonFile}:`, parseError);
-      return null;
+      // If JSON parsing fails, but a PDF exists, still create a quiz entry
+      const dataFile = files.find(f => f.startsWith(baseName) && f.endsWith('.pdf'));
+      if (dataFile) {
+          const dataFilePathFull = path.join(filesDirectory, dataFile);
+          const stats = fs.statSync(dataFilePathFull); // This might throw if file doesn't exist, but we just found it
+          return {
+              id: index + 1,
+              title: baseName, // Use baseName as title if metadata is unreadable
+              examType: '기타', // Default
+              subject: '기타', // Default
+              size: getFileSize(dataFilePathFull),
+              date: new Date(stats.mtime).toISOString().split('T')[0],
+              fileUrl: `/files/${encodeURIComponent(dataFile)}`,
+              jsonUrl: `/files/${encodeURIComponent(baseName + '.json')}`, // Derive jsonUrl from PDF base name
+              shortsLink: undefined,
+              tags: [],
+              difficulty: undefined
+          };
+      }
+      return null; // If no PDF either, then truly skip
     }
   }).filter(Boolean); // Filter out nulls from missing files
 
@@ -90,6 +104,7 @@ export interface Quiz {
   size?: string;
   date: string;
   fileUrl?: string;
+  jsonUrl?: string;
   shortsLink?: string;
   tags?: string[];
   difficulty?: string; // Quiz 인터페이스에 difficulty 속성 추가

@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import Header from './components/Header';
 import QuizList from './components/QuizList';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
@@ -9,9 +8,9 @@ import ContactUs from './components/ContactUs';
 import DocumentPreview from './components/DocumentPreview';
 import PremiumCard from './components/PremiumCard';
 import { quizzes as initialQuizzes, Quiz } from './data/quizzes';
-import JSZip from 'jszip';
 import Pagination from './components/Pagination';
 import { QUIZZES_PER_PAGE } from './constants';
+import QuizModal from './components/QuizModal';
 
 // Filters type definition
 interface Filters {
@@ -29,6 +28,8 @@ const App: React.FC = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false); // State for mobile sidebar
   const [route, setRoute] = useState(window.location.hash || '#/');
   const [selectedQuizForPreview, setSelectedQuizForPreview] = useState<Quiz | null>(null);
+  const [quizModalJsonUrl, setQuizModalJsonUrl] = useState<string | null>(null);
+  const [selectedQuizForDownloadPreview, setSelectedQuizForDownloadPreview] = useState<Quiz | null>(null);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -36,12 +37,26 @@ const App: React.FC = () => {
       setRoute(hash || '#/');
       
       const quizMatch = hash.match(/^#\/quiz\/(\d+)$/);
+      const solveMatch = hash.match(/^#\/solve\/(\d+)$/);
+
       if (quizMatch) {
         const quizId = parseInt(quizMatch[1], 10);
         const quiz = initialQuizzes.find(q => q.id === quizId);
         setSelectedQuizForPreview(quiz || null);
+        setQuizModalJsonUrl(null); // Close solve modal if preview is opened
+      } else if (solveMatch) {
+        const quizId = parseInt(solveMatch[1], 10);
+        const quiz = initialQuizzes.find(q => q.id === quizId);
+        if (quiz && quiz.jsonUrl) {
+          setQuizModalJsonUrl(quiz.jsonUrl);
+        } else {
+          setQuizModalJsonUrl(null); // Close if quiz or jsonUrl not found
+          window.location.hash = '#/'; // Redirect to home
+        }
+        setSelectedQuizForPreview(null); // Close preview modal if solve is opened
       } else {
         setSelectedQuizForPreview(null);
+        setQuizModalJsonUrl(null);
       }
       
       window.scrollTo(0, 0);
@@ -90,6 +105,14 @@ const App: React.FC = () => {
     setSelectedIds(newSelectedIds);
   };
 
+  const handleStartQuiz = (quizId: number) => {
+    window.location.hash = `#/solve/${quizId}`;
+  };
+
+  const handleDownloadPreview = (quiz: Quiz) => {
+    setSelectedQuizForDownloadPreview(quiz);
+  };
+
   const AppHeader = () => (
     <>
         <div className="flex items-center mb-8">
@@ -119,6 +142,8 @@ const App: React.FC = () => {
             quizzes={currentQuizzes}
             selectedIds={selectedIds}
             onSelectQuiz={handleSelectQuiz} 
+            onStartQuiz={handleStartQuiz}
+            onDownloadPreview={handleDownloadPreview}
         />
         <Pagination 
           totalCount={filteredQuizzes.length} 
@@ -140,8 +165,6 @@ const App: React.FC = () => {
       case '#/contact': return <ContactUs />;
       default:
         if (route.startsWith('#/quiz/')) {
-          // Even when a quiz is selected, we show the main layout.
-          // The preview is an overlay.
           return renderMainContent();
         }
         return renderMainContent();
@@ -210,7 +233,7 @@ const App: React.FC = () => {
         .tag-pink { background-color: #fdf2f8; color: #db2777; }
         .tag-green { background-color: #f0fdf4; color: #16a34a; }
         .download-button {
-            @apply bg-sky-500 text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out w-full;
+            @apply bg-sky-500 text-white rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out;
         }
         .download-button:hover { @apply bg-sky-600 shadow-md; }
         .ad-banner {
@@ -238,7 +261,7 @@ const App: React.FC = () => {
     `}</style>
     <div className="bg-gray-50 p-4 md:p-6">
       <div className="max-w-screen-2xl mx-auto">
-        <AppHeader totalCount={filteredQuizzes.length} />
+        <AppHeader />
         {renderContent()}
       </div>
       <Footer />
@@ -250,6 +273,23 @@ const App: React.FC = () => {
             setSelectedQuizForPreview(null);
             window.location.hash = '#/';
           }}
+        />
+      )}
+
+      {quizModalJsonUrl && (
+        <QuizModal 
+          jsonUrl={quizModalJsonUrl} 
+          onClose={() => {
+            setQuizModalJsonUrl(null);
+            window.location.hash = '#/';
+          }} 
+        />
+      )}
+
+      {selectedQuizForDownloadPreview && (
+        <DocumentPreview
+          quiz={selectedQuizForDownloadPreview}
+          onClose={() => setSelectedQuizForDownloadPreview(null)}
         />
       )}
     </div>

@@ -6,12 +6,16 @@ interface QuizListProps {
   quizzes: Quiz[];
   selectedIds: Set<number>;
   onSelectQuiz: (id: number) => void;
+  onStartQuiz: (quizId: number) => void;
+  onDownloadPreview: (quiz: Quiz) => void;
 }
 
 const QuizList: React.FC<QuizListProps> = ({
   quizzes,
   selectedIds,
   onSelectQuiz,
+  onStartQuiz,
+  onDownloadPreview,
 }) => {
   if (quizzes.length === 0) {
     return (
@@ -33,6 +37,8 @@ const QuizList: React.FC<QuizListProps> = ({
       isSelected={selectedIds.has(quiz.id)}
       onSelect={() => onSelectQuiz(quiz.id)}
       onPreview={() => handlePreview(quiz.id)}
+      onStartQuiz={() => onStartQuiz(quiz.id)}
+      onDownloadPreview={onDownloadPreview}
     />
   );
 
