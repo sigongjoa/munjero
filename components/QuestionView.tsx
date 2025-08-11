@@ -11,7 +11,7 @@ const QuestionView: React.FC<QuestionViewProps> = ({ question, userAnswer, onSel
   return (
     <div className="p-6 h-full flex flex-col">
       <h3 className="text-lg font-semibold mb-4">문제 {question.questionNumber}.</h3>
-      <div className="flex-grow overflow-y-auto">
+      <div>
         <p className="text-gray-700 whitespace-pre-wrap mb-6">{question.questionText}</p>
         
         <div className="space-y-3">

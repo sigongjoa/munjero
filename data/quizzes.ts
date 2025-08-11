@@ -15,25 +15,6 @@ export interface Quiz {
 export const quizzes: Quiz[] = [
   {
     "id": 1,
-    "title": "신창섭",
-    "examType": "AI 생성",
-    "subject": "국어",
-    "size": "98.1 KB",
-    "date": "2025-08-11",
-    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%8B%A0%EC%B0%BD%EC%84%AD_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
-    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%8B%A0%EC%B0%BD%EC%84%AD_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
-    "tags": [
-      "신창섭의 건드림",
-      "섬세한 소통",
-      "상호작용적 소통",
-      "비판적 사고",
-      "자기 성찰"
-    ],
-    "difficulty": "어려움"
-  },
-  {
-    "id": 2,
     "title": "도황 화법과 언어",
     "examType": "모의고사",
     "subject": "화법과 언어",
@@ -50,7 +31,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 3,
+    "id": 2,
     "title": "사회_원피스_루피로_보는_제왕학의_이해",
     "examType": "모의고사",
     "subject": "사회",
@@ -67,7 +48,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 4,
+    "id": 3,
     "title": "원피스 드래곤 양육비는?",
     "examType": "모의고사",
     "subject": "국어",
@@ -85,7 +66,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 5,
+    "id": 4,
     "title": "과학 유전공학의 핵심 기술에 대한 이해",
     "examType": "모의고사",
     "subject": "과학",
@@ -102,7 +83,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 6,
+    "id": 5,
     "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_쉬움",
     "examType": "AI 생성 모의고사",
     "subject": "국어",
@@ -121,7 +102,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 7,
+    "id": 6,
     "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_어려움",
     "examType": "AI 생성 모의고사",
     "subject": "국어",
@@ -140,7 +121,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 8,
+    "id": 7,
     "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_중간",
     "examType": "AI 생성 모의고사",
     "subject": "국어",
@@ -159,7 +140,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "중간"
   },
   {
-    "id": 9,
+    "id": 8,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_쉬움",
     "examType": "AI 생성 모의고사",
     "subject": "국어",
@@ -178,7 +159,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 10,
+    "id": 9,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_어려움",
     "examType": "AI 생성 모의고사",
     "subject": "국어",
@@ -197,7 +178,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 11,
+    "id": 10,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_중간",
     "examType": "AI 생성 모의고사",
     "subject": "국어",
@@ -212,6 +193,25 @@ export const quizzes: Quiz[] = [
       "의무론",
       "상황주의 윤리",
       "원피스"
+    ],
+    "difficulty": "중간"
+  },
+  {
+    "id": 11,
+    "title": "사도 야스토라(차드)의 간지에서 웃음거리로의 전락 과정",
+    "examType": "AI 생성 모의고사",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-08",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%82%AC%EB%8F%84_%EC%95%BC%EC%8A%A4%ED%86%A0%EB%9D%BC(%EC%B0%A8%EB%93%9C)%EC%9D%98_%EA%B0%84%EC%A7%80%EC%97%90%EC%84%9C_%EC%9B%83%EC%9D%8C%EA%B1%B0%EB%A6%AC%EB%A1%9C%EC%9D%98_%EC%A0%84%EB%9D%BD_%EA%B3%BC%EC%A0%95_%EC%A4%91%EA%B0%84.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%82%AC%EB%8F%84_%EC%95%BC%EC%8A%A4%ED%86%A0%EB%9D%BC(%EC%B0%A8%EB%93%9C)%EC%9D%98_%EA%B0%84%EC%A7%80%EC%97%90%EC%84%9C_%EC%9B%83%EC%9D%8C%EA%B1%B0%EB%A6%AC%EB%A1%9C%EC%9D%98_%EC%A0%84%EB%9D%BD_%EA%B3%BC%EC%A0%95_%EC%A4%91%EA%B0%84.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "사도 야스토라",
+      "블리치",
+      "캐릭터성 변화",
+      "밈 문화",
+      "파워 인플레"
     ],
     "difficulty": "중간"
   },
@@ -236,20 +236,39 @@ export const quizzes: Quiz[] = [
   },
   {
     "id": 13,
-    "title": "사도 야스토라(차드)의 간지에서 웃음거리로의 전락 과정",
-    "examType": "AI 생성 모의고사",
+    "title": "신창섭",
+    "examType": "AI 생성",
     "subject": "국어",
-    "size": "0.1 MB",
-    "date": "2025-08-08",
-    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%82%AC%EB%8F%84_%EC%95%BC%EC%8A%A4%ED%86%A0%EB%9D%BC(%EC%B0%A8%EB%93%9C)%EC%9D%98_%EA%B0%84%EC%A7%80%EC%97%90%EC%84%9C_%EC%9B%83%EC%9D%8C%EA%B1%B0%EB%A6%AC%EB%A1%9C%EC%9D%98_%EC%A0%84%EB%9D%BD_%EA%B3%BC%EC%A0%95_%EC%A4%91%EA%B0%84.pdf",
-    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%82%AC%EB%8F%84_%EC%95%BC%EC%8A%A4%ED%86%A0%EB%9D%BC(%EC%B0%A8%EB%93%9C)%EC%9D%98_%EA%B0%84%EC%A7%80%EC%97%90%EC%84%9C_%EC%9B%83%EC%9D%8C%EA%B1%B0%EB%A6%AC%EB%A1%9C%EC%9D%98_%EC%A0%84%EB%9D%BD_%EA%B3%BC%EC%A0%95_%EC%A4%91%EA%B0%84.json",
+    "size": "98.1 KB",
+    "date": "2025-08-11",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%8B%A0%EC%B0%BD%EC%84%AD_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%8B%A0%EC%B0%BD%EC%84%AD_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
     "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
-      "사도 야스토라",
-      "블리치",
-      "캐릭터성 변화",
-      "밈 문화",
-      "파워 인플레"
+      "신창섭의 건드림",
+      "섬세한 소통",
+      "상호작용적 소통",
+      "비판적 사고",
+      "자기 성찰"
+    ],
+    "difficulty": "어려움"
+  },
+  {
+    "id": 14,
+    "title": "군주론의 입장에서 아카이누를 바라본다면?",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-11",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B5%B0%EC%A3%BC%EB%A1%A0%EC%9D%98_%EC%9E%85%EC%9E%A5%EC%97%90%EC%84%9C_%EC%95%84%EC%B9%B4%EC%9D%B4%EB%88%84%EB%A5%BC_%EB%B0%94%EB%9D%BC%EB%B3%B8%EB%8B%A4%EB%A9%B4_%EC%A4%91%EA%B0%84.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B5%B0%EC%A3%BC%EB%A1%A0%EC%9D%98_%EC%9E%85%EC%9E%A5%EC%97%90%EC%84%9C_%EC%95%84%EC%B9%B4%EC%9D%B4%EB%88%84%EB%A5%BC_%EB%B0%94%EB%9D%BC%EB%B3%B8%EB%8B%A4%EB%A9%B4_%EC%A4%91%EA%B0%84.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "군주론",
+      "마키아벨리",
+      "아카이누",
+      "통치술",
+      "개념이해"
     ],
     "difficulty": "중간"
   }
