@@ -49,21 +49,29 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
                     <span>{quiz.date}</span>
                 </div>
             </div>
-            <div className="mt-6 flex items-center">
+            <div className="mt-6 flex flex-col space-y-2">
                 <button
                     onClick={() => onStartQuiz(quiz.id)}
                     disabled={!quiz.jsonUrl}
-                    className="flex-1 mr-1 bg-blue-500 text-white text-xs font-bold py-2 px-4 rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out disabled:bg-gray-300 disabled:cursor-not-allowed"
+                    className="w-full bg-blue-500 text-white text-xs font-bold py-2 px-4 rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
                     문제 풀기
                 </button>
                 <button
                     onClick={() => quiz.fileUrl && onDownloadPreview(quiz)}
                     disabled={!quiz.fileUrl}
-                    className="flex-1 download-button text-xs font-bold py-3 px-6"
+                    className="w-full download-button text-xs font-bold py-3 px-6"
                 >
                     다운로드
                 </button>
+                {quiz.shortsLink && (
+                    <button
+                        onClick={() => window.open(quiz.shortsLink, '_blank')}
+                        className="w-full bg-purple-500 text-white text-xs font-bold py-2 px-4 rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out"
+                    >
+                        쇼츠 보러가기
+                    </button>
+                )}
             </div>
         </div>
     );

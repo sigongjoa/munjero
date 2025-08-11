@@ -3,6 +3,7 @@
   "id": "string (문제집의 고유 식별자)",
   "title": "string (문제집의 제목)",
   "description": "string (문제집에 대한 상세 설명)",
+  "shortsLink": "string (관련 YouTube Shorts 영상 링크, 선택 사항)",
   "createdAt": "string (ISO 8601 날짜 및 시간, 예: \"2024-05-23T10:00:00Z\")",
   "sourceType": "string (\"AI_GENERATED\" 또는 \"COMMUNITY_CREATED\")",
   "author": {
