@@ -270,6 +270,6 @@ export const quizzes: Quiz[] = [
       "통치술",
       "공포심유발"
     ],
-    "difficulty": "중간"
+    "difficulty": "보통"
   }
 ];
