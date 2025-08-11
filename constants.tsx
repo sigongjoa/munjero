@@ -13,4 +13,4 @@ export const FileIcon: React.FC = () => (
     </svg>
 );
 
-export const QUIZZES_PER_PAGE = 7;
+export const QUIZZES_PER_PAGE = 8;

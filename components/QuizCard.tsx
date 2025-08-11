@@ -60,7 +60,7 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
                 <button
                     onClick={() => quiz.fileUrl && onDownloadPreview(quiz)}
                     disabled={!quiz.fileUrl}
-                    className="flex-1 download-button text-xs font-bold py-2 px-4"
+                    className="flex-1 download-button text-xs font-bold py-3 px-6"
                 >
                     다운로드
                 </button>
