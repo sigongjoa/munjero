@@ -262,7 +262,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-11",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B5%B0%EC%A3%BC%EB%A1%A0%EC%9D%98_%EC%9E%85%EC%9E%A5%EC%97%90%EC%84%9C_%EC%95%84%EC%B9%B4%EC%9D%B4%EB%88%84%EB%A5%BC_%EB%B0%94%EB%9D%BC%EB%B3%B8%EB%8B%A4%EB%A9%B4_%EC%A4%91%EA%B0%84.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B5%B0%EC%A3%BC%EB%A1%A0%EC%9D%98_%EC%9E%85%EC%9E%A5%EC%97%90%EC%84%9C_%EC%95%84%EC%B9%B4%EC%9D%B4%EB%88%84%EB%A5%BC_%EB%B0%94%EB%9D%BC%EB%B3%B8%EB%8B%A4%EB%A9%B4_%EC%A4%91%EA%B0%84.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://www.youtube.com/shorts/OEpoaE0JUZE",
     "tags": [
       "군주론",
       "마키아벨리",
