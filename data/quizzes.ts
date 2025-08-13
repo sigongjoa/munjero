@@ -347,5 +347,24 @@ export const quizzes: Quiz[] = [
       "바나나맛우유"
     ],
     "difficulty": "어려움"
+  },
+  {
+    "id": 19,
+    "title": "드래곤볼에서 나타나는 무협지의 요소: '무(武)'와 '협(俠)'의 조화",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-13",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%93%9C%EB%9E%98%EA%B3%A4%EB%B3%BC%EC%97%90%EC%84%9C_%EB%82%98%ED%83%80%EB%82%98%EB%8A%94_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EC%9A%94%EC%86%8C_'%EB%AC%B4(%E6%AD%A6)'%EC%99%80_'%ED%98%91(%E4%BF%A0)'%EC%9D%98_%EC%A1%B0%ED%99%94_%EC%89%AC%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%93%9C%EB%9E%98%EA%B3%A4%EB%B3%BC%EC%97%90%EC%84%9C_%EB%82%98%ED%83%80%EB%82%98%EB%8A%94_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EC%9A%94%EC%86%8C_'%EB%AC%B4(%E6%AD%A6)'%EC%99%80_'%ED%98%91(%E4%BF%A0)'%EC%9D%98_%EC%A1%B0%ED%99%94_%EC%89%AC%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "드래곤볼",
+      "무협지",
+      "무",
+      "협",
+      "손오공"
+    ],
+    "difficulty": "쉬움"
   }
 ];
