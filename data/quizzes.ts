@@ -262,7 +262,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-12",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A7%88%ED%82%A4%EC%95%84%EB%B2%A8%EB%A6%AC%EC%A0%81_%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C_%ED%83%80%EB%85%B8%EC%8A%A4%EB%A5%BC_%EC%8B%AC%EC%B8%B5%EC%A0%81%EC%9C%BC%EB%A1%9C_%EB%B6%84%EC%84%9D.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A7%88%ED%82%A4%EC%95%84%EB%B2%A8%EB%A6%AC%EC%A0%81_%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C_%ED%83%80%EB%85%B8%EC%8A%A4%EB%A5%BC_%EC%8B%AC%EC%B8%B5%EC%A0%81%EC%9C%BC%EB%A1%9C_%EB%B6%84%EC%84%9D.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/BF_BdRo8SNs?utm_source=youtube&utm_medium=shorts&utm_campaign=타노스_마키아벨리",
     "tags": [
       "마키아벨리",
       "타노스",
@@ -281,7 +281,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-12",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A7%88%ED%82%A4%EC%95%84%EB%B2%A8%EB%A6%AC%EC%A0%81_%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C_%ED%83%80%EB%85%B8%EC%8A%A4%EB%A5%BC_%EC%8B%AC%EC%B8%B5%EC%A0%81%EC%9C%BC%EB%A1%9C_%EB%B6%84%EC%84%9D.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A7%88%ED%82%A4%EC%95%84%EB%B2%A8%EB%A6%AC%EC%A0%81_%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C_%ED%83%80%EB%85%B8%EC%8A%A4%EB%A5%BC_%EC%8B%AC%EC%B8%B5%EC%A0%81%EC%9C%BC%EB%A1%9C_%EB%B6%84%EC%84%9D.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/BF_BdRo8SNs?utm_source=youtube&utm_medium=shorts&utm_campaign=타노스_마키아벨리",
     "tags": [
       "마키아벨리",
       "타노스",
@@ -300,7 +300,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-13",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/xrvxzxYDufA?utm_source=youtube&utm_medium=shorts&utm_campaign=빙그레_바나나맛_우유_쉬움",
     "tags": [
       "지식재산권",
       "상표권",
@@ -319,7 +319,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-13",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EB%B3%B4%ED%86%B5.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/xrvxzxYDufA?utm_source=youtube&utm_medium=shorts&utm_campaign=빙그레_바나나맛_우유_보통",
     "tags": [
       "지식재산권",
       "상표권",
@@ -338,7 +338,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-13",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/xrvxzxYDufA?utm_source=youtube&utm_medium=shorts&utm_campaign=빙그레_바나나맛_우유_어려움",
     "tags": [
       "지식재산권",
       "상표권 침해",
