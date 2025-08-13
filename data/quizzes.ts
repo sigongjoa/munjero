@@ -16,7 +16,7 @@ export const quizzes: Quiz[] = [
   {
     "id": 1,
     "title": "도황 화법과 언어",
-    "examType": "모의고사",
+    "examType": "기타",
     "subject": "화법과 언어",
     "size": "2.8 MB",
     "date": "2025-08-03",
@@ -33,7 +33,7 @@ export const quizzes: Quiz[] = [
   {
     "id": 2,
     "title": "사회_원피스_루피로_보는_제왕학의_이해",
-    "examType": "모의고사",
+    "examType": "기타",
     "subject": "사회",
     "size": "6.1 MB",
     "date": "2025-08-04",
@@ -50,7 +50,7 @@ export const quizzes: Quiz[] = [
   {
     "id": 3,
     "title": "원피스 드래곤 양육비는?",
-    "examType": "모의고사",
+    "examType": "기타",
     "subject": "국어",
     "size": "0.1 MB",
     "date": "2025-08-05",
@@ -63,12 +63,12 @@ export const quizzes: Quiz[] = [
       "원피스",
       "형법"
     ],
-    "difficulty": "보통"
+    "difficulty": "어려움"
   },
   {
     "id": 4,
     "title": "과학 유전공학의 핵심 기술에 대한 이해",
-    "examType": "모의고사",
+    "examType": "기타",
     "subject": "과학",
     "size": "93.8 KB",
     "date": "2025-08-06",
@@ -85,7 +85,7 @@ export const quizzes: Quiz[] = [
   {
     "id": 5,
     "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_쉬움",
-    "examType": "AI 생성 모의고사",
+    "examType": "기타",
     "subject": "국어",
     "size": "4.7 MB",
     "date": "2025-08-06",
@@ -104,7 +104,7 @@ export const quizzes: Quiz[] = [
   {
     "id": 6,
     "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_어려움",
-    "examType": "AI 생성 모의고사",
+    "examType": "기타",
     "subject": "국어",
     "size": "8.4 MB",
     "date": "2025-08-06",
@@ -123,7 +123,7 @@ export const quizzes: Quiz[] = [
   {
     "id": 7,
     "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_중간",
-    "examType": "AI 생성 모의고사",
+    "examType": "기타",
     "subject": "국어",
     "size": "4.7 MB",
     "date": "2025-08-06",
@@ -142,7 +142,7 @@ export const quizzes: Quiz[] = [
   {
     "id": 8,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_쉬움",
-    "examType": "AI 생성 모의고사",
+    "examType": "기타",
     "subject": "국어",
     "size": "0.1 MB",
     "date": "2025-08-08",
@@ -161,7 +161,7 @@ export const quizzes: Quiz[] = [
   {
     "id": 9,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_어려움",
-    "examType": "AI 생성 모의고사",
+    "examType": "기타",
     "subject": "국어",
     "size": "12.0 MB",
     "date": "2025-08-08",
@@ -179,22 +179,14 @@ export const quizzes: Quiz[] = [
   },
   {
     "id": 10,
-    "title": "키자루의 행동과 정의관에 대한 윤리적 분석_중간",
-    "examType": "AI 생성 모의고사",
-    "subject": "국어",
+    "title": "국어_키자루의_행동과_정의관에_대한_윤리적_분석_중간",
+    "examType": "기타",
+    "subject": "기타",
     "size": "0.1 MB",
     "date": "2025-08-08",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%A4%91%EA%B0%84.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%A4%91%EA%B0%84.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
-    "tags": [
-      "키자루",
-      "애매한 정의",
-      "의무론",
-      "상황주의 윤리",
-      "원피스"
-    ],
-    "difficulty": "중간"
+    "tags": []
   },
   {
     "id": 13,
@@ -309,5 +301,62 @@ export const quizzes: Quiz[] = [
       "군주"
     ],
     "difficulty": "보통"
+  },
+  {
+    "id": 20,
+    "title": "지식재산권과 상표권 침해 심층 분석: 빙그레 '바나나맛 우유' 분쟁 사례를 중심으로",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-13",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%89%AC%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%89%AC%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "지식재산권",
+      "상표권",
+      "바나나맛우유",
+      "상표침해",
+      "요부관찰"
+    ],
+    "difficulty": "쉬움"
+  },
+  {
+    "id": 21,
+    "title": "지식재산권과 상표권 침해 심층 분석: 빙그레 '바나나맛 우유' 분쟁 사례를 중심으로",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "4.1 MB",
+    "date": "2025-08-13",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EB%B3%B4%ED%86%B5.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EB%B3%B4%ED%86%B5.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "지식재산권",
+      "상표권",
+      "바나나맛우유",
+      "요부관찰",
+      "희석화이론"
+    ],
+    "difficulty": "보통"
+  },
+  {
+    "id": 22,
+    "title": "지식재산권과 상표권 침해 심층 분석: 빙그레 '바나나맛 우유' 분쟁 사례를 중심으로",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "4.0 MB",
+    "date": "2025-08-13",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "지식재산권",
+      "상표권 침해",
+      "요부관찰",
+      "징벌적 손해배상",
+      "바나나맛우유"
+    ],
+    "difficulty": "어려움"
   }
 ];

@@ -1,7 +1,25 @@
 {
+  "specVersion": "1.0",
+  "id": "user-provided-1723521600000",
   "title": "과학 유전공학의 핵심 기술에 대한 이해",
-  "examType": "모의고사",
-  "subject": "과학",
-  "tags": ["유전공학", "생명과학", "스마일 열매"],
-  "difficulty": "보통"
+  "description": "사용자가 제공한 '과학' 과목의 문제집입니다. 학습 목표는 '과학 유전공학의 핵심 기술에 대한 이해'입니다.",
+  "createdAt": "2025-08-13T05:00:00.000Z",
+  "sourceType": "USER_PROVIDED",
+  "author": {
+    "id": "user",
+    "name": "사용자"
+  },
+  "tags": [
+    "유전공학",
+    "생명과학",
+    "스마일 열매"
+  ],
+  "subject": {
+    "main": "과학",
+    "sub": ""
+  },
+  "difficulty": "보통",
+  "questionCount": 0,
+  "passage": "",
+  "questions": []
 }
