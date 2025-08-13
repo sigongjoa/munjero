@@ -205,7 +205,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-08",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%82%AC%EB%8F%84_%EC%95%BC%EC%8A%A4%ED%86%A0%EB%9D%BC(%EC%B0%A8%EB%93%9C)%EC%9D%98_%EA%B0%84%EC%A7%80%EC%97%90%EC%84%9C_%EC%9B%83%EC%9D%8C%EA%B1%B0%EB%A6%AC%EB%A1%9C%EC%9D%98_%EC%A0%84%EB%9D%BD_%EA%B3%BC%EC%A0%95_%EC%A4%91%EA%B0%84.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%82%AC%EB%8F%84_%EC%95%BC%EC%8A%A4%ED%86%A0%EB%9D%BC(%EC%B0%A8%EB%93%9C)%EC%9D%98_%EA%B0%84%EC%A7%80%EC%97%90%EC%84%9C_%EC%9B%83%EC%9D%8C%EA%B1%B0%EB%A6%AC%EB%A1%9C%EC%9D%98_%EC%A0%84%EB%9D%BD_%EA%B3%BC%EC%A0%95_%EC%A4%91%EA%B0%84.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/BBizRGbuRC0?utm_source=youtube&utm_medium=shorts&utm_campaign=차드_간지_전락",
     "tags": [
       "사도 야스토라",
       "블리치",
