@@ -353,17 +353,74 @@ export const quizzes: Quiz[] = [
     "title": "드래곤볼에서 나타나는 무협지의 요소: '무(武)'와 '협(俠)'의 조화",
     "examType": "AI 생성",
     "subject": "국어",
-    "size": "0.1 MB",
+    "size": "6.7 MB",
     "date": "2025-08-13",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%93%9C%EB%9E%98%EA%B3%A4%EB%B3%BC%EC%97%90%EC%84%9C_%EB%82%98%ED%83%80%EB%82%98%EB%8A%94_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EC%9A%94%EC%86%8C_'%EB%AC%B4(%E6%AD%A6)'%EC%99%80_'%ED%98%91(%E4%BF%A0)'%EC%9D%98_%EC%A1%B0%ED%99%94_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%93%9C%EB%9E%98%EA%B3%A4%EB%B3%BC%EC%97%90%EC%84%9C_%EB%82%98%ED%83%80%EB%82%98%EB%8A%94_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EC%9A%94%EC%86%8C_'%EB%AC%B4(%E6%AD%A6)'%EC%99%80_'%ED%98%91(%E4%BF%A0)'%EC%9D%98_%EC%A1%B0%ED%99%94_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/LsgVD2Se8oY",
     "tags": [
       "드래곤볼",
       "무협지",
-      "무",
-      "협",
+      "무(武)",
+      "협(俠)",
       "손오공"
+    ],
+    "difficulty": "쉬움"
+  },
+  {
+    "id": 20,
+    "title": "그럼 스타워즈 세계관을 정파(제다이)와 마교(시스) 중심으로, 무협식 해석",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-15",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B7%B8%EB%9F%BC_%EC%8A%A4%ED%83%80%EC%9B%8C%EC%A6%88_%EC%84%B8%EA%B3%84%EA%B4%80%EC%9D%84_%EC%A0%95%ED%8C%8C(%EC%A0%9C%EB%8B%A4%EC%9D%B4)%EC%99%80_%EB%A7%88%EA%B5%90(%EC%8B%9C%EC%8A%A4)_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C%2C_%EB%AC%B4%ED%98%91%EC%8B%9D_%ED%95%B4%EC%84%9D_%EB%B3%B4%ED%86%B5.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B7%B8%EB%9F%BC_%EC%8A%A4%ED%83%80%EC%9B%8C%EC%A6%88_%EC%84%B8%EA%B3%84%EA%B4%80%EC%9D%84_%EC%A0%95%ED%8C%8C(%EC%A0%9C%EB%8B%A4%EC%9D%B4)%EC%99%80_%EB%A7%88%EA%B5%90(%EC%8B%9C%EC%8A%A4)_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C%2C_%EB%AC%B4%ED%98%91%EC%8B%9D_%ED%95%B4%EC%84%9D_%EB%B3%B4%ED%86%B5.json",
+    "shortsLink": "https://www.youtube.com/shorts/ePYXZxtvGds",
+    "tags": [
+      "스타워즈",
+      "제다이",
+      "시스",
+      "무협",
+      "정파마교"
+    ],
+    "difficulty": "보통"
+  },
+  {
+    "id": 21,
+    "title": "강호의 도리에 대한 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-16",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "강호의 도리",
+      "밈",
+      "언어 변화",
+      "온라인 문화",
+      "불문율"
+    ],
+    "difficulty": "쉬움"
+  },
+  {
+    "id": 22,
+    "title": "강호의 도리에 대한 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-16",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "강호의 도리",
+      "밈",
+      "언어 변화",
+      "온라인 문화",
+      "불문율"
     ],
     "difficulty": "쉬움"
   }
