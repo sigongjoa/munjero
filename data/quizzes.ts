@@ -392,7 +392,7 @@ export const quizzes: Quiz[] = [
     "examType": "AI 생성",
     "subject": "국어",
     "size": "0.1 MB",
-    "date": "2025-08-16",
+    "date": "2025-08-18",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
     "shortsLink": "https://www.youtube.com/shorts/example",
@@ -411,7 +411,7 @@ export const quizzes: Quiz[] = [
     "examType": "AI 생성",
     "subject": "국어",
     "size": "0.1 MB",
-    "date": "2025-08-16",
+    "date": "2025-08-18",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
     "shortsLink": "https://www.youtube.com/shorts/example",
@@ -423,5 +423,81 @@ export const quizzes: Quiz[] = [
       "불문율"
     ],
     "difficulty": "쉬움"
+  },
+  {
+    "id": 23,
+    "title": "지식재산권의 기본 구분 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-18",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "지식재산권",
+      "특허",
+      "실용신안",
+      "디자인권",
+      "상표"
+    ],
+    "difficulty": "보통"
+  },
+  {
+    "id": 24,
+    "title": "지식재산권의 기본 구분 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-18",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "지식재산권",
+      "특허",
+      "실용신안",
+      "디자인권",
+      "상표"
+    ],
+    "difficulty": "쉬움"
+  },
+  {
+    "id": 25,
+    "title": "지식재산권의 기본 구분 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-18",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "지식재산권",
+      "특허",
+      "실용신안",
+      "디자인권",
+      "상표"
+    ],
+    "difficulty": "쉬움"
+  },
+  {
+    "id": 26,
+    "title": "지식재산권의 기본 구분 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-18",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "지식재산권",
+      "특허",
+      "실용신안",
+      "디자인권",
+      "상표"
+    ],
+    "difficulty": "보통"
   }
 ];
