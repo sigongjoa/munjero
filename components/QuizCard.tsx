@@ -1,26 +1,14 @@
 import React from 'react';
 import { Quiz } from '../data/quizzes';
 
-const tagColors = [
-    'tag-purple',
-    'tag-blue',
-    'tag-pink',
-    'tag-green',
-    'tag-gray',
-];
-
-const getTagColor = (index: number) => {
-    return tagColors[index % tagColors.length];
-};
-
 const getDifficultyColor = (difficulty: string | undefined) => {
     switch (difficulty) {
         case '어려움':
-            return 'bg-red-100 text-red-700';
+            return 'bg-red-50 text-red-500';
         case '보통':
-            return 'bg-yellow-100 text-yellow-700';
+            return 'bg-yellow-50 text-yellow-500';
         case '쉬움':
-            return 'bg-green-100 text-green-700';
+            return 'bg-green-50 text-green-500';
         default:
             return 'bg-gray-100 text-gray-700';
     }
@@ -30,66 +18,65 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
     const uniqueTags = [...new Set([quiz.subject, ...(quiz.tags || [])])];
 
     return (
-        <div className="card">
-            <div>
-                <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-start">
-                        {quiz.difficulty && (
-                            <span className={`text-xs font-bold px-2.5 py-1 rounded-full mr-3 mt-1 ${getDifficultyColor(quiz.difficulty)}`}>
-                                {quiz.difficulty}
-                            </span>
-                        )}
-                        <h3
-                            className="text-lg font-bold text-gray-800 cursor-pointer hover:text-blue-600 transition-colors flex-1"
-                            onClick={onPreview}
-                        >
-                            {quiz.title}
-                        </h3>
-                    </div>
-                    <input
-                        className="h-5 w-5 rounded text-blue-500 border-gray-300 focus:ring-blue-200"
-                        type="checkbox"
-                        checked={isSelected}
-                        onChange={onSelect}
-                        aria-label={`Select quiz: ${quiz.title}`}
-                    />
+        <div className="bg-white p-4 rounded-2xl shadow-sm flex items-center space-x-4">
+            <input
+                className="form-checkbox h-5 w-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500 ml-2"
+                type="checkbox"
+                checked={isSelected}
+                onChange={onSelect}
+                aria-label={`Select quiz: ${quiz.title}`}
+            />
+            <div className="flex-1">
+                <div className="flex items-center gap-3">
+                    {quiz.difficulty && (
+                        <span className={`${getDifficultyColor(quiz.difficulty)} text-sm font-bold px-3 py-1 rounded-full`}>
+                            {quiz.difficulty}
+                        </span>
+                    )}
+                    <h3 className="text-lg font-bold text-gray-900 truncate">{quiz.title}</h3>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="card-tag tag-gray">{quiz.examType}</span>
-                    {uniqueTags.map((tag, index) => (
-                        <span key={tag} className={`card-tag ${getTagColor(index)}`}>{tag}</span>
+                <div className="flex items-center gap-2 mt-2">
+                    <span className="bg-gray-200 text-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md">AI 생성</span>
+                    <span className="bg-gray-200 text-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md">{quiz.subject}</span>
+                    {uniqueTags.filter(tag => tag !== quiz.subject).slice(0, 1).map((tag) => (
+                        <span key={tag} className="bg-gray-200 text-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md">{tag}</span>
                     ))}
+                    {uniqueTags.length > 2 && (
+                        <button className="text-xs font-semibold text-gray-500 hover:text-gray-800">+{uniqueTags.length - 2} 더보기</button>
+                    )}
                 </div>
-                <div className="flex items-center text-gray-500 text-sm mb-1">
-                    <span className="material-icons text-base mr-2">description</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-gray-500">
+                <div className="flex items-center">
+                    <span className="material-symbols-outlined text-base mr-1">draft</span>
                     <span>{quiz.size || 'N/A'}</span>
                 </div>
-                <div className="flex items-center text-gray-500 text-sm">
-                    <span className="material-icons text-base mr-2">calendar_today</span>
+                <div className="flex items-center">
+                    <span className="material-symbols-outlined text-base mr-1">calendar_today</span>
                     <span>{quiz.date}</span>
                 </div>
             </div>
-            <div className="mt-6 flex flex-col space-y-2">
+            <div className="flex items-center space-x-2">
                 <button
                     onClick={() => onStartQuiz(quiz.id)}
                     disabled={!quiz.jsonUrl}
-                    className="w-full bg-blue-500 text-white text-xs font-bold py-2 px-4 rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out disabled:bg-gray-300 disabled:cursor-not-allowed"
+                    className="bg-blue-500 text-white py-2 px-4 rounded-lg font-semibold text-sm disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
                     문제 풀기
                 </button>
                 <button
                     onClick={() => quiz.fileUrl && onDownloadPreview(quiz)}
                     disabled={!quiz.fileUrl}
-                    className="w-full download-button text-xs font-bold py-3 px-6"
+                    className="p-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
-                    다운로드
+                    <span className="material-symbols-outlined">download</span>
                 </button>
                 {quiz.shortsLink && (
                     <button
                         onClick={() => window.open(quiz.shortsLink, '_blank')}
-                        className="w-full bg-purple-500 text-white text-xs font-bold py-2 px-4 rounded-lg flex items-center justify-center transition-all duration-200 ease-in-out"
+                        className="p-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200"
                     >
-                        쇼츠 보러가기
+                        <span className="material-symbols-outlined">slideshow</span>
                     </button>
                 )}
             </div>
