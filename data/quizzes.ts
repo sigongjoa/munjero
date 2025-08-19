@@ -311,25 +311,6 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 17,
-    "title": "드래곤볼에서 나타나는 무협지의 요소: '무(武)'와 '협(俠)'의 조화",
-    "examType": "AI 생성",
-    "subject": "국어",
-    "size": "6.7 MB",
-    "date": "2025-08-13",
-    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%93%9C%EB%9E%98%EA%B3%A4%EB%B3%BC%EC%97%90%EC%84%9C_%EB%82%98%ED%83%80%EB%82%98%EB%8A%94_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EC%9A%94%EC%86%8C_'%EB%AC%B4(%E6%AD%A6)'%EC%99%80_'%ED%98%91(%E4%BF%A0)'%EC%9D%98_%EC%A1%B0%ED%99%94_%EC%89%AC%EC%9B%80.pdf",
-    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%93%9C%EB%9E%98%EA%B3%A4%EB%B3%BC%EC%97%90%EC%84%9C_%EB%82%98%ED%83%80%EB%82%98%EB%8A%94_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EC%9A%94%EC%86%8C_'%EB%AC%B4(%E6%AD%A6)'%EC%99%80_'%ED%98%91(%E4%BF%A0)'%EC%9D%98_%EC%A1%B0%ED%99%94_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/LsgVD2Se8oY",
-    "tags": [
-      "드래곤볼",
-      "무협지",
-      "무(武)",
-      "협(俠)",
-      "손오공"
-    ],
-    "difficulty": "쉬움"
-  },
-  {
     "id": 18,
     "title": "강호의 도리에 대한 이해",
     "examType": "AI 생성",
@@ -357,7 +338,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-18",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/8QOZN4jbcPo",
     "tags": [
       "지식재산권",
       "특허",
@@ -376,7 +357,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-18",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/8QOZN4jbcPo",
     "tags": [
       "지식재산권",
       "특허",
@@ -395,7 +376,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/SNnrGQhKSaA",
     "tags": [
       "리더십",
       "샹크스",
@@ -414,7 +395,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/SNnrGQhKSaA",
     "tags": [
       "리더십",
       "샹크스",
@@ -433,7 +414,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
+    "shortsLink": "https://youtube.com/shorts/SNnrGQhKSaA",
     "tags": [
       "리더십",
       "샹크스",
@@ -442,5 +423,83 @@ export const quizzes: Quiz[] = [
       "국어과역량"
     ],
     "difficulty": "어려움"
+  },
+  {
+    "id": 24,
+    "title": "무협지의 경공의 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-19",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "경공",
+      "무협",
+      "내공",
+      "경신술",
+      "애니메이션",
+      "문화콘텐츠"
+    ],
+    "difficulty": "쉬움"
+  },
+  {
+    "id": 25,
+    "title": "무협지의 경공의 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-19",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "경공",
+      "무협",
+      "경신술",
+      "내공",
+      "애니메이션"
+    ],
+    "difficulty": "보통"
+  },
+  {
+    "id": 26,
+    "title": "무협지의 경공의 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.2 MB",
+    "date": "2025-08-19",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "경공",
+      "내공",
+      "경신술",
+      "무협",
+      "애니메이션"
+    ],
+    "difficulty": "어려움"
+  },
+  {
+    "id": 27,
+    "title": "무협지의 경공의 이해",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.2 MB",
+    "date": "2025-08-19",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.json",
+    "shortsLink": "https://www.youtube.com/shorts/example",
+    "tags": [
+      "경공",
+      "내공",
+      "경신술",
+      "무협",
+      "애니메이션",
+      "문화콘텐츠"
+    ],
+    "difficulty": "매우 어려움"
   }
 ];
