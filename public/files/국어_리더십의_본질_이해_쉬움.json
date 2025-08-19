@@ -1,0 +1,219 @@
+{
+  "specVersion": "1.0",
+  "id": "ai-gen-1755587627123",
+  "title": "리더십의 본질 이해",
+  "description": "AI가 생성한 '국어 > ' 과목의 '사료(텍스트) 해석형' 유형 문제집입니다. 학습 목표는 '리더십의 본질 이해'입니다.",
+  "createdAt": "2025-08-19T07:13:47.123Z",
+  "sourceType": "AI_GENERATED",
+  "author": {
+    "id": "ai-tutor-gemini-2.5-flash",
+    "name": "AI Tutor"
+  },
+  "tags": [
+    "리더십",
+    "샹크스",
+    "존F케네디",
+    "전쟁억제",
+    "평화"
+  ],
+  "subject": {
+    "main": "국어",
+    "sub": ""
+  },
+  "difficulty": "쉬움",
+  "generationConfig": {
+    "questionType": "사료(텍스트) 해석형",
+    "passageLength": 1500,
+    "numQuestions": 3,
+    "useOriginalText": false,
+    "questionStemStyle": "3문장 이내로 간결하게",
+    "questionChoicesStyle": "각 선택지는 30자 내외로 문제 쉬운 문제로"
+  },
+  "passage": "역사는 늘 중대한 갈림길에서 한 개인의 결정이 수많은 이들의 운명을 좌우하는 순간을 마주해왔습니다. 만화 『원피스』의 샹크스와 20세기 미국의 대통령 존 F. 케네디는 전혀 다른 배경을 가졌음에도 불구하고, '전쟁을 멈춘 리더'라는 점에서 놀랍도록 유사한 리더십의 본질을 보여줍니다.두 인물은 압도적인 카리스마로 실제적인 전쟁을 억제한 지도자였습니다. 샹크스는 마린포드 전장에 나타나 단 한마디 선언으로 해군과 해적의 충돌을 종식시켰고, 그의 존재 자체가 강력한 억지력으로 작용했습니다. 케네디 역시 쿠바 미사일 위기에서 핵전쟁 직전의 순간, 과감한 외교적 결단으로 사태를 수습하며 세계 평화를 지켜냈습니다. 이들의 등장은 그 존재 자체가 평화 유지의 수단이었음을 명확히 보여줍니다.또한, 이들은 공통적으로 젊고 상징적인 리더십을 발휘했습니다. 샹크스는 사황 중 젊고 자유분방한 이미지로 해적 세계에 특별한 무게감을 부여했고, 새로운 가치를 제시하는 상징이었습니다. 케네디 역시 최연소 미국 대통령으로 젊음과 혁신을 상징하며 국민에게 희망을 안겨주었습니다. 두 사람 모두 시대를 대표하는 '젊은 리더십'의 전형으로 기억됩니다.더욱이, 이들 리더십의 핵심에는 '말의 무게'가 있었습니다. 샹크스는 물리적 힘 없이 \"내가 막겠다\"는 선언만으로 모든 전투를 멈추게 하는 영향력을 보여주었습니다. 케네디 또한 연설과 끈기 있는 협상을 통해 핵전쟁을 회피했습니다. 결과적으로 두 리더는 직접적인 행동보다, 존재감과 신뢰받는 언어의 힘으로 전장의 흐름과 역사의 방향을 바꾼 인물들이었습니다.물론, 샹크스와 케네디 사이에는 분명한 차이점도 존재합니다. 샹크스의 권력 기반은 그의 해적단 전투력과 동료 간의 깊은 신뢰에서 비롯됩니다. 반면 케네디는 민주주의 체제 속 국민의 지지와 제도적 힘을 바탕으로 권력을 행사했습니다. 또한 샹크스가 '체제 밖'에서 중재자로서 균형을 지켰다면, 케네디는 '체제 안'에서 대통령으로서 자유 진영의 수호자 역할을 수행했습니다. 최후의 모습에서도 차이가 드러납니다. 샹크스는 여전히 현역의 균형자로 살아있는 반면, 케네디는 암살이라는 비극적 죽음을 맞았지만, 오히려 그 죽음이 그의 리더십과 전설을 완성시키는 역설적 결과를 낳았습니다.결론적으로 샹크스와 케네디는 모두 '전쟁을 막은 카리스마 리더'라는 본질적 공통점을 지니고 있습니다. 동시에 그들이 활동한 위치와 리더십 발휘 방식에서는 뚜렷한 차이를 보입니다. 샹크스는 제도와 규범을 초월한 자유로운 중재자였고, 케네디는 민주적 제도와 국민 지지 속 체제를 수호하는 정치적 지도자였습니다. 그럼에도 두 사람 모두, 인류가 직면한 위기의 순간에 '평화'를 선택하고 실현했다는 점에서, 역사와 허구를 초월한 진정한 리더십의 상징이라 할 수 있습니다.",
+  "passage_shorts_script": {
+    "scenes": [
+      {
+        "caption": "만화 캐릭터랑 미국 대통령이 닮았다고요?🤔",
+        "section": "훅",
+        "visual_suggestion": "샹크스와 케네디 이미지 교차, 놀란 표정의 이모티콘"
+      },
+      {
+        "caption": "전쟁을 멈춘 두 리더, 샹크스와 케네디! 이들의 놀라운 공통점과 차이점은 뭘까요?",
+        "section": "몰입",
+        "visual_suggestion": "두 인물이 전쟁을 멈추는 상징적 장면 연출, 궁금증 유발 자막"
+      },
+      {
+        "caption": "두 리더는 카리스마와 말의 힘으로 전쟁을 억제했습니다. 젊고 상징적인 리더십으로 희망을 주었죠. 샹크스는 존재감으로, 케네디는 외교로 평화를 지켜냈습니다. 권력 기반과 활동 영역은 달랐지만, 결국 둘 다 평화를 택한 위대한 리더입니다.",
+        "section": "본문 요약",
+        "visual_suggestion": "핵심 키워드(카리스마, 말의 힘, 평화) 강조, 샹크스와 케네디의 특징 병렬적으로 보여주는 인포그래픽"
+      },
+      {
+        "caption": "여러분은 어떤 리더십이 더 인상 깊으신가요?",
+        "section": "마무리",
+        "visual_suggestion": "시청자에게 질문을 던지는 듯한 효과, 생각하는 이모티콘"
+      },
+      {
+        "caption": "더 자세한 내용은 본문에서 확인하고, 관련 문제는 문제로에서 풀어보세요!",
+        "section": "CTA",
+        "visual_suggestion": "채널 로고 및 구독 유도, 학습 플랫폼 로고 노출"
+      }
+    ],
+    "title": "샹크스 vs 케네디: 전쟁을 멈춘 두 리더십의 비밀"
+  },
+  "suggestedLinks": [
+    {
+      "title": "kocw.net",
+      "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFExuPD6DPrkMBb-d64004dM4uJZ_ywopPRxPHbgbxb-jR5iLxt9ti95oArpTHBWY1pv7r3sQOtGSJahKiAuNBrVs2xgtyxEjJIIcmJBDPxIP4R7QoiEdA_xksrHlN9h51o_fDT_YEIlU0Culb2"
+    },
+    {
+      "title": "kocw.net",
+      "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGisIa88HFPcxxFFMZRXbY6OVJUFX6BqqRte9L91KSISBgnsFX15uKQu1rIZcMS4VlNqN7Z2l2OZqkGSg8yHe6BgF2JoCovpA2Y4CUMsCVwbmLJDPYx6dJIKiUZyJ9hjtVqMLCtXJVIjg=="
+    },
+    {
+      "title": "eklc.co.kr",
+      "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfsc7fb8AezDQGEOBVZZoMqdIo-6VqFRJuddKgNMYiFJWYFA1B13bsFFsmFuMT0DhT3r4d8vYklxphVET3vJVd6G5xFXWCXNnyIKKMAO42Wf2g"
+    },
+    {
+      "title": "multicampus.com",
+      "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhDuTtwW1_JYaRWI_IxDaKgS8DcYkWry7VEH58SapQsdjhNy73z4pJHUDQwmEWRjIhG7mqUbp430tZlD5DtJbq7xf6FMa3oupmEZohjcKSCEcK6Z8nzs9NtW6MuIKYZa4XKAJpBxAgZd7LXA91ZfEZmMMMnOfn"
+    },
+    {
+      "title": "fastcampus.co.kr",
+      "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgYqeykkli7Wai_ro4deocgSsNc3-GC2VR48hMhU1b3F7a9OLQhCgjIvTBXN9KuzOvMm-HbT6MivFUxccrUDN14w2nDgJvh9HDzET9vOQF8bWyD_UkqlpKtaAbZKJEllMaLvm-VSxw8iJb_NG4ROLvGUMb"
+    }
+  ],
+  "questions": [
+    {
+      "questionNumber": 1,
+      "questionText": "샹크스와 케네디 리더십의 공통점으로 가장 적절한 것은 무엇인가?",
+      "options": [
+        "젊음으로 평화를 상징했다.",
+        "물리적 힘으로 위기를 해결했다.",
+        "존재와 언어로 전쟁을 억제했다.",
+        "민주적 절차를 통해 권력을 얻었다.",
+        "체제 밖에서 자유롭게 활동했다."
+      ],
+      "answerIndex": 2,
+      "explanation": "제시문에 따르면, 샹크스는 \"내가 막겠다\"는 선언으로, 케네디는 연설과 협상을 통해 전쟁을 멈췄다고 언급되어 있습니다. 이는 물리적인 행동보다는 그들의 \"존재감과 신뢰받는 언어의 힘\"으로 전장의 흐름을 바꾼 것이므로, 정답은 ③번입니다. ①번은 젊음이 상징적 리더십의 특징이지 직접적인 전쟁 억제 수단은 아니었고, ②번은 물리적 힘이 아닌 존재와 언어의 힘을 강조했으며, ④번과 ⑤번은 차이점에 해당합니다.",
+      "knowledgeTag": "공통점 파악",
+      "shorts_script": {
+        "scenes": [
+          {
+            "caption": "99%가 헷갈리는 리더십 문제, 당신은 풀 수 있나요?",
+            "section": "훅",
+            "visual_suggestion": "물음표와 함께 '도전' 분위기 조성, 샹크스와 케네디 이미지 교차"
+          },
+          {
+            "caption": "샹크스와 케네디, 둘 다 전쟁을 멈췄죠? 그들의 진짜 공통점은?",
+            "section": "몰입",
+            "visual_suggestion": "두 리더가 평화를 지키는 상징적 이미지, 흔한 오해를 언급하며 호기심 자극"
+          },
+          {
+            "caption": "문제! 샹크스와 케네디 리더십의 공통점으로 가장 적절한 것은?",
+            "section": "문제 제시",
+            "visual_suggestion": "문제 텍스트 크게 표시, 옵션 A, B, C를 간결하게 제시"
+          },
+          {
+            "caption": "정답은 ③번! 그들의 존재감과 말 한마디의 힘이 전쟁을 멈췄습니다!",
+            "section": "정답 공개",
+            "visual_suggestion": "정답 옵션 강조, 핵심 해설 한 문장으로 제시"
+          },
+          {
+            "caption": "정답 맞혔다면 댓글로 알려주세요! 다음 문제에서 만나요!",
+            "section": "CTA",
+            "visual_suggestion": "댓글 유도 애니메이션, 다음 영상 예고"
+          }
+        ],
+        "title": "샹크스 vs 케네디: 리더십 공통점 퀴즈!"
+      }
+    },
+    {
+      "questionNumber": 2,
+      "questionText": "샹크스와 케네디 리더십의 차이 중, 권력 기반에 대한 설명으로 가장 적절한 것은?",
+      "options": [
+        "샹크스는 전투력, 케네디는 국민 지지.",
+        "샹크스는 제도 안, 케네디는 제도 밖.",
+        "샹크스는 비극적 최후, 케네디는 현역.",
+        "샹크스는 중재자, 케네디는 수호자.",
+        "샹크스는 언어, 케네디는 외교."
+      ],
+      "answerIndex": 0,
+      "explanation": "제시문에서 샹크스의 권력 기반은 \"해적단이라는 전투력과 동료 간의 깊은 신뢰\"라고 언급되었으며, 케네디는 \"민주주의 체제 속 국민의 지지와 제도적 힘\"을 바탕으로 권력을 행사했다고 설명되어 있습니다. 따라서 샹크스는 전투력과 신뢰, 케네디는 국민 지지와 제도적 힘이라는 차이가 가장 적절합니다. 다른 선택지들은 리더십의 역할(④)이나 최후의 모습(③), 활동 영역(②)에 대한 차이이며, ⑤번은 권력 기반과는 다른 요소입니다.",
+      "knowledgeTag": "차이점 분석",
+      "shorts_script": {
+        "scenes": [
+          {
+            "caption": "리더십의 진짜 힘은 어디서 올까? 샹크스와 케네디의 차이는?",
+            "section": "훅",
+            "visual_suggestion": "리더십을 상징하는 아이콘과 함께 질문 제시, 두 인물 이미지 분할"
+          },
+          {
+            "caption": "겉으론 비슷해 보여도 리더십의 근원은 천지 차이! 과연 둘의 권력 기반은 어떻게 달랐을까요?",
+            "section": "몰입",
+            "visual_suggestion": "각 리더의 상징적 배경(샹크스-해적선, 케네디-백악관) 교차, 궁금증 유발 자막"
+          },
+          {
+            "caption": "문제! 샹크스와 케네디 리더십의 권력 기반 차이로 가장 적절한 것은?",
+            "section": "문제 제시",
+            "visual_suggestion": "문제 텍스트 표시, 옵션 A, B, C를 명확하게 제시"
+          },
+          {
+            "caption": "정답은 ①번! 샹크스는 해적단의 힘과 신뢰, 케네디는 국민 지지와 제도에서 힘을 얻었죠!",
+            "section": "정답 공개",
+            "visual_suggestion": "정답 옵션 강조, 핵심 해설 한 문장으로 제시, 배경에 각 리더의 권력 기반 상징 이미지"
+          },
+          {
+            "caption": "더 깊은 지식을 원한다면 채널 구독! 좋아요도 잊지 마세요!",
+            "section": "CTA",
+            "visual_suggestion": "구독 버튼 강조 애니메이션, 채널 로고 노출"
+          }
+        ],
+        "title": "샹크스 vs 케네디: 권력 기반의 차이 퀴즈!"
+      }
+    },
+    {
+      "questionNumber": 3,
+      "questionText": "제시된 내용을 종합할 때, 샹크스와 케네디 두 리더가 공통적으로 추구했던 가치는 무엇인가?",
+      "options": [
+        "혁신적인 시대 정신.",
+        "강력한 군사력 확보.",
+        "평화의 가치 실현.",
+        "젊은 세대의 희망.",
+        "개인의 자유로운 삶."
+      ],
+      "answerIndex": 2,
+      "explanation": "제시문은 샹크스와 케네디가 서로 다른 배경과 방식으로 리더십을 발휘했지만, \"인류가 직면한 거대한 위기의 순간에 오직 '평화'라는 가치를 선택하고 이를 실현했다\"는 공통점을 강조하고 있습니다. 따라서 두 리더가 공통적으로 추구했던 궁극적인 가치는 '평화의 실현'입니다. 나머지 선택지들은 부분적인 특징이거나 두 리더의 궁극적인 공통 가치와는 거리가 멉니다.",
+      "knowledgeTag": "가치 추론",
+      "shorts_script": {
+        "scenes": [
+          {
+            "caption": "진정한 리더는 무엇을 추구할까? 이 문제 풀면 깨닫습니다!",
+            "section": "훅",
+            "visual_suggestion": "명언집 느낌의 타이포그래피, 리더십 상징 이미지"
+          },
+          {
+            "caption": "두 위대한 리더가 결국 공통적으로 지킨 단 하나의 가치는 무엇이었을까요?",
+            "section": "몰입",
+            "visual_suggestion": "샹크스와 케네디가 함께 평화를 향해 나아가는 상징적 이미지 연출"
+          },
+          {
+            "caption": "문제! 샹크스와 케네디가 공통적으로 추구했던 가치는 무엇인가?",
+            "section": "문제 제시",
+            "visual_suggestion": "문제 텍스트 중앙에 표시, 옵션 A, B, C를 보기 쉽게 배치"
+          },
+          {
+            "caption": "정답은 ③번! 그들은 서로 다른 길을 걸었지만, 궁극적으로 평화를 선택했습니다!",
+            "section": "정답 공개",
+            "visual_suggestion": "정답 옵션이 강조되며 밝아지는 효과, 평화를 상징하는 비주얼"
+          },
+          {
+            "caption": "이 영상 저장하고 나중에 또 보세요! 팔로우도 잊지 마세요!",
+            "section": "CTA",
+            "visual_suggestion": "저장 버튼 애니메이션, 팔로우 유도 문구"
+          }
+        ],
+        "title": "공통 가치 찾기! 샹크스 & 케네디 리더십 퀴즈"
+      }
+    }
+  ]
+}
