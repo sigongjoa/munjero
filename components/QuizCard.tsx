@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Quiz } from '../data/quizzes';
 
 const getDifficultyColor = (difficulty: string | undefined) => {
@@ -15,7 +15,14 @@ const getDifficultyColor = (difficulty: string | undefined) => {
 };
 
 const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void; onPreview: () => void; onStartQuiz: (quizId: number) => void; onDownloadPreview: (quiz: Quiz) => void; }> = ({ quiz, isSelected, onSelect, onPreview, onStartQuiz, onDownloadPreview }) => {
-    const uniqueTags = [...new Set([quiz.subject, ...(quiz.tags || [])])];
+    const [showAllTags, setShowAllTags] = useState(false);
+
+    // Create a list of tags to display, excluding '기타' if it's the subject
+    const filteredTags = (quiz.subject === '기타' ? [] : [quiz.subject])
+        .concat(quiz.tags || [])
+        .filter(tag => tag !== quiz.examType); // Filter out examType if it's a tag
+
+    const displayedTags = showAllTags ? filteredTags : filteredTags.slice(0, 2);
 
     return (
         <div className="bg-white p-4 rounded-2xl shadow-sm flex items-center space-x-4">
@@ -36,13 +43,24 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
                     <h3 className="text-lg font-bold text-gray-900 truncate">{quiz.title}</h3>
                 </div>
                 <div className="flex items-center gap-2 mt-2">
-                    <span className="bg-gray-200 text-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md">AI 생성</span>
-                    <span className="bg-gray-200 text-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md">{quiz.subject}</span>
-                    {uniqueTags.filter(tag => tag !== quiz.subject).slice(0, 1).map((tag) => (
+                    {displayedTags.map((tag) => (
                         <span key={tag} className="bg-gray-200 text-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md">{tag}</span>
                     ))}
-                    {uniqueTags.length > 2 && (
-                        <button className="text-xs font-semibold text-gray-500 hover:text-gray-800">+{uniqueTags.length - 2} 더보기</button>
+                    {filteredTags.length > 2 && !showAllTags && (
+                        <button
+                            onClick={() => setShowAllTags(true)}
+                            className="text-xs font-semibold text-gray-500 hover:text-gray-800"
+                        >
+                            +{filteredTags.length - 2} 더보기
+                        </button>
+                    )}
+                    {filteredTags.length > 2 && showAllTags && (
+                        <button
+                            onClick={() => setShowAllTags(false)}
+                            className="text-xs font-semibold text-gray-500 hover:text-gray-800"
+                        >
+                            간략히
+                        </button>
                     )}
                 </div>
             </div>

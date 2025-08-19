@@ -29,7 +29,7 @@ const App: React.FC = () => {
   const [route, setRoute] = useState(window.location.hash || '#/');
   const [selectedQuizForPreview, setSelectedQuizForPreview] = useState<Quiz | null>(null);
   const [quizModalJsonUrl, setQuizModalJsonUrl] = useState<string | null>(null);
-  const [selectedQuizForDownloadPreview, setSelectedQuizForDownloadPreview] = useState<Quiz | null>(null);
+  
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -110,7 +110,7 @@ const App: React.FC = () => {
   };
 
   const handleDownloadPreview = (quiz: Quiz) => {
-    setSelectedQuizForDownloadPreview(quiz);
+    window.location.hash = `#/quiz/${quiz.id}`;
   };
 
   const AppHeader = () => (
@@ -211,15 +211,9 @@ const App: React.FC = () => {
         />
       )}
 
-      {selectedQuizForDownloadPreview && (
-        <DocumentPreview
-          quiz={selectedQuizForDownloadPreview}
-          onClose={() => setSelectedQuizForDownloadPreview(null)}
-        />
-      )}
+      
     </>
   );
 };
 
 export default App;
-
