@@ -543,19 +543,19 @@ export const quizzes: Quiz[] = [
     "title": "리더십의 본질 이해",
     "examType": "AI 생성",
     "subject": "국어",
-    "size": "100.3 KB",
+    "size": "0.1 MB",
     "date": "2025-08-19",
-    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
-    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
     "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "리더십",
       "샹크스",
       "존F케네디",
-      "전쟁억제",
-      "평화"
+      "비교분석",
+      "국어과역량"
     ],
-    "difficulty": "쉬움"
+    "difficulty": "어려움"
   },
   {
     "id": 30,
@@ -564,44 +564,6 @@ export const quizzes: Quiz[] = [
     "subject": "국어",
     "size": "0.1 MB",
     "date": "2025-08-19",
-    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
-    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
-    "tags": [
-      "리더십",
-      "샹크스",
-      "존F케네디",
-      "비교분석",
-      "국어과역량"
-    ],
-    "difficulty": "어려움"
-  },
-  {
-    "id": 31,
-    "title": "리더십의 본질 이해",
-    "examType": "AI 생성",
-    "subject": "국어",
-    "size": "0.1 MB",
-    "date": "2025-08-19",
-    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
-    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
-    "tags": [
-      "리더십",
-      "샹크스",
-      "존F케네디",
-      "비교분석",
-      "국어과역량"
-    ],
-    "difficulty": "어려움"
-  },
-  {
-    "id": 32,
-    "title": "리더십의 본질 이해",
-    "examType": "AI 생성",
-    "subject": "국어",
-    "size": "0.1 MB",
-    "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.json",
     "shortsLink": "https://www.youtube.com/shorts/example",
@@ -613,43 +575,5 @@ export const quizzes: Quiz[] = [
       "전쟁억제"
     ],
     "difficulty": "매우 어려움"
-  },
-  {
-    "id": 33,
-    "title": "리더십의 본질 이해",
-    "examType": "AI 생성",
-    "subject": "국어",
-    "size": "0.1 MB",
-    "date": "2025-08-19",
-    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
-    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
-    "tags": [
-      "리더십",
-      "샹크스",
-      "존F케네디",
-      "위기관리",
-      "전쟁억제"
-    ],
-    "difficulty": "매우 어려움"
-  },
-  {
-    "id": 34,
-    "title": "리더십의 본질 이해",
-    "examType": "AI 생성",
-    "subject": "국어",
-    "size": "0.1 MB",
-    "date": "2025-08-19",
-    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
-    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
-    "tags": [
-      "리더십",
-      "샹크스",
-      "존F케네디",
-      "텍스트해석",
-      "공통점과차이점"
-    ],
-    "difficulty": "보통"
   }
 ];
