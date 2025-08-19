@@ -338,7 +338,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-18",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://youtube.com/shorts/8QOZN4jbcPo",
+    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "지식재산권",
       "특허",
@@ -357,7 +357,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-18",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/8QOZN4jbcPo",
+    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "지식재산권",
       "특허",
@@ -376,7 +376,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://youtube.com/shorts/SNnrGQhKSaA",
+    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "리더십",
       "샹크스",
@@ -395,7 +395,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/SNnrGQhKSaA",
+    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "리더십",
       "샹크스",
@@ -414,7 +414,7 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/SNnrGQhKSaA",
+    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "리더십",
       "샹크스",
