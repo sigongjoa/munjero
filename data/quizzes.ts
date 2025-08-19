@@ -22,7 +22,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-03",
     "fileUrl": "/files/%EB%8F%84%ED%99%A9.pdf",
     "jsonUrl": "/files/%EB%8F%84%ED%99%A9.json",
-    "shortsLink": "https://youtube.com/shorts/eVW9DY_e-7U",
     "tags": [
       "화법과 언어",
       "도황",
@@ -39,7 +38,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-04",
     "fileUrl": "/files/%EC%82%AC%ED%9A%8C_%EC%9B%90%ED%94%BC%EC%8A%A4_%EB%A3%A8%ED%94%BC%EB%A1%9C_%EB%B3%B4%EB%8A%94_%EC%A0%9C%EC%99%95%ED%95%99%EC%9D%98_%EC%9D%B4%ED%95%B4.pdf",
     "jsonUrl": "/files/%EC%82%AC%ED%9A%8C_%EC%9B%90%ED%94%BC%EC%8A%A4_%EB%A3%A8%ED%94%BC%EB%A1%9C_%EB%B3%B4%EB%8A%94_%EC%A0%9C%EC%99%95%ED%95%99%EC%9D%98_%EC%9D%B4%ED%95%B4.json",
-    "shortsLink": "https://youtube.com/shorts/bOVh-bDcqHw?utm_source=youtube&utm_medium=shorts&utm_campaign=사회_원피스_루피_제왕학",
     "tags": [
       "원피스",
       "루피",
@@ -56,7 +54,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-05",
     "fileUrl": "/files/%EB%93%9C%EB%9E%98%EA%B3%A4%20%EC%96%91%EC%9C%A1%EB%B9%84.pdf",
     "jsonUrl": "/files/%EB%93%9C%EB%9E%98%EA%B3%A4%20%EC%96%91%EC%9C%A1%EB%B9%84.json",
-    "shortsLink": "https://youtube.com/shorts/yVjLo2sOAik?utm_source=youtube&utm_medium=shorts&utm_campaign=드래곤_양육비",
     "tags": [
       "드래곤",
       "양육비",
@@ -74,7 +71,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-06",
     "fileUrl": "/files/%EA%B3%BC%ED%95%99_%EC%9B%90%ED%94%BC%EC%8A%A4_%EC%8A%A4%EB%A7%88%EC%9D%BC%EC%97%B4%EB%A7%A4%EB%A1%9C_%EB%B3%B4%EB%8A%94_%EC%9C%A0%EC%A0%84%EA%B3%B5%ED%95%99%EC%9D%98_%ED%95%B5%EC%8B%AC_%EA%B8%B0%EC%88%A0%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4.pdf",
     "jsonUrl": "/files/%EA%B3%BC%ED%95%99_%EC%9B%90%ED%94%BC%EC%8A%A4_%EC%8A%A4%EB%A7%88%EC%9D%BC%EC%97%B4%EB%A7%A4%EB%A1%9C_%EB%B3%B4%EB%8A%94_%EC%9C%A0%EC%A0%84%EA%B3%B5%ED%95%99%EC%9D%98_%ED%95%B5%EC%8B%AC_%EA%B8%B0%EC%88%A0%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4.json",
-    "shortsLink": "https://youtube.com/shorts/12OVBWZoiyU?utm_source=youtube&utm_medium=shorts&utm_campaign=유전공학_스마일열매",
     "tags": [
       "유전공학",
       "생명과학",
@@ -91,7 +87,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-06",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%82%98%ED%83%9C%ED%95%9C_%EC%A0%95%EC%9D%98%EC%9D%98_%EC%A7%84%EC%A7%9C_%EC%96%BC%EA%B5%B4_%EC%95%84%EC%98%A4%ED%82%A4%EC%A7%80_%EC%BF%A0%EC%9E%94%EC%9D%98_%EB%8D%95_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EC%84%A0%ED%83%9D_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%82%98%ED%83%9C%ED%95%9C_%EC%A0%95%EC%9D%98%EC%9D%98_%EC%A7%84%EC%A7%9C_%EC%96%BC%EA%B5%B4_%EC%95%84%EC%98%A4%ED%82%A4%EC%A7%80_%EC%BF%A0%EC%9E%94%EC%9D%98_%EB%8D%95_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EC%84%A0%ED%83%9D_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/Y4PKP01p9G8?utm_source=youtube&utm_medium=shorts&utm_campaign=아오키지_쉬움",
     "tags": [
       "아오키지 쿠잔",
       "덕 윤리",
@@ -110,7 +105,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-06",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%82%98%ED%83%9C%ED%95%9C_%EC%A0%95%EC%9D%98%EC%9D%98_%EC%A7%84%EC%A7%9C_%EC%96%BC%EA%B5%B4_%EC%95%84%EC%98%A4%ED%82%A4%EC%A7%80_%EC%BF%A0%EC%9E%94%EC%9D%98_%EB%8D%95_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EC%84%A0%ED%83%9D_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%82%98%ED%83%9C%ED%95%9C_%EC%A0%95%EC%9D%98%EC%9D%98_%EC%A7%84%EC%A7%9C_%EC%96%BC%EA%B5%B4_%EC%95%84%EC%98%A4%ED%82%A4%EC%A7%80_%EC%BF%A0%EC%9E%94%EC%9D%98_%EB%8D%95_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EC%84%A0%ED%83%9D_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/Y4PKP01p9G8?utm_source=youtube&utm_medium=shorts&utm_campaign=아오키지_어려움",
     "tags": [
       "덕 윤리",
       "아오키지 쿠잔",
@@ -129,7 +123,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-06",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%82%98%ED%83%9C%ED%95%9C_%EC%A0%95%EC%9D%98%EC%9D%98_%EC%A7%84%EC%A7%9C_%EC%96%BC%EA%B5%B4_%EC%95%84%EC%98%A4%ED%82%A4%EC%A7%80_%EC%BF%A0%EC%9E%94%EC%9D%98_%EB%8D%95_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EC%84%A0%ED%83%9D_%EC%A4%91%EA%B0%84_%EC%84%A0%ED%83%9D.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%82%98%ED%83%9C%ED%95%9C_%EC%A0%95%EC%9D%98%EC%9D%98_%EC%A7%84%EC%A7%9C_%EC%96%BC%EA%B5%B4_%EC%95%84%EC%98%A4%ED%82%A4%EC%A7%80_%EC%BF%A0%EC%9E%94%EC%9D%98_%EB%8D%95_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EC%84%A0%ED%83%9D_%EC%A4%91%EA%B0%84_%EC%84%A0%ED%83%9D.json",
-    "shortsLink": "https://youtube.com/shorts/Y4PKP01p9G8?utm_source=youtube&utm_medium=shorts&utm_campaign=아오키지_중간",
     "tags": [
       "덕윤리",
       "아오키지 쿠잔",
@@ -148,7 +141,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-08",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/gnfee59x5Cg?utm_source=youtube&utm_medium=shorts&utm_campaign=키자루_쉬움",
     "tags": [
       "키자루",
       "애매한정의",
@@ -167,7 +159,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-08",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/gnfee59x5Cg?utm_source=youtube&utm_medium=shorts&utm_campaign=키자루_어려움",
     "tags": [
       "키자루",
       "애매한정의",
@@ -186,7 +177,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-08",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%A4%91%EA%B0%84.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%ED%82%A4%EC%9E%90%EB%A3%A8%EC%9D%98_%ED%96%89%EB%8F%99%EA%B3%BC_%EC%A0%95%EC%9D%98%EA%B4%80%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9C%A4%EB%A6%AC%EC%A0%81_%EB%B6%84%EC%84%9D_%EC%A4%91%EA%B0%84.json",
-    "shortsLink": "https://youtube.com/shorts/gnfee59x5Cg?utm_source=youtube&utm_medium=shorts&utm_campaign=키자루_중간",
     "tags": [
       "키자루",
       "애매한 정의",
@@ -205,7 +195,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-08",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%82%AC%EB%8F%84_%EC%95%BC%EC%8A%A4%ED%86%A0%EB%9D%BC(%EC%B0%A8%EB%93%9C)%EC%9D%98_%EA%B0%84%EC%A7%80%EC%97%90%EC%84%9C_%EC%9B%83%EC%9D%8C%EA%B1%B0%EB%A6%AC%EB%A1%9C%EC%9D%98_%EC%A0%84%EB%9D%BD_%EA%B3%BC%EC%A0%95_%EC%A4%91%EA%B0%84.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%82%AC%EB%8F%84_%EC%95%BC%EC%8A%A4%ED%86%A0%EB%9D%BC(%EC%B0%A8%EB%93%9C)%EC%9D%98_%EA%B0%84%EC%A7%80%EC%97%90%EC%84%9C_%EC%9B%83%EC%9D%8C%EA%B1%B0%EB%A6%AC%EB%A1%9C%EC%9D%98_%EC%A0%84%EB%9D%BD_%EA%B3%BC%EC%A0%95_%EC%A4%91%EA%B0%84.json",
-    "shortsLink": "https://youtube.com/shorts/BBizRGbuRC0?utm_source=youtube&utm_medium=shorts&utm_campaign=차드_간지_전락",
     "tags": [
       "사도 야스토라",
       "블리치",
@@ -224,7 +213,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-11",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B5%B0%EC%A3%BC%EB%A1%A0%EC%9D%98_%EC%9E%85%EC%9E%A5%EC%97%90%EC%84%9C_%EC%95%84%EC%B9%B4%EC%9D%B4%EB%88%84%EB%A5%BC_%EB%B0%94%EB%9D%BC%EB%B3%B8%EB%8B%A4%EB%A9%B4_%EC%A4%91%EA%B0%84.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B5%B0%EC%A3%BC%EB%A1%A0%EC%9D%98_%EC%9E%85%EC%9E%A5%EC%97%90%EC%84%9C_%EC%95%84%EC%B9%B4%EC%9D%B4%EB%88%84%EB%A5%BC_%EB%B0%94%EB%9D%BC%EB%B3%B8%EB%8B%A4%EB%A9%B4_%EC%A4%91%EA%B0%84.json",
-    "shortsLink": "https://youtube.com/shorts/OEpoaE0JUZE?utm_source=youtube&utm_medium=shorts&utm_campaign=아카이누_군주론",
     "tags": [
       "군주론",
       "마키아벨리",
@@ -243,7 +231,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-12",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A7%88%ED%82%A4%EC%95%84%EB%B2%A8%EB%A6%AC%EC%A0%81_%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C_%ED%83%80%EB%85%B8%EC%8A%A4%EB%A5%BC_%EC%8B%AC%EC%B8%B5%EC%A0%81%EC%9C%BC%EB%A1%9C_%EB%B6%84%EC%84%9D.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A7%88%ED%82%A4%EC%95%84%EB%B2%A8%EB%A6%AC%EC%A0%81_%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C_%ED%83%80%EB%85%B8%EC%8A%A4%EB%A5%BC_%EC%8B%AC%EC%B8%B5%EC%A0%81%EC%9C%BC%EB%A1%9C_%EB%B6%84%EC%84%9D.json",
-    "shortsLink": "https://youtube.com/shorts/BF_BdRo8SNs?utm_source=youtube&utm_medium=shorts&utm_campaign=타노스_마키아벨리",
     "tags": [
       "마키아벨리",
       "타노스",
@@ -262,7 +249,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-13",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/xrvxzxYDufA?utm_source=youtube&utm_medium=shorts&utm_campaign=빙그레_바나나맛_우유_쉬움",
     "tags": [
       "지식재산권",
       "상표권",
@@ -281,7 +267,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-13",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EB%B3%B4%ED%86%B5.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://youtube.com/shorts/xrvxzxYDufA?utm_source=youtube&utm_medium=shorts&utm_campaign=빙그레_바나나맛_우유_보통",
     "tags": [
       "지식재산권",
       "상표권",
@@ -300,7 +285,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-13",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EA%B3%BC_%EC%83%81%ED%91%9C%EA%B6%8C_%EC%B9%A8%ED%95%B4_%EC%8B%AC%EC%B8%B5_%EB%B6%84%EC%84%9D_%EB%B9%99%EA%B7%B8%EB%A0%88_'%EB%B0%94%EB%82%98%EB%82%98%EB%A7%9B_%EC%9A%B0%EC%9C%A0'_%EB%B6%84%EC%9F%81_%EC%82%AC%EB%A1%80%EB%A5%BC_%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://youtube.com/shorts/xrvxzxYDufA?utm_source=youtube&utm_medium=shorts&utm_campaign=빙그레_바나나맛_우유_어려움",
     "tags": [
       "지식재산권",
       "상표권 침해",
@@ -311,6 +295,24 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
+    "id": 17,
+    "title": "드래곤볼에서 나타나는 무협지의 요소: '무(武)'와 '협(俠)'의 조화",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "6.7 MB",
+    "date": "2025-08-13",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%93%9C%EB%9E%98%EA%B3%A4%EB%B3%BC%EC%97%90%EC%84%9C_%EB%82%98%ED%83%80%EB%82%98%EB%8A%94_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EC%9A%94%EC%86%8C_'%EB%AC%B4(%E6%AD%A6)'%EC%99%80_'%ED%98%91(%E4%BF%A0)'%EC%9D%98_%EC%A1%B0%ED%99%94_%EC%89%AC%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%93%9C%EB%9E%98%EA%B3%A4%EB%B3%BC%EC%97%90%EC%84%9C_%EB%82%98%ED%83%80%EB%82%98%EB%8A%94_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EC%9A%94%EC%86%8C_'%EB%AC%B4(%E6%AD%A6)'%EC%99%80_'%ED%98%91(%E4%BF%A0)'%EC%9D%98_%EC%A1%B0%ED%99%94_%EC%89%AC%EC%9B%80.json",
+    "tags": [
+      "드래곤볼",
+      "무협지",
+      "무(武)",
+      "협(俠)",
+      "손오공"
+    ],
+    "difficulty": "쉬움"
+  },
+  {
     "id": 18,
     "title": "강호의 도리에 대한 이해",
     "examType": "AI 생성",
@@ -319,7 +321,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-18",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EA%B0%95%ED%98%B8%EC%9D%98_%EB%8F%84%EB%A6%AC%EC%97%90_%EB%8C%80%ED%95%9C_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "강호의 도리",
       "밈",
@@ -338,7 +339,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-18",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "지식재산권",
       "특허",
@@ -357,7 +357,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-18",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A7%80%EC%8B%9D%EC%9E%AC%EC%82%B0%EA%B6%8C%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B5%AC%EB%B6%84_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "지식재산권",
       "특허",
@@ -376,7 +375,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "리더십",
       "샹크스",
@@ -395,7 +393,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "리더십",
       "샹크스",
@@ -414,7 +411,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%A6%AC%EB%8D%94%EC%8B%AD%EC%9D%98_%EB%B3%B8%EC%A7%88_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "리더십",
       "샹크스",
@@ -433,7 +429,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EC%89%AC%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "경공",
       "무협",
@@ -453,7 +448,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EB%B3%B4%ED%86%B5.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "경공",
       "무협",
@@ -472,7 +466,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "경공",
       "내공",
@@ -491,7 +484,6 @@ export const quizzes: Quiz[] = [
     "date": "2025-08-19",
     "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
     "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EB%AC%B4%ED%98%91%EC%A7%80%EC%9D%98_%EA%B2%BD%EA%B3%B5%EC%9D%98_%EC%9D%B4%ED%95%B4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.json",
-    "shortsLink": "https://www.youtube.com/shorts/example",
     "tags": [
       "경공",
       "내공",

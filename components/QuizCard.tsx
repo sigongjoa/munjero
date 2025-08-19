@@ -89,9 +89,24 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
                 >
                     <span className="material-symbols-outlined">download</span>
                 </button>
-                {quiz.shortsLink && (
+                {quiz.jsonUrl && ( // Only show button if jsonUrl exists
                     <button
-                        onClick={() => window.open(quiz.shortsLink, '_blank')}
+                        onClick={async () => {
+                            if (!quiz.jsonUrl) return;
+                            try {
+                                const response = await fetch(quiz.jsonUrl);
+                                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                                const data = await response.json();
+                                if (data.short_link) {
+                                    window.open(data.short_link, '_blank');
+                                } else {
+                                    alert('쇼츠 링크를 찾을 수 없습니다.');
+                                }
+                            } catch (error) {
+                                console.error("Failed to fetch shorts link:", error);
+                                alert('쇼츠 링크를 불러오는 데 실패했습니다.');
+                            }
+                        }}
                         className="p-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200"
                     >
                         <span className="material-symbols-outlined">slideshow</span>

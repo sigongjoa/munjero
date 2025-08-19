@@ -68,7 +68,7 @@ fs.readdir(filesDirectory, (err, files) => {
         date: stats ? new Date(stats.mtime).toISOString().split('T')[0] : new Date(metadata.createdAt).toISOString().split('T')[0],
         fileUrl: dataFile ? `/files/${encodeURIComponent(dataFile)}` : undefined,
         jsonUrl: `/files/${encodeURIComponent(jsonFile)}`,
-        shortsLink: metadata.shortsLink || 'https://www.youtube.com/shorts/example', // Placeholder for demonstration
+        // shortsLink: metadata.short_link || 'https://www.youtube.com/shorts/example', // Placeholder for demonstration
         tags: metadata.tags || [],
         difficulty: metadata.difficulty || undefined
       };
