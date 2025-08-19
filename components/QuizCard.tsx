@@ -13,6 +13,19 @@ const getTagColor = (index: number) => {
     return tagColors[index % tagColors.length];
 };
 
+const getDifficultyColor = (difficulty: string | undefined) => {
+    switch (difficulty) {
+        case '어려움':
+            return 'bg-red-100 text-red-700';
+        case '보통':
+            return 'bg-yellow-100 text-yellow-700';
+        case '쉬움':
+            return 'bg-green-100 text-green-700';
+        default:
+            return 'bg-gray-100 text-gray-700';
+    }
+};
+
 const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void; onPreview: () => void; onStartQuiz: (quizId: number) => void; onDownloadPreview: (quiz: Quiz) => void; }> = ({ quiz, isSelected, onSelect, onPreview, onStartQuiz, onDownloadPreview }) => {
     const uniqueTags = [...new Set([quiz.subject, ...(quiz.tags || [])])];
 
@@ -20,12 +33,19 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
         <div className="card">
             <div>
                 <div className="flex justify-between items-start mb-4">
-                    <h3
-                        className="text-lg font-bold text-gray-800 cursor-pointer hover:text-blue-600 transition-colors"
-                        onClick={onPreview}
-                    >
-                        {quiz.title}
-                    </h3>
+                    <div className="flex items-start">
+                        {quiz.difficulty && (
+                            <span className={`text-xs font-bold px-2.5 py-1 rounded-full mr-3 mt-1 ${getDifficultyColor(quiz.difficulty)}`}>
+                                {quiz.difficulty}
+                            </span>
+                        )}
+                        <h3
+                            className="text-lg font-bold text-gray-800 cursor-pointer hover:text-blue-600 transition-colors flex-1"
+                            onClick={onPreview}
+                        >
+                            {quiz.title}
+                        </h3>
+                    </div>
                     <input
                         className="h-5 w-5 rounded text-blue-500 border-gray-300 focus:ring-blue-200"
                         type="checkbox"
