@@ -37,19 +37,10 @@ fs.readdir(filesDirectory, (err, files) => {
     return console.error('Unable to scan directory: ' + err);
   }
 
-  const orderFilePath = path.join(filesDirectory, 'quiz-order.json');
-  let orderedFiles = [];
-  try {
-    orderedFiles = JSON.parse(fs.readFileSync(orderFilePath, 'utf8'));
-  } catch (err) {
-    console.error('Could not read or parse quiz-order.json:', err);
-    // Fallback to reading all json files if order file is missing or invalid
-    orderedFiles = files.filter(file => file.endsWith('.json')).map(file => path.basename(file, '.json'));
-  }
+  const jsonFiles = files.filter(file => file.endsWith('.json') && file !== 'quiz-order.json');
 
-  const quizzes = orderedFiles.map((orderedFile, index) => {
-    const baseName = path.basename(orderedFile, path.extname(orderedFile));
-    const jsonFile = `${baseName}.json`;
+  const quizzes = jsonFiles.map((jsonFile, index) => {
+    const baseName = path.basename(jsonFile, '.json');
     const jsonFilePath = path.join(filesDirectory, jsonFile);
     console.log(`Processing quiz: ${baseName}`);
 
