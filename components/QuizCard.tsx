@@ -34,13 +34,13 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
                 aria-label={`Select quiz: ${quiz.title}`}
             />
             <div className="flex-1">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 w-full">
                     {quiz.difficulty && (
                         <span className={`${getDifficultyColor(quiz.difficulty)} text-sm font-bold px-3 py-1 rounded-full`}>
                             {quiz.difficulty}
                         </span>
                     )}
-                    <h3 className="text-lg font-bold text-gray-900 truncate min-w-0">{quiz.title}</h3>
+                    <h3 className="flex-1 text-lg font-bold text-gray-900 truncate">{quiz.title}</h3>
                 </div>
                 <div className="flex items-center gap-2 mt-2">
                     {displayedTags.map((tag) => (
