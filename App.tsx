@@ -54,7 +54,7 @@ const App: React.FC = () => {
             window.location.hash = '#/'; // Redirect to home
           }
           setSelectedQuizForPreview(null); // Close preview modal if solve is opened
-        } else {
+        } else if (hash === '#/' || hash === '') {
           setSelectedQuizForPreview(null);
           setQuizModalJsonUrl(null);
         }
@@ -114,8 +114,10 @@ const App: React.FC = () => {
 
   const handleDownloadPreview = (quiz: Quiz) => {
     setSelectedQuizForPreview(quiz);
-    // Optionally, you can still update the hash for direct linking, but it's not strictly necessary for modal display
-    // window.location.hash = `#/quiz/${quiz.id}`;
+    // Introduce a small delay to allow React to render the modal before hash change
+    setTimeout(() => {
+      window.location.hash = `#/quiz/${quiz.id}`;
+    }, 50); // 50ms delay
   };
 
   const AppHeader = () => (
