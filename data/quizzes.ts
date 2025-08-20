@@ -459,8 +459,8 @@ export const quizzes: Quiz[] = [
   },
   {
     "id": 26,
-    "title": "국어_무협지의_경공의_이해_어려움",
-    "examType": "기타",
+    "title": "무협지의 경공의 이해",
+    "examType": "AI 생성",
     "subject": "국어",
     "size": "0.2 MB",
     "date": "2025-08-19",
