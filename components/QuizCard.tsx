@@ -40,7 +40,7 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
                             {quiz.difficulty}
                         </span>
                     )}
-                    <h3 className="flex-1 text-lg font-bold text-gray-900 truncate">{quiz.title}</h3>
+                                        <h3 className="text-lg font-bold text-gray-900 truncate" style={{ maxWidth: '400px' }} title={quiz.title}>{quiz.title}</h3>
                 </div>
                 <div className="flex items-center gap-2 mt-2">
                     {displayedTags.map((tag) => (
