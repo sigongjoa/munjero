@@ -459,8 +459,8 @@ export const quizzes: Quiz[] = [
   },
   {
     "id": 26,
-    "title": "무협지의 경공의 이해",
-    "examType": "AI 생성",
+    "title": "국어_무협지의_경공의_이해_어려움",
+    "examType": "기타",
     "subject": "국어",
     "size": "0.2 MB",
     "date": "2025-08-19",
@@ -493,5 +493,62 @@ export const quizzes: Quiz[] = [
       "문화콘텐츠"
     ],
     "difficulty": "매우 어려움"
+  },
+  {
+    "id": 28,
+    "title": "입체상표의 개념과 한계를 하리보 곰 젤리 판례를 통해 이해하고, 소비자 인식이 상표권 판단에 미치는 영향을 설명할 수 있다.",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-20",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%9E%85%EC%B2%B4%EC%83%81%ED%91%9C%EC%9D%98_%EA%B0%9C%EB%85%90%EA%B3%BC_%ED%95%9C%EA%B3%84%EB%A5%BC_%ED%95%98%EB%A6%AC%EB%B3%B4_%EA%B3%B0_%EC%A0%A4%EB%A6%AC_%ED%8C%90%EB%A1%80%EB%A5%BC_%ED%86%B5%ED%95%B4_%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0%2C_%EC%86%8C%EB%B9%84%EC%9E%90_%EC%9D%B8%EC%8B%9D%EC%9D%B4_%EC%83%81%ED%91%9C%EA%B6%8C_%ED%8C%90%EB%8B%A8%EC%97%90_%EB%AF%B8%EC%B9%98%EB%8A%94_%EC%98%81%ED%96%A5%EC%9D%84_%EC%84%A4%EB%AA%85%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8B%A4._%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%9E%85%EC%B2%B4%EC%83%81%ED%91%9C%EC%9D%98_%EA%B0%9C%EB%85%90%EA%B3%BC_%ED%95%9C%EA%B3%84%EB%A5%BC_%ED%95%98%EB%A6%AC%EB%B3%B4_%EA%B3%B0_%EC%A0%A4%EB%A6%AC_%ED%8C%90%EB%A1%80%EB%A5%BC_%ED%86%B5%ED%95%B4_%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0%2C_%EC%86%8C%EB%B9%84%EC%9E%90_%EC%9D%B8%EC%8B%9D%EC%9D%B4_%EC%83%81%ED%91%9C%EA%B6%8C_%ED%8C%90%EB%8B%A8%EC%97%90_%EB%AF%B8%EC%B9%98%EB%8A%94_%EC%98%81%ED%96%A5%EC%9D%84_%EC%84%A4%EB%AA%85%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8B%A4._%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.json",
+    "tags": [
+      "입체상표",
+      "3D 상표",
+      "하리보 곰 젤리",
+      "상표권",
+      "소비자 인식",
+      "출처 식별력",
+      "지식재산권"
+    ],
+    "difficulty": "매우 어려움"
+  },
+  {
+    "id": 29,
+    "title": "입체상표의 개념과 한계를 하리보 곰 젤리 판례를 통해 이해하고, 소비자 인식이 상표권 판단에 미치는 영향을 설명할 수 있다.",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-20",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%9E%85%EC%B2%B4%EC%83%81%ED%91%9C%EC%9D%98_%EA%B0%9C%EB%85%90%EA%B3%BC_%ED%95%9C%EA%B3%84%EB%A5%BC_%ED%95%98%EB%A6%AC%EB%B3%B4_%EA%B3%B0_%EC%A0%A4%EB%A6%AC_%ED%8C%90%EB%A1%80%EB%A5%BC_%ED%86%B5%ED%95%B4_%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0%2C_%EC%86%8C%EB%B9%84%EC%9E%90_%EC%9D%B8%EC%8B%9D%EC%9D%B4_%EC%83%81%ED%91%9C%EA%B6%8C_%ED%8C%90%EB%8B%A8%EC%97%90_%EB%AF%B8%EC%B9%98%EB%8A%94_%EC%98%81%ED%96%A5%EC%9D%84_%EC%84%A4%EB%AA%85%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8B%A4._%EB%B3%B4%ED%86%B5.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%9E%85%EC%B2%B4%EC%83%81%ED%91%9C%EC%9D%98_%EA%B0%9C%EB%85%90%EA%B3%BC_%ED%95%9C%EA%B3%84%EB%A5%BC_%ED%95%98%EB%A6%AC%EB%B3%B4_%EA%B3%B0_%EC%A0%A4%EB%A6%AC_%ED%8C%90%EB%A1%80%EB%A5%BC_%ED%86%B5%ED%95%B4_%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0%2C_%EC%86%8C%EB%B9%84%EC%9E%90_%EC%9D%B8%EC%8B%9D%EC%9D%B4_%EC%83%81%ED%91%9C%EA%B6%8C_%ED%8C%90%EB%8B%A8%EC%97%90_%EB%AF%B8%EC%B9%98%EB%8A%94_%EC%98%81%ED%96%A5%EC%9D%84_%EC%84%A4%EB%AA%85%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8B%A4._%EB%B3%B4%ED%86%B5.json",
+    "tags": [
+      "입체상표",
+      "상표권",
+      "하리보",
+      "소비자 인식",
+      "독일 연방대법원"
+    ],
+    "difficulty": "보통"
+  },
+  {
+    "id": 30,
+    "title": "입체상표의 개념과 한계를 하리보 곰 젤리 판례를 통해 이해하고, 소비자 인식이 상표권 판단에 미치는 영향을 설명할 수 있다.",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-20",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%9E%85%EC%B2%B4%EC%83%81%ED%91%9C%EC%9D%98_%EA%B0%9C%EB%85%90%EA%B3%BC_%ED%95%9C%EA%B3%84%EB%A5%BC_%ED%95%98%EB%A6%AC%EB%B3%B4_%EA%B3%B0_%EC%A0%A4%EB%A6%AC_%ED%8C%90%EB%A1%80%EB%A5%BC_%ED%86%B5%ED%95%B4_%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0%2C_%EC%86%8C%EB%B9%84%EC%9E%90_%EC%9D%B8%EC%8B%9D%EC%9D%B4_%EC%83%81%ED%91%9C%EA%B6%8C_%ED%8C%90%EB%8B%A8%EC%97%90_%EB%AF%B8%EC%B9%98%EB%8A%94_%EC%98%81%ED%96%A5%EC%9D%84_%EC%84%A4%EB%AA%85%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8B%A4._%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%9E%85%EC%B2%B4%EC%83%81%ED%91%9C%EC%9D%98_%EA%B0%9C%EB%85%90%EA%B3%BC_%ED%95%9C%EA%B3%84%EB%A5%BC_%ED%95%98%EB%A6%AC%EB%B3%B4_%EA%B3%B0_%EC%A0%A4%EB%A6%AC_%ED%8C%90%EB%A1%80%EB%A5%BC_%ED%86%B5%ED%95%B4_%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0%2C_%EC%86%8C%EB%B9%84%EC%9E%90_%EC%9D%B8%EC%8B%9D%EC%9D%B4_%EC%83%81%ED%91%9C%EA%B6%8C_%ED%8C%90%EB%8B%A8%EC%97%90_%EB%AF%B8%EC%B9%98%EB%8A%94_%EC%98%81%ED%96%A5%EC%9D%84_%EC%84%A4%EB%AA%85%ED%95%A0_%EC%88%98_%EC%9E%88%EB%8B%A4._%EC%96%B4%EB%A0%A4%EC%9B%80.json",
+    "tags": [
+      "입체상표",
+      "3D 상표",
+      "하리보 판례",
+      "상표권",
+      "소비자 인식",
+      "출처 식별력"
+    ],
+    "difficulty": "어려움"
   }
 ];
