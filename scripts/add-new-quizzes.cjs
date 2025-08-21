@@ -1,5 +1,6 @@
 
 
+
 const fs = require('fs');
 const path = require('path');
 
@@ -13,24 +14,33 @@ const QUIZZES_TS_PATH = path.join(DATA_DIR, 'quizzes.ts');
 const COMMIT_MESSAGE_PATH = path.join(ROOT_DIR, 'commit_message.txt');
 const LINKS_OUTPUT_PATH = path.join(UPLOADS_DIR, 'new_quiz_links.txt');
 
-// --- MAIN LOGIC ---
 function main() {
-    // All logic is now consolidated into a single, sequential function.
-    updateQuizData();
+    const quizOrder = JSON.parse(fs.readFileSync(QUIZ_ORDER_PATH, 'utf-8'));
+
+    // 1. Process new files and get their info
+    const newFilesInfo = processUploads(quizOrder);
+
+    // 2. Regenerate quizzes.ts based on the single source of truth: quiz-order.json
+    const { ghostMissing, ghostParse } = regenerateQuizzesTs(quizOrder);
+
+    // 3. Create output files for the user
+    createOutputFiles(newFilesInfo, ghostMissing, ghostParse);
+
+    console.log('\nScript finished successfully!');
 }
 
-/**
- * Processes new files, updates quiz-order.json, and regenerates data/quizzes.ts in a single, sequential flow.
- */
-function updateQuizData() {
-    // 1. Handle new uploads
+function processUploads(quizOrder) {
     if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR);
-    
-    const newFiles = fs.readdirSync(UPLOADS_DIR).filter(f => f.endsWith('.json'));
-    const quizOrder = JSON.parse(fs.readFileSync(QUIZ_ORDER_PATH, 'utf-8'));
+
+    const newFilesInUpload = fs.readdirSync(UPLOADS_DIR).filter(f => f.endsWith('.json'));
+    if (newFilesInUpload.length === 0) {
+        console.log("No new files in /upload directory to process.");
+        return [];
+    }
+
     const newFilesInfo = [];
 
-    for (const jsonFile of newFiles) {
+    for (const jsonFile of newFilesInUpload) {
         const pdfFile = jsonFile.replace('.json', '.pdf');
         if (!fs.existsSync(path.join(UPLOADS_DIR, pdfFile))) {
             console.warn(`[Warning] Missing PDF for ${jsonFile}. Skipping.`);
@@ -39,111 +49,93 @@ function updateQuizData() {
         fs.renameSync(path.join(UPLOADS_DIR, jsonFile), path.join(PUBLIC_FILES_DIR, jsonFile));
         fs.renameSync(path.join(UPLOADS_DIR, pdfFile), path.join(PUBLIC_FILES_DIR, pdfFile));
         
-        quizOrder.push(jsonFile); // Update order in memory
-        newFilesInfo.push({ fileName: jsonFile, id: quizOrder.length - 1 });
+        quizOrder.unshift(jsonFile); // Add to the beginning
+        newFilesInfo.push({ fileName: jsonFile, id: quizOrder.length - 1 }); // ID will be based on new length
         console.log(`Processed and moved: ${jsonFile}`);
     }
 
-    // 2. Clean up quiz-order.json from ghost files
-    const originalCount = quizOrder.length;
-    const cleanedQuizOrder = quizOrder.filter(fileName => {
-        const exists = fs.existsSync(path.join(PUBLIC_FILES_DIR, fileName));
-        if (!exists) {
-            console.warn(`[Cleaning] Removing ghost file from quiz order: ${fileName}`);
-        }
-        return exists;
-    });
+    // IMPORTANT: Write the updated order back to disk so it persists.
+    fs.writeFileSync(QUIZ_ORDER_PATH, JSON.stringify(quizOrder, null, 2), 'utf-8');
+    console.log(`Successfully updated quiz-order.json with ${newFilesInfo.length} new entries.`);
+    return newFilesInfo;
+}
 
-    if (cleanedQuizOrder.length < originalCount) {
-        console.log(`Cleaned ${originalCount - cleanedQuizOrder.length} ghost entries.`);
-    }
+function regenerateQuizzesTs(quizOrder) {
+    console.log('Regenerating data/quizzes.ts...');
+    
+    const quizzesOut = [];
+    const ghostMissing = [];
+    const ghostParse = [];
 
-    // 3. Regenerate quizzes.ts using the final, correct order
-    console.log('Regenerating data/quizzes.ts with correct order...');
-    const allQuizzesData = [];
-    for (let i = 0; i < cleanedQuizOrder.length; i++) {
-        const fileName = cleanedQuizOrder[i];
+    for (let i = 0; i < quizOrder.length; i++) {
+        const fileName = quizOrder[i];
         const filePath = path.join(PUBLIC_FILES_DIR, fileName);
+
+        if (!fs.existsSync(filePath)) {
+            ghostMissing.push(fileName);
+            continue;
+        }
+
         try {
-            const quizDetail = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-            const baseName = path.basename(fileName, '.json');
-            allQuizzesData.push({
-                id: i,
-                title: quizDetail.title || '제목 없음',
-                examType: quizDetail.examType || '기타',
-                subject: quizDetail.subject || '기타',
-                date: quizDetail.date || new Date().toISOString().split('T')[0],
-                fileUrl: `/files/${encodeURIComponent(baseName)}.pdf`,
+            const detail = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+            const base = path.basename(fileName, '.json');
+            quizzesOut.push({
+                id: i, // ID is the original index, ensuring stability
+                title: detail.title || '제목 없음',
+                examType: detail.examType || '기타',
+                subject: detail.subject || '기타',
+                date: detail.date || new Date().toISOString().split('T')[0],
+                fileUrl: `/files/${encodeURIComponent(base)}.pdf`,
                 jsonUrl: `/files/${encodeURIComponent(fileName)}`,
-                tags: quizDetail.tags || [],
-                difficulty: quizDetail.difficulty || '보통'
+                tags: detail.tags || [],
+                difficulty: detail.difficulty || '보통'
             });
         } catch (e) {
-            console.error(`[Error] Failed to process ${fileName}. It might be corrupted. Skipping.`, e);
+            ghostParse.push(fileName);
         }
     }
 
-    const tsFileContent = `
-// This file is auto-generated by scripts/add-new-quizzes.cjs. DO NOT EDIT MANUALLY.
+    const tsFileContent = `\n// This file is auto-generated by scripts/add-new-quizzes.cjs. DO NOT EDIT MANUALLY.\n\nexport interface Quiz {\n  id: number;\n  title: string;\n  examType: string;\n  subject: string | { main: string; sub: string };\n  size?: string;\n  date: string;\n  fileUrl?: string;\n  jsonUrl?: string;\n  shortsLink?: string;\n  tags?: string[];\n  difficulty?: string;\n}\n\nexport const quizzes: Quiz[] = ${JSON.stringify(quizzesOut, null, 2)};\n`;
 
-export interface Quiz {
-  id: number;
-  title: string;
-  examType: string;
-  subject: string | { main: string; sub: string };
-  size?: string;
-  date: string;
-  fileUrl?: string;
-  jsonUrl?: string;
-  shortsLink?: string;
-  tags?: string[];
-  difficulty?: string;
-}
-
-export const quizzes: Quiz[] = ${JSON.stringify(allQuizzesData, null, 2)};
-`;
-
-    // 4. Write all changes to disk at the end
-    fs.writeFileSync(QUIZ_ORDER_PATH, JSON.stringify(cleanedQuizOrder, null, 2), 'utf-8');
     fs.writeFileSync(QUIZZES_TS_PATH, tsFileContent.trim(), 'utf-8');
-    console.log('Successfully updated quiz-order.json and regenerated data/quizzes.ts.');
-
-    // 5. Create output files for user
-    if (newFilesInfo.length > 0) {
-        createOutputFiles(newFilesInfo);
-    }
-    console.log('\nScript finished successfully!');
+    console.log(`Successfully regenerated data/quizzes.ts with ${quizzesOut.length} valid quizzes.`);
+    return { ghostMissing, ghostParse };
 }
 
-/**
- * Creates the commit message and the links file for sharing.
- */
-function createOutputFiles(newFiles) {
-    let commitMessageBody = '';
-    let linksOutput = '';
-
-    for (const fileInfo of newFiles) {
-        const { subject, title, difficulty } = parseFilename(fileInfo.fileName);
-        commitMessageBody += `- [${subject}] ${title} (${difficulty})\n`;
-
-        const solveUrl = `https://munjero.xyz/#/solve/${fileInfo.id}`;
-        const quizUrl = `https://munjero.xyz/#/quiz/${fileInfo.id}`;
-        linksOutput += `[${subject}] ${title} (${difficulty})\n`;
-        linksOutput += `문제 풀어보기: ${solveUrl}\n`;
-        linksOutput += `문제 다운로드: ${quizUrl}\n\n`;
+function createOutputFiles(newFiles, ghostMissing, ghostParse) {
+    if (newFiles.length > 0) {
+        let commitMessageBody = '';
+        let linksOutput = '';
+        for (const fileInfo of newFiles) {
+            const { subject, title, difficulty } = parseFilename(fileInfo.fileName);
+            commitMessageBody += `- [${subject}] ${title} (${difficulty})\n`;
+            const solveUrl = `https://munjero.xyz/#/solve/${fileInfo.id}`;
+            const quizUrl = `https://munjero.xyz/#/quiz/${fileInfo.id}`;
+            linksOutput += `[${subject}] ${title} (${difficulty})\n`;
+            linksOutput += `문제 풀어보기: ${solveUrl}\n`;
+            linksOutput += `문제 다운로드: ${quizUrl}\n\n`;
+        }
+        const fullCommitMessage = `feat: Add new quizzes\n\n${commitMessageBody}`;
+        fs.writeFileSync(COMMIT_MESSAGE_PATH, fullCommitMessage, 'utf-8');
+        fs.writeFileSync(LINKS_OUTPUT_PATH, linksOutput, 'utf-8');
+        console.log(`Successfully created output files for new quizzes.`);
     }
 
-    const fullCommitMessage = `feat: Add new quizzes\n\n${commitMessageBody}`;
-    fs.writeFileSync(COMMIT_MESSAGE_PATH, fullCommitMessage, 'utf-8');
-    console.log(`Successfully created commit message file.`);
-
-    fs.writeFileSync(LINKS_OUTPUT_PATH, linksOutput, 'utf-8');
-    console.log(`Successfully created links file.`);
+    if (ghostMissing.length || ghostParse.length) {
+        let report = '\n------------------------------------\n';
+        report += '[자동 청소 리포트]\n';
+        report += '------------------------------------\n';
+        if (ghostMissing.length) {
+            report += '[존재하지 않는 파일]\n' + ghostMissing.join('\n') + '\n\n';
+        }
+        if (ghostParse.length) {
+            report += '[데이터 파싱 실패]\n' + ghostParse.join('\n') + '\n';
+        }
+        fs.appendFileSync(LINKS_OUTPUT_PATH, report);
+        console.log(`Cleanup report appended to ${LINKS_OUTPUT_PATH}.`);
+    }
 }
 
-/**
- * Parses metadata from a filename.
- */
 function parseFilename(filename) {
     const basename = path.basename(filename, path.extname(filename));
     const parts = basename.split('_');
@@ -154,5 +146,5 @@ function parseFilename(filename) {
     }
 }
 
-// --- RUN SCRIPT ---
 main();
+

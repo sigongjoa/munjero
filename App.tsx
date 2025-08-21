@@ -1,5 +1,6 @@
 
 
+
 import React, { useState, useMemo, useEffect } from 'react';
 import QuizList from './components/QuizList';
 import Sidebar from './components/Sidebar';
@@ -8,7 +9,7 @@ import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ContactUs from './components/ContactUs';
 import DocumentPreview from './components/DocumentPreview';
-import { quizzes as initialQuizzes, Quiz } from './data/quizzes';
+import { quizzes } from './data/quizzes'; // Directly import quizzes
 import Pagination from './components/Pagination';
 import { QUIZZES_PER_PAGE } from './constants';
 import QuizModal from './components/QuizModal';
@@ -21,78 +22,71 @@ interface Filters {
 }
 
 const App: React.FC = () => {
-  // The quizzes state now holds the master list, sorted by ID ascending.
-  const [quizzes, setQuizzes] = useState<Quiz[]>(initialQuizzes);
   const [filters, setFilters] = useState<Filters>({ exam: '전체', subject: '전체', difficulty: '전체' });
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [isSidebarOpen, setSidebarOpen] = useState(false); // State for mobile sidebar
-  const [isBookmarkFilterActive, setIsBookmarkFilterActive] = useState(false); // New state for bookmark filter
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [isBookmarkFilterActive, setIsBookmarkFilterActive] = useState(false);
   const [route, setRoute] = useState(window.location.hash || '#/');
   const [selectedQuizForPreview, setSelectedQuizForPreview] = useState<Quiz | null>(null);
   const [quizModalJsonUrl, setQuizModalJsonUrl] = useState<string | null>(null);
-  
 
   useEffect(() => {
-    // The data is now static from the generated quizzes.ts, so no dynamic fetching is needed here.
-    // The sorting logic is handled by reversing the array for display.
     const handleHashChange = () => {
-        const hash = window.location.hash;
-        setRoute(hash || '#/');
-        
-        const quizMatch = hash.match(/^#\/quiz\/(\d+)$/);
-        const solveMatch = hash.match(/^#\/solve\/(\d+)$/);
+      const hash = window.location.hash;
+      setRoute(hash || '#/');
 
-        if (quizMatch) {
-          const quizId = parseInt(quizMatch[1], 10);
-          const quiz = quizzes.find(q => q.id === quizId);
-          setSelectedQuizForPreview(quiz || null);
-          setQuizModalJsonUrl(null); // Close solve modal if preview is opened
-        } else if (solveMatch) {
-          const quizId = parseInt(solveMatch[1], 10);
-          const quiz = quizzes.find(q => q.id === quizId);
-          if (quiz && quiz.jsonUrl) {
-            setQuizModalJsonUrl(quiz.jsonUrl);
-          } else {
-            setQuizModalJsonUrl(null); // Close if quiz or jsonUrl not found
-            window.location.hash = '#/'; // Redirect to home
-          }
-          setSelectedQuizForPreview(null); // Close preview modal if solve is opened
-        } else if (hash === '#/' || hash === '') {
-          setSelectedQuizForPreview(null);
+      const quizMatch = hash.match(/^#\/quiz\/(\d+)$/);
+      const solveMatch = hash.match(/^#\/solve\/(\d+)$/);
+
+      if (quizMatch) {
+        const quizId = parseInt(quizMatch[1], 10);
+        const quiz = quizzes.find(q => q.id === quizId);
+        setSelectedQuizForPreview(quiz || null);
+        setQuizModalJsonUrl(null);
+      } else if (solveMatch) {
+        const quizId = parseInt(solveMatch[1], 10);
+        const quiz = quizzes.find(q => q.id === quizId);
+        if (quiz && quiz.jsonUrl) {
+          setQuizModalJsonUrl(quiz.jsonUrl);
+        } else {
           setQuizModalJsonUrl(null);
+          window.location.hash = '#/';
         }
-        
-        window.scrollTo(0, 0);
-      };
+        setSelectedQuizForPreview(null);
+      } else if (hash === '#/' || hash === '') {
+        setSelectedQuizForPreview(null);
+        setQuizModalJsonUrl(null);
+      }
+      window.scrollTo(0, 0);
+    };
 
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
-  }, [quizzes]); // Depend on quizzes state
+  }, []); // useEffect dependency on quizzes is removed as it's a static import now.
 
   const handleFilterChange = (filterType: keyof Filters, value: string) => {
     setFilters(prev => ({ ...prev, [filterType]: value }));
     setCurrentPage(1);
   };
-  
+
   const handleSearchChange = (term: string) => {
     setSearchTerm(term);
     setCurrentPage(1);
   };
-  
+
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
 
   const handleToggleBookmarkFilter = () => {
     setIsBookmarkFilterActive(prev => !prev);
-    setCurrentPage(1); // Reset page when filter changes
+    setCurrentPage(1);
   };
 
   const filteredQuizzes = useMemo(() => {
-    // Reverse the array for display (newest first) and then filter
-    let currentQuizzes = quizzes.slice().reverse();
+    let currentQuizzes = quizzes;
 
     if (isBookmarkFilterActive) {
       const storedBookmarks = JSON.parse(localStorage.getItem('bookmarkedQuizIds') || '[]');
@@ -106,12 +100,10 @@ const App: React.FC = () => {
       const searchMatch = searchTerm === '' || quiz.title.toLowerCase().includes(searchTerm.toLowerCase());
       return examMatch && subjectMatch && difficultyMatch && searchMatch;
     });
-  }, [quizzes, filters, searchTerm, isBookmarkFilterActive]);
+  }, []); // useEffect dependency on quizzes is removed as it's a static import now.
 
   const startIndex = (currentPage - 1) * QUIZZES_PER_PAGE;
   const currentQuizzesOnPage = filteredQuizzes.slice(startIndex, startIndex + QUIZZES_PER_PAGE);
-
-  
 
   const handleStartQuiz = (quizId: number) => {
     window.location.hash = `#/solve/${quizId}`;
@@ -132,7 +124,7 @@ const App: React.FC = () => {
   );
 
   const DailyQuizBanner: React.FC<{ onChallenge: (quizId: number) => void }> = ({ onChallenge }) => {
-    if (quizzes.length === 0) return null; // Use the state quizzes
+    if (quizzes.length === 0) return null;
     const today = new Date();
     let seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
     const seededRandom = () => {
@@ -233,4 +225,5 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 
