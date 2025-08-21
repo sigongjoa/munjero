@@ -1,3 +1,0 @@
-feat: Add new quizzes
-
-- [기타] test (보통)

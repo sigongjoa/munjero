@@ -1,3 +1,5 @@
+
+
 import React, { useState, useMemo, useEffect } from 'react';
 import QuizList from './components/QuizList';
 import Sidebar from './components/Sidebar';
@@ -6,7 +8,6 @@ import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import ContactUs from './components/ContactUs';
 import DocumentPreview from './components/DocumentPreview';
-import PremiumCard from './components/PremiumCard';
 import { quizzes as initialQuizzes, Quiz } from './data/quizzes';
 import Pagination from './components/Pagination';
 import { QUIZZES_PER_PAGE } from './constants';
@@ -20,7 +21,8 @@ interface Filters {
 }
 
 const App: React.FC = () => {
-  const [quizzes] = useState<Quiz[]>(initialQuizzes);
+  // The quizzes state now holds the master list, sorted by ID ascending.
+  const [quizzes, setQuizzes] = useState<Quiz[]>(initialQuizzes);
   const [filters, setFilters] = useState<Filters>({ exam: '전체', subject: '전체', difficulty: '전체' });
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,6 +34,8 @@ const App: React.FC = () => {
   
 
   useEffect(() => {
+    // The data is now static from the generated quizzes.ts, so no dynamic fetching is needed here.
+    // The sorting logic is handled by reversing the array for display.
     const handleHashChange = () => {
         const hash = window.location.hash;
         setRoute(hash || '#/');
@@ -41,12 +45,12 @@ const App: React.FC = () => {
 
         if (quizMatch) {
           const quizId = parseInt(quizMatch[1], 10);
-          const quiz = initialQuizzes.find(q => q.id === quizId);
+          const quiz = quizzes.find(q => q.id === quizId);
           setSelectedQuizForPreview(quiz || null);
           setQuizModalJsonUrl(null); // Close solve modal if preview is opened
         } else if (solveMatch) {
           const quizId = parseInt(solveMatch[1], 10);
-          const quiz = initialQuizzes.find(q => q.id === quizId);
+          const quiz = quizzes.find(q => q.id === quizId);
           if (quiz && quiz.jsonUrl) {
             setQuizModalJsonUrl(quiz.jsonUrl);
           } else {
@@ -65,7 +69,7 @@ const App: React.FC = () => {
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+  }, [quizzes]); // Depend on quizzes state
 
   const handleFilterChange = (filterType: keyof Filters, value: string) => {
     setFilters(prev => ({ ...prev, [filterType]: value }));
@@ -87,7 +91,8 @@ const App: React.FC = () => {
   };
 
   const filteredQuizzes = useMemo(() => {
-    let currentQuizzes = quizzes;
+    // Reverse the array for display (newest first) and then filter
+    let currentQuizzes = quizzes.slice().reverse();
 
     if (isBookmarkFilterActive) {
       const storedBookmarks = JSON.parse(localStorage.getItem('bookmarkedQuizIds') || '[]');
@@ -104,7 +109,7 @@ const App: React.FC = () => {
   }, [quizzes, filters, searchTerm, isBookmarkFilterActive]);
 
   const startIndex = (currentPage - 1) * QUIZZES_PER_PAGE;
-  const currentQuizzes = filteredQuizzes.slice(startIndex, startIndex + QUIZZES_PER_PAGE);
+  const currentQuizzesOnPage = filteredQuizzes.slice(startIndex, startIndex + QUIZZES_PER_PAGE);
 
   
 
@@ -114,10 +119,9 @@ const App: React.FC = () => {
 
   const handleDownloadPreview = (quiz: Quiz) => {
     setSelectedQuizForPreview(quiz);
-    // Introduce a small delay to allow React to render the modal before hash change
     setTimeout(() => {
       window.location.hash = `#/quiz/${quiz.id}`;
-    }, 50); // 50ms delay
+    }, 50);
   };
 
   const AppHeader = () => (
@@ -127,26 +131,28 @@ const App: React.FC = () => {
     </header>
   );
 
-  const DailyQuizBanner: React.FC<{ dailyQuiz: Quiz; onChallenge: (quizId: number) => void }> = ({ dailyQuiz, onChallenge }) => (
-    <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6 rounded-lg shadow-lg flex items-center justify-between">
-      <div>
-        <h2 className="text-xl font-bold mb-1">오늘의 문제 ✨</h2>
-        <p className="text-indigo-100">{dailyQuiz.title}</p>
-      </div>
-      <button className="bg-white text-indigo-600 font-semibold px-6 py-2 rounded-lg hover:bg-indigo-50 transition-colors" onClick={() => onChallenge(dailyQuiz.id)}>도전하기</button>
-    </div>
-  );
-
-  const renderMainContent = () => {
-    // Deterministic random selection for daily quiz based on date
+  const DailyQuizBanner: React.FC<{ onChallenge: (quizId: number) => void }> = ({ onChallenge }) => {
+    if (quizzes.length === 0) return null; // Use the state quizzes
     const today = new Date();
     let seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
     const seededRandom = () => {
       const x = Math.sin(seed++) * 10000;
       return x - Math.floor(x);
     };
-    const dailyQuiz = initialQuizzes[Math.floor(seededRandom() * initialQuizzes.length)];
+    const dailyQuiz = quizzes[Math.floor(seededRandom() * quizzes.length)];
 
+    return (
+      <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6 rounded-lg shadow-lg flex items-center justify-between">
+        <div>
+          <h2 className="text-xl font-bold mb-1">오늘의 문제 ✨</h2>
+          <p className="text-indigo-100">{dailyQuiz.title}</p>
+        </div>
+        <button className="bg-white text-indigo-600 font-semibold px-6 py-2 rounded-lg hover:bg-indigo-50 transition-colors" onClick={() => onChallenge(dailyQuiz.id)}>도전하기</button>
+      </div>
+    );
+  };
+
+  const renderMainContent = () => {
     return (
       <div className="flex gap-8">
         <aside className="w-1/4">
@@ -155,8 +161,8 @@ const App: React.FC = () => {
             onClose={() => setSidebarOpen(false)}
             filters={filters}
             onFilterChange={handleFilterChange}
-            examTypes={['전체', ...Array.from(new Set(initialQuizzes.map(q => q.examType)))]}
-            subjects={['전체', ...Array.from(new Set(initialQuizzes.map(q => q.subject)))]}
+            examTypes={['전체', ...Array.from(new Set(quizzes.map(q => q.examType)))]}
+            subjects={['전체', ...Array.from(new Set(quizzes.map(q => q.subject as string)))]}
             difficulties={['전체', '쉬움', '보통', '어려움']}
             searchTerm={searchTerm}
             onSearchChange={handleSearchChange}
@@ -165,10 +171,10 @@ const App: React.FC = () => {
           />
         </aside>
         <main className="w-3/4 space-y-6">
-          <DailyQuizBanner dailyQuiz={dailyQuiz} onChallenge={handleStartQuiz} />
+          <DailyQuizBanner onChallenge={handleStartQuiz} />
           <div className="space-y-4">
             <QuizList 
-                quizzes={currentQuizzes}
+                quizzes={currentQuizzesOnPage}
                 onStartQuiz={handleStartQuiz}
                 onDownloadPreview={handleDownloadPreview}
             />
@@ -227,3 +233,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
