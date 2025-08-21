@@ -1,32 +1,35 @@
 
 @echo off
 
-echo Running the quiz upload script...
-node scripts/add-new-quizzes.cjs
+echo Running the quiz upload script inside WSL...
 
-REM Check if the commit message file was created by the script
+REM Run the node script inside WSL
+wsl node scripts/add-new-quizzes.cjs
+
+REM Check if the commit message file was created.
+REM This check runs on Windows, but accesses the same file system.
 if not exist commit_message.txt (
     echo No new quizzes were found to commit.
     pause
     goto :eof
 )
 
-echo Staging, committing, and pushing changes...
-git add .
-git commit -F commit_message.txt
+echo Staging, committing, and pushing changes inside WSL...
+wsl git add .
+wsl git commit -F commit_message.txt
 if %errorlevel% neq 0 (
-    echo Git commit failed. Please check the output above.
-    REM Clean up the temporary commit message file even if commit fails
-    del commit_message.txt
+    echo Git commit failed inside WSL.
+    REM Clean up using WSL's rm command
+    wsl rm commit_message.txt
     pause
     goto :eof
 )
 
-git push
+wsl git push
 if %errorlevel% neq 0 (
-    echo Git push failed. Please check the output above.
-    REM Clean up the temporary commit message file even if push fails
-    del commit_message.txt
+    echo Git push failed inside WSL. Check your WSL SSH key settings.
+    REM Clean up using WSL's rm command
+    wsl rm commit_message.txt
     pause
     goto :eof
 )
