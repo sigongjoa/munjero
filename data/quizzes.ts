@@ -378,6 +378,61 @@ export const quizzes: Quiz[] = [
   },
   {
     "id": 21,
+    "title": "조로는 단순한 ‘2인자’가 아니라 밀짚모자 일당의 정신적 기둥이다",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.2 MB",
+    "date": "2025-08-21",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A1%B0%EB%A1%9C%EB%8A%94_%EB%8B%A8%EC%88%9C%ED%95%9C_%E2%80%982%EC%9D%B8%EC%9E%90%E2%80%99%EA%B0%80_%EC%95%84%EB%8B%88%EB%9D%BC_%EB%B0%80%EC%A7%9A%EB%AA%A8%EC%9E%90_%EC%9D%BC%EB%8B%B9%EC%9D%98_%EC%A0%95%EC%8B%A0%EC%A0%81_%EA%B8%B0%EB%91%A5%EC%9D%B4%EB%8B%A4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A1%B0%EB%A1%9C%EB%8A%94_%EB%8B%A8%EC%88%9C%ED%95%9C_%E2%80%982%EC%9D%B8%EC%9E%90%E2%80%99%EA%B0%80_%EC%95%84%EB%8B%88%EB%9D%BC_%EB%B0%80%EC%A7%9A%EB%AA%A8%EC%9E%90_%EC%9D%BC%EB%8B%B9%EC%9D%98_%EC%A0%95%EC%8B%A0%EC%A0%81_%EA%B8%B0%EB%91%A5%EC%9D%B4%EB%8B%A4_%EB%A7%A4%EC%9A%B0%20%EC%96%B4%EB%A0%A4%EC%9B%80.json",
+    "tags": [
+      "롤로노아 조로",
+      "원피스",
+      "밀짚모자 일당",
+      "리더십",
+      "집단 응집력",
+      "약간의 결점 효과"
+    ],
+    "difficulty": "매우 어려움"
+  },
+  {
+    "id": 22,
+    "title": "조로는 단순한 ‘2인자’가 아니라 밀짚모자 일당의 정신적 기둥이다",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.1 MB",
+    "date": "2025-08-21",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A1%B0%EB%A1%9C%EB%8A%94_%EB%8B%A8%EC%88%9C%ED%95%9C_%E2%80%982%EC%9D%B8%EC%9E%90%E2%80%99%EA%B0%80_%EC%95%84%EB%8B%88%EB%9D%BC_%EB%B0%80%EC%A7%9A%EB%AA%A8%EC%9E%90_%EC%9D%BC%EB%8B%B9%EC%9D%98_%EC%A0%95%EC%8B%A0%EC%A0%81_%EA%B8%B0%EB%91%A5%EC%9D%B4%EB%8B%A4_%EB%B3%B4%ED%86%B5.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A1%B0%EB%A1%9C%EB%8A%94_%EB%8B%A8%EC%88%9C%ED%95%9C_%E2%80%982%EC%9D%B8%EC%9E%90%E2%80%99%EA%B0%80_%EC%95%84%EB%8B%88%EB%9D%BC_%EB%B0%80%EC%A7%9A%EB%AA%A8%EC%9E%90_%EC%9D%BC%EB%8B%B9%EC%9D%98_%EC%A0%95%EC%8B%A0%EC%A0%81_%EA%B8%B0%EB%91%A5%EC%9D%B4%EB%8B%A4_%EB%B3%B4%ED%86%B5.json",
+    "tags": [
+      "롤로노아 조로",
+      "원피스",
+      "정신적 기둥",
+      "리더십",
+      "캐릭터 분석"
+    ],
+    "difficulty": "보통"
+  },
+  {
+    "id": 23,
+    "title": "조로는 단순한 ‘2인자’가 아니라 밀짚모자 일당의 정신적 기둥이다",
+    "examType": "AI 생성",
+    "subject": "국어",
+    "size": "0.2 MB",
+    "date": "2025-08-21",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A1%B0%EB%A1%9C%EB%8A%94_%EB%8B%A8%EC%88%9C%ED%95%9C_%E2%80%982%EC%9D%B8%EC%9E%90%E2%80%99%EA%B0%80_%EC%95%84%EB%8B%88%EB%9D%BC_%EB%B0%80%EC%A7%9A%EB%AA%A8%EC%9E%90_%EC%9D%BC%EB%8B%B9%EC%9D%98_%EC%A0%95%EC%8B%A0%EC%A0%81_%EA%B8%B0%EB%91%A5%EC%9D%B4%EB%8B%A4_%EC%96%B4%EB%A0%A4%EC%9B%80.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_%EC%A1%B0%EB%A1%9C%EB%8A%94_%EB%8B%A8%EC%88%9C%ED%95%9C_%E2%80%982%EC%9D%B8%EC%9E%90%E2%80%99%EA%B0%80_%EC%95%84%EB%8B%88%EB%9D%BC_%EB%B0%80%EC%A7%9A%EB%AA%A8%EC%9E%90_%EC%9D%BC%EB%8B%B9%EC%9D%98_%EC%A0%95%EC%8B%A0%EC%A0%81_%EA%B8%B0%EB%91%A5%EC%9D%B4%EB%8B%A4_%EC%96%B4%EB%A0%A4%EC%9B%80.json",
+    "tags": [
+      "롤로노아 조로",
+      "원피스",
+      "리더십",
+      "정신적 기둥",
+      "텍스트 해석"
+    ],
+    "difficulty": "어려움"
+  },
+  {
+    "id": 24,
     "title": "지식재산권과 상표권 침해 심층 분석: 빙그레 '바나나맛 우유' 분쟁 사례를 중심으로",
     "examType": "AI 생성",
     "subject": "국어",
@@ -395,7 +450,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 22,
+    "id": 25,
     "title": "지식재산권과 상표권 침해 심층 분석: 빙그레 '바나나맛 우유' 분쟁 사례를 중심으로",
     "examType": "AI 생성",
     "subject": "국어",
@@ -413,7 +468,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 23,
+    "id": 26,
     "title": "지식재산권과 상표권 침해 심층 분석: 빙그레 '바나나맛 우유' 분쟁 사례를 중심으로",
     "examType": "AI 생성",
     "subject": "국어",
@@ -431,7 +486,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 24,
+    "id": 27,
     "title": "지식재산권의 기본 구분 이해",
     "examType": "AI 생성",
     "subject": "국어",
@@ -449,7 +504,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 25,
+    "id": 28,
     "title": "지식재산권의 기본 구분 이해",
     "examType": "AI 생성",
     "subject": "국어",
@@ -467,7 +522,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 26,
+    "id": 29,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_쉬움",
     "examType": "기타",
     "subject": "국어",
@@ -485,7 +540,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 27,
+    "id": 30,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_어려움",
     "examType": "기타",
     "subject": "국어",
@@ -503,7 +558,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 28,
+    "id": 31,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_중간",
     "examType": "기타",
     "subject": "국어",
@@ -521,7 +576,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "중간"
   },
   {
-    "id": 29,
+    "id": 32,
     "title": "도황 화법과 언어",
     "examType": "기타",
     "subject": "화법과 언어",
@@ -537,7 +592,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 30,
+    "id": 33,
     "title": "원피스 드래곤 양육비는?",
     "examType": "기타",
     "subject": "국어",
@@ -554,7 +609,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 31,
+    "id": 34,
     "title": "사회_원피스_루피로_보는_제왕학의_이해",
     "examType": "기타",
     "subject": "사회",
