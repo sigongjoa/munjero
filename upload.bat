@@ -34,6 +34,21 @@ if %errorlevel% neq 0 (
     goto :eof
 )
 
+echo.
+echo ===================================================================
+echo Push successful. Monitoring GitHub Action status...
+echo ===================================================================
+
+wsl bash scripts/watch-latest-run.sh deploy.yml
+
+if %errorlevel% neq 0 (
+    echo.
+    echo !!! GitHub Action failed or could not be monitored. !!!
+    echo Check the Actions tab in your GitHub repository for details.
+) else (
+    echo.
+    echo +++ GitHub Action completed successfully. +++
+)
 
 REM Clean up the temporary commit message file
 del commit_message.txt

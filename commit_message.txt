@@ -1,4 +1,3 @@
 feat: Add new quizzes
 
-- [기타] test1 (보통)
-- [기타] test2 (보통)
+- [기타] test (보통)

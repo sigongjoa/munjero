@@ -3,97 +3,171 @@
 const fs = require('fs');
 const path = require('path');
 
+// --- PATHS ---
 const ROOT_DIR = path.join(__dirname, '..');
 const UPLOADS_DIR = path.join(ROOT_DIR, 'upload');
 const PUBLIC_FILES_DIR = path.join(ROOT_DIR, 'public', 'files');
+const DATA_DIR = path.join(ROOT_DIR, 'data');
 const QUIZ_ORDER_PATH = path.join(PUBLIC_FILES_DIR, 'quiz-order.json');
+const QUIZZES_TS_PATH = path.join(DATA_DIR, 'quizzes.ts');
 const COMMIT_MESSAGE_PATH = path.join(ROOT_DIR, 'commit_message.txt');
 const LINKS_OUTPUT_PATH = path.join(UPLOADS_DIR, 'new_quiz_links.txt');
 
-function parseFilename(filename) {
-    // Handles cases like "도황.json" which might not have subject/difficulty
-    const basename = path.basename(filename, path.extname(filename));
-    const parts = basename.split('_');
-    if (parts.length >= 3) {
-        const subject = parts[0];
-        const difficulty = parts[parts.length - 1];
-        const title = parts.slice(1, -1).join('_');
-        return { subject, title, difficulty };
-    } else {
-        // Fallback for simple names
-        return { subject: '기타', title: basename, difficulty: '보통' };
+// --- MAIN LOGIC ---
+function main() {
+    // 1. Process files from the upload directory
+    const newFiles = processUploads();
+    if (newFiles.length === 0) {
+        console.log("No new valid quiz pairs to add.");
+        return;
     }
+
+    // 2. Regenerate the quizzes.ts file based on the final order
+    regenerateQuizzesTs();
+
+    // 3. Create commit message and links file for the new files
+    createOutputFiles(newFiles);
+    
+    console.log('\nScript finished successfully!');
 }
 
-function main() {
+/**
+ * Moves files from /upload to /public/files and updates quiz-order.json
+ * @returns {Array} - An array of newly added quiz file info objects.
+ */
+function processUploads() {
     if (!fs.existsSync(UPLOADS_DIR)) {
-        console.log("'upload' directory not found. Nothing to do.");
-        return;
+        fs.mkdirSync(UPLOADS_DIR);
+        return [];
     }
 
     const files = fs.readdirSync(UPLOADS_DIR);
     const jsonFiles = files.filter(file => file.endsWith('.json'));
+    if (jsonFiles.length === 0) return [];
 
-    if (jsonFiles.length === 0) {
-        console.log("No new quizzes to add.");
-        return;
-    }
-
-    let quizOrderData;
-    try {
-        quizOrderData = JSON.parse(fs.readFileSync(QUIZ_ORDER_PATH, 'utf-8'));
-    } catch (error) {
-        console.error("Error reading or parsing quiz-order.json:", error);
-        return;
-    }
-
-    let commitMessageBody = '';
-    let linksOutput = '';
-    let filesProcessed = 0;
-    let currentId = quizOrderData.length; // Corrected: Get length of the array itself
+    const quizOrder = JSON.parse(fs.readFileSync(QUIZ_ORDER_PATH, 'utf-8'));
+    const newFilesInfo = [];
 
     for (const jsonFile of jsonFiles) {
         const pdfFile = jsonFile.replace('.json', '.pdf');
         if (!files.includes(pdfFile)) {
-            console.warn(`[Warning] Missing corresponding PDF for ${jsonFile}. Skipping.`);
+            console.warn(`[Warning] Missing PDF for ${jsonFile}. Skipping.`);
             continue;
         }
 
-        const fileInfo = parseFilename(jsonFile);
-        if (!fileInfo) continue;
-
-        // Corrected: Push the filename string, not an object
-        quizOrderData.push(jsonFile);
-
-        const solveUrl = `https://munjero.xyz/#/solve/${currentId}`;
-        const quizUrl = `https://munjero.xyz/#/quiz/${currentId}`;
-
-        commitMessageBody += `- [${fileInfo.subject}] ${fileInfo.title} (${fileInfo.difficulty})\n`;
-        linksOutput += `[${fileInfo.subject}] ${fileInfo.title} (${fileInfo.difficulty})\n`;
-        linksOutput += `문제 풀어보기: ${solveUrl}\n`;
-        linksOutput += `문제 다운로드: ${quizUrl}\n\n`;
-
+        // Move files
         fs.renameSync(path.join(UPLOADS_DIR, jsonFile), path.join(PUBLIC_FILES_DIR, jsonFile));
         fs.renameSync(path.join(UPLOADS_DIR, pdfFile), path.join(PUBLIC_FILES_DIR, pdfFile));
-        
-        console.log(`Processed and moved: ${jsonFile} and ${pdfFile}`);
-        filesProcessed++;
-        currentId++;
+
+        // Add to order list
+        quizOrder.push(jsonFile);
+        newFilesInfo.push({ fileName: jsonFile, id: quizOrder.length - 1 });
+        console.log(`Processed and moved: ${jsonFile}`);
     }
 
-    if (filesProcessed > 0) {
-        fs.writeFileSync(QUIZ_ORDER_PATH, JSON.stringify(quizOrderData, null, 2), 'utf-8');
-        console.log("Successfully updated quiz-order.json.");
+    fs.writeFileSync(QUIZ_ORDER_PATH, JSON.stringify(quizOrder, null, 2), 'utf-8');
+    console.log("Successfully updated quiz-order.json.");
+    return newFilesInfo;
+}
 
-        const fullCommitMessage = `feat: Add new quizzes\n\n${commitMessageBody}`;
-        fs.writeFileSync(COMMIT_MESSAGE_PATH, fullCommitMessage, 'utf-8');
-        console.log(`Successfully created commit message file at ${COMMIT_MESSAGE_PATH}.`);
+/**
+ * Regenerates the entire data/quizzes.ts file from scratch.
+ */
+function regenerateQuizzesTs() {
+    console.log('Regenerating data/quizzes.ts...');
+    const quizOrder = JSON.parse(fs.readFileSync(QUIZ_ORDER_PATH, 'utf-8'));
+    const allQuizzesData = [];
 
-        fs.writeFileSync(LINKS_OUTPUT_PATH, linksOutput, 'utf-8');
-        console.log(`Successfully created links file at ${LINKS_OUTPUT_PATH}.`);
+    for (let i = 0; i < quizOrder.length; i++) {
+        const fileName = quizOrder[i];
+        const filePath = path.join(PUBLIC_FILES_DIR, fileName);
+
+        try {
+            const quizDetail = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+            const baseName = path.basename(fileName, '.json');
+
+            const quiz = {
+                id: i,
+                title: quizDetail.title || '제목 없음',
+                examType: quizDetail.examType || '기타',
+                subject: quizDetail.subject || '기타',
+                date: quizDetail.date || new Date().toISOString().split('T')[0],
+                fileUrl: `/files/${encodeURIComponent(baseName)}.pdf`,
+                jsonUrl: `/files/${encodeURIComponent(baseName)}.json`,
+                tags: quizDetail.tags || [],
+                difficulty: quizDetail.difficulty || '보통'
+            };
+            allQuizzesData.push(quiz);
+        } catch (e) {
+            console.error(`[Error] Failed to read or parse ${fileName}. Skipping.`, e);
+        }
+    }
+
+    const tsFileContent = `
+// This file is auto-generated by scripts/add-new-quizzes.cjs. DO NOT EDIT MANUALLY.
+
+export interface Quiz {
+  id: number;
+  title: string;
+  examType: string;
+  subject: string;
+  size?: string; // This field seems optional now
+  date: string;
+  fileUrl?: string;
+  jsonUrl?: string;
+  shortsLink?: string;
+  tags?: string[];
+  difficulty?: string;
+}
+
+export const quizzes: Quiz[] = ${JSON.stringify(allQuizzesData, null, 2)};
+`;
+
+    fs.writeFileSync(QUIZZES_TS_PATH, tsFileContent.trim(), 'utf-8');
+    console.log('Successfully regenerated data/quizzes.ts.');
+}
+
+/**
+ * Creates the commit message and the links file for sharing.
+ * @param {Array} newFiles - Array of new file info objects from processUploads.
+ */
+function createOutputFiles(newFiles) {
+    let commitMessageBody = '';
+    let linksOutput = '';
+
+    for (const fileInfo of newFiles) {
+        const { subject, title, difficulty } = parseFilename(fileInfo.fileName);
+        commitMessageBody += `- [${subject}] ${title} (${difficulty})\n`;
+
+        const solveUrl = `https://munjero.xyz/#/solve/${fileInfo.id}`;
+        const quizUrl = `https://munjero.xyz/#/quiz/${fileInfo.id}`;
+        linksOutput += `[${subject}] ${title} (${difficulty})\n`;
+        linksOutput += `문제 풀어보기: ${solveUrl}\n`;
+        linksOutput += `문제 다운로드: ${quizUrl}\n\n`;
+    }
+
+    const fullCommitMessage = `feat: Add new quizzes\n\n${commitMessageBody}`;
+    fs.writeFileSync(COMMIT_MESSAGE_PATH, fullCommitMessage, 'utf-8');
+    console.log(`Successfully created commit message file.`);
+
+    fs.writeFileSync(LINKS_OUTPUT_PATH, linksOutput, 'utf-8');
+    console.log(`Successfully created links file.`);
+}
+
+/**
+ * Parses metadata from a filename.
+ * @param {string} filename - The full filename (e.g., '국어_제목_쉬움.json').
+ * @returns {{subject: string, title: string, difficulty: string}}
+ */
+function parseFilename(filename) {
+    const basename = path.basename(filename, path.extname(filename));
+    const parts = basename.split('_');
+    if (parts.length >= 3) {
+        return { subject: parts[0], title: parts.slice(1, -1).join('_'), difficulty: parts[parts.length - 1] };
     } else {
-        console.log("No valid quiz pairs were processed.");
+        return { subject: '기타', title: basename, difficulty: '보통' };
     }
 }
 
+// --- RUN SCRIPT ---
 main();
