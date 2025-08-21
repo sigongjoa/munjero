@@ -1,3 +1,0 @@
-feat: Add new quizzes
-
-- [국어] test (보통)

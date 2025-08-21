@@ -58,7 +58,7 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
                 <h3 className="text-lg font-semibold text-gray-800 mb-2 ellipsis-2">{quiz.title}</h3>
                 <div className="flex items-center gap-2 mb-3 flex-wrap">
                     <span className={`${getDifficultyColor(quiz.difficulty)} text-xs font-medium px-2 py-0.5 rounded-full`}>{quiz.difficulty}</span>
-                    <span className="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-0.5 rounded-full">{quiz.subject}</span>
+                    <span className="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-0.5 rounded-full">{typeof quiz.subject === 'object' ? quiz.subject.main : quiz.subject}</span>
                     {quiz.tags && quiz.tags.map((tag, index) => (
                         <span key={index} className="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-0.5 rounded-full">{tag}</span>
                     ))}

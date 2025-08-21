@@ -154,7 +154,7 @@ const App: React.FC = () => {
             filters={filters}
             onFilterChange={handleFilterChange}
             examTypes={['전체', ...Array.from(new Set(quizzes.map(q => q.examType)))]}
-            subjects={['전체', ...Array.from(new Set(quizzes.map(q => q.subject as string)))]}
+            subjects={['전체', ...Array.from(new Set(quizzes.map(q => typeof q.subject === 'object' ? q.subject.main : q.subject)))]}
             difficulties={['전체', '쉬움', '보통', '어려움']}
             searchTerm={searchTerm}
             onSearchChange={handleSearchChange}
