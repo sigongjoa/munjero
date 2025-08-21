@@ -15,91 +15,71 @@ const LINKS_OUTPUT_PATH = path.join(UPLOADS_DIR, 'new_quiz_links.txt');
 
 // --- MAIN LOGIC ---
 function main() {
-    // 1. Process files from the upload directory
-    const newFiles = processUploads();
-    if (newFiles.length === 0) {
-        console.log("No new valid quiz pairs to add.");
-        return;
-    }
-
-    // 2. Regenerate the quizzes.ts file based on the final order
-    regenerateQuizzesTs();
-
-    // 3. Create commit message and links file for the new files
-    createOutputFiles(newFiles);
-    
-    console.log('\nScript finished successfully!');
+    // All logic is now consolidated into a single, sequential function.
+    updateQuizData();
 }
 
 /**
- * Moves files from /upload to /public/files and updates quiz-order.json
- * @returns {Array} - An array of newly added quiz file info objects.
+ * Processes new files, updates quiz-order.json, and regenerates data/quizzes.ts in a single, sequential flow.
  */
-function processUploads() {
-    if (!fs.existsSync(UPLOADS_DIR)) {
-        fs.mkdirSync(UPLOADS_DIR);
-        return [];
-    }
-
-    const files = fs.readdirSync(UPLOADS_DIR);
-    const jsonFiles = files.filter(file => file.endsWith('.json'));
-    if (jsonFiles.length === 0) return [];
-
+function updateQuizData() {
+    // 1. Handle new uploads
+    if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR);
+    
+    const newFiles = fs.readdirSync(UPLOADS_DIR).filter(f => f.endsWith('.json'));
     const quizOrder = JSON.parse(fs.readFileSync(QUIZ_ORDER_PATH, 'utf-8'));
     const newFilesInfo = [];
 
-    for (const jsonFile of jsonFiles) {
+    for (const jsonFile of newFiles) {
         const pdfFile = jsonFile.replace('.json', '.pdf');
-        if (!files.includes(pdfFile)) {
+        if (!fs.existsSync(path.join(UPLOADS_DIR, pdfFile))) {
             console.warn(`[Warning] Missing PDF for ${jsonFile}. Skipping.`);
             continue;
         }
-
-        // Move files
         fs.renameSync(path.join(UPLOADS_DIR, jsonFile), path.join(PUBLIC_FILES_DIR, jsonFile));
         fs.renameSync(path.join(UPLOADS_DIR, pdfFile), path.join(PUBLIC_FILES_DIR, pdfFile));
-
-        // Add to order list
-        quizOrder.push(jsonFile);
+        
+        quizOrder.push(jsonFile); // Update order in memory
         newFilesInfo.push({ fileName: jsonFile, id: quizOrder.length - 1 });
         console.log(`Processed and moved: ${jsonFile}`);
     }
 
-    fs.writeFileSync(QUIZ_ORDER_PATH, JSON.stringify(quizOrder, null, 2), 'utf-8');
-    console.log("Successfully updated quiz-order.json.");
-    return newFilesInfo;
-}
+    // 2. Clean up quiz-order.json from ghost files
+    const originalCount = quizOrder.length;
+    const cleanedQuizOrder = quizOrder.filter(fileName => {
+        const exists = fs.existsSync(path.join(PUBLIC_FILES_DIR, fileName));
+        if (!exists) {
+            console.warn(`[Cleaning] Removing ghost file from quiz order: ${fileName}`);
+        }
+        return exists;
+    });
 
-/**
- * Regenerates the entire data/quizzes.ts file from scratch.
- */
-function regenerateQuizzesTs() {
-    console.log('Regenerating data/quizzes.ts...');
-    const quizOrder = JSON.parse(fs.readFileSync(QUIZ_ORDER_PATH, 'utf-8'));
+    if (cleanedQuizOrder.length < originalCount) {
+        console.log(`Cleaned ${originalCount - cleanedQuizOrder.length} ghost entries.`);
+    }
+
+    // 3. Regenerate quizzes.ts using the final, correct order
+    console.log('Regenerating data/quizzes.ts with correct order...');
     const allQuizzesData = [];
-
-    for (let i = 0; i < quizOrder.length; i++) {
-        const fileName = quizOrder[i];
+    for (let i = 0; i < cleanedQuizOrder.length; i++) {
+        const fileName = cleanedQuizOrder[i];
         const filePath = path.join(PUBLIC_FILES_DIR, fileName);
-
         try {
             const quizDetail = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
             const baseName = path.basename(fileName, '.json');
-
-            const quiz = {
+            allQuizzesData.push({
                 id: i,
                 title: quizDetail.title || '제목 없음',
                 examType: quizDetail.examType || '기타',
                 subject: quizDetail.subject || '기타',
                 date: quizDetail.date || new Date().toISOString().split('T')[0],
                 fileUrl: `/files/${encodeURIComponent(baseName)}.pdf`,
-                jsonUrl: `/files/${encodeURIComponent(baseName)}.json`,
+                jsonUrl: `/files/${encodeURIComponent(fileName)}`,
                 tags: quizDetail.tags || [],
                 difficulty: quizDetail.difficulty || '보통'
-            };
-            allQuizzesData.push(quiz);
+            });
         } catch (e) {
-            console.error(`[Error] Failed to read or parse ${fileName}. Skipping.`, e);
+            console.error(`[Error] Failed to process ${fileName}. It might be corrupted. Skipping.`, e);
         }
     }
 
@@ -110,8 +90,8 @@ export interface Quiz {
   id: number;
   title: string;
   examType: string;
-  subject: string;
-  size?: string; // This field seems optional now
+  subject: string | { main: string; sub: string };
+  size?: string;
   date: string;
   fileUrl?: string;
   jsonUrl?: string;
@@ -123,13 +103,20 @@ export interface Quiz {
 export const quizzes: Quiz[] = ${JSON.stringify(allQuizzesData, null, 2)};
 `;
 
+    // 4. Write all changes to disk at the end
+    fs.writeFileSync(QUIZ_ORDER_PATH, JSON.stringify(cleanedQuizOrder, null, 2), 'utf-8');
     fs.writeFileSync(QUIZZES_TS_PATH, tsFileContent.trim(), 'utf-8');
-    console.log('Successfully regenerated data/quizzes.ts.');
+    console.log('Successfully updated quiz-order.json and regenerated data/quizzes.ts.');
+
+    // 5. Create output files for user
+    if (newFilesInfo.length > 0) {
+        createOutputFiles(newFilesInfo);
+    }
+    console.log('\nScript finished successfully!');
 }
 
 /**
  * Creates the commit message and the links file for sharing.
- * @param {Array} newFiles - Array of new file info objects from processUploads.
  */
 function createOutputFiles(newFiles) {
     let commitMessageBody = '';
@@ -156,8 +143,6 @@ function createOutputFiles(newFiles) {
 
 /**
  * Parses metadata from a filename.
- * @param {string} filename - The full filename (e.g., '국어_제목_쉬움.json').
- * @returns {{subject: string, title: string, difficulty: string}}
  */
 function parseFilename(filename) {
     const basename = path.basename(filename, path.extname(filename));
