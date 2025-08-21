@@ -16,6 +16,7 @@ const LINKS_OUTPUT_PATH = path.join(UPLOADS_DIR, 'new_quiz_links.txt');
 
 function main() {
     const quizOrder = JSON.parse(fs.readFileSync(QUIZ_ORDER_PATH, 'utf-8'));
+    console.log('DEBUG: quizOrder.json content at start of main:', JSON.stringify(quizOrder, null, 2));
 
     // 1. Process new files and get their info
     const newFilesInfo = processUploads(quizOrder);
@@ -99,6 +100,7 @@ function regenerateQuizzesTs(quizOrder) {
 
     fs.writeFileSync(QUIZZES_TS_PATH, tsFileContent.trim(), 'utf-8');
     console.log(`Successfully regenerated data/quizzes.ts with ${quizzesOut.length} valid quizzes.`);
+    console.log('DEBUG: quizzesOut content before writing to quizzes.ts:', JSON.stringify(quizzesOut, null, 2));
     return { ghostMissing, ghostParse };
 }
 
