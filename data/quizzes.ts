@@ -17,26 +17,6 @@ export interface Quiz {
 export const quizzes: Quiz[] = [
   {
     "id": 0,
-    "title": "test",
-    "examType": "기타",
-    "subject": {
-      "main": "국어",
-      "sub": ""
-    },
-    "date": "2025-08-21",
-    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_test_%EB%B3%B4%ED%86%B5.pdf",
-    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_test_%EB%B3%B4%ED%86%B5.json",
-    "tags": [
-      "매체 의사소통",
-      "디지털 역량",
-      "국어 교육과정",
-      "언어생활 탐구",
-      "비판적 사고"
-    ],
-    "difficulty": "보통"
-  },
-  {
-    "id": 1,
     "title": "무협지의 경공의 이해",
     "examType": "기타",
     "subject": {
@@ -56,7 +36,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 2,
+    "id": 1,
     "title": "무협지의 경공의 이해",
     "examType": "기타",
     "subject": {
@@ -77,7 +57,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "매우 어려움"
   },
   {
-    "id": 3,
+    "id": 2,
     "title": "무협지의 경공의 이해",
     "examType": "기타",
     "subject": {
@@ -97,7 +77,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 4,
+    "id": 3,
     "title": "무협지의 경공의 이해",
     "examType": "기타",
     "subject": {
@@ -118,7 +98,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 5,
+    "id": 4,
     "title": "입체상표의 개념과 한계를 하리보 곰 젤리 판례를 통해 이해하고, 소비자 인식이 상표권 판단에 미치는 영향을 설명할 수 있다.",
     "examType": "기타",
     "subject": {
@@ -139,7 +119,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 6,
+    "id": 5,
     "title": "입체상표의 개념과 한계를 하리보 곰 젤리 판례를 통해 이해하고, 소비자 인식이 상표권 판단에 미치는 영향을 설명할 수 있다.",
     "examType": "기타",
     "subject": {
@@ -159,7 +139,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 7,
+    "id": 6,
     "title": "입체상표의 개념과 한계를 하리보 곰 젤리 판례를 통해 이해하고, 소비자 인식이 상표권 판단에 미치는 영향을 설명할 수 있다.",
     "examType": "기타",
     "subject": {
@@ -181,7 +161,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "매우 어려움"
   },
   {
-    "id": 8,
+    "id": 7,
     "title": "리더십의 본질 이해",
     "examType": "기타",
     "subject": {
@@ -201,7 +181,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 9,
+    "id": 8,
     "title": "리더십의 본질 이해",
     "examType": "기타",
     "subject": {
@@ -221,7 +201,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 10,
+    "id": 9,
     "title": "리더십의 본질 이해",
     "examType": "기타",
     "subject": {
@@ -241,7 +221,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 11,
+    "id": 10,
     "title": "지식재산권의 기본 구분 이해",
     "examType": "기타",
     "subject": {
@@ -261,7 +241,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 12,
+    "id": 11,
     "title": "지식재산권의 기본 구분 이해",
     "examType": "기타",
     "subject": {
@@ -281,7 +261,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 13,
+    "id": 12,
     "title": "과학 유전공학의 핵심 기술에 대한 이해",
     "examType": "기타",
     "subject": {
@@ -299,7 +279,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 14,
+    "id": 13,
     "title": "강호의 도리에 대한 이해",
     "examType": "기타",
     "subject": {
@@ -319,7 +299,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 15,
+    "id": 14,
     "title": "군주론의 입장에서 아카이누를 바라본다면?",
     "examType": "기타",
     "subject": {
@@ -339,7 +319,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 16,
+    "id": 15,
     "title": "그럼 스타워즈 세계관을 정파(제다이)와 마교(시스) 중심으로, 무협식 해석",
     "examType": "기타",
     "subject": {
@@ -359,7 +339,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 17,
+    "id": 16,
     "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_쉬움",
     "examType": "기타",
     "subject": {
@@ -379,7 +359,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 18,
+    "id": 17,
     "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_어려움",
     "examType": "기타",
     "subject": {
@@ -399,7 +379,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 19,
+    "id": 18,
     "title": "나태한 정의의 진짜 얼굴: 아오키지 쿠잔의 덕 윤리적 선택_중간",
     "examType": "기타",
     "subject": {
@@ -419,7 +399,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "중간"
   },
   {
-    "id": 20,
+    "id": 19,
     "title": "마키아벨리적 관점에서 타노스를 심층적으로 분석",
     "examType": "기타",
     "subject": {
@@ -439,7 +419,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 21,
+    "id": 20,
     "title": "사도 야스토라(차드)의 간지에서 웃음거리로의 전락 과정",
     "examType": "AI 생성 모의고사",
     "subject": "국어",
@@ -456,7 +436,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "중간"
   },
   {
-    "id": 22,
+    "id": 21,
     "title": "지식재산권과 상표권 침해 심층 분석: 빙그레 '바나나맛 우유' 분쟁 사례를 중심으로",
     "examType": "기타",
     "subject": {
@@ -476,7 +456,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 23,
+    "id": 22,
     "title": "지식재산권과 상표권 침해 심층 분석: 빙그레 '바나나맛 우유' 분쟁 사례를 중심으로",
     "examType": "기타",
     "subject": {
@@ -496,7 +476,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 24,
+    "id": 23,
     "title": "지식재산권과 상표권 침해 심층 분석: 빙그레 '바나나맛 우유' 분쟁 사례를 중심으로",
     "examType": "기타",
     "subject": {
@@ -516,7 +496,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 25,
+    "id": 24,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_쉬움",
     "examType": "기타",
     "subject": {
@@ -536,7 +516,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "쉬움"
   },
   {
-    "id": 26,
+    "id": 25,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_어려움",
     "examType": "기타",
     "subject": {
@@ -556,7 +536,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 27,
+    "id": 26,
     "title": "키자루의 행동과 정의관에 대한 윤리적 분석_중간",
     "examType": "기타",
     "subject": {
@@ -576,7 +556,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "중간"
   },
   {
-    "id": 28,
+    "id": 27,
     "title": "도황 화법과 언어",
     "examType": "기타",
     "subject": {
@@ -594,7 +574,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 29,
+    "id": 28,
     "title": "원피스 드래곤 양육비는?",
     "examType": "기타",
     "subject": {
@@ -613,7 +593,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 30,
+    "id": 29,
     "title": "사회_원피스_루피로_보는_제왕학의_이해",
     "examType": "기타",
     "subject": {
@@ -631,7 +611,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 31,
+    "id": 30,
     "title": "조로는 단순한 ‘2인자’가 아니라 밀짚모자 일당의 정신적 기둥이다",
     "examType": "기타",
     "subject": {
@@ -651,7 +631,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "보통"
   },
   {
-    "id": 32,
+    "id": 31,
     "title": "조로는 단순한 ‘2인자’가 아니라 밀짚모자 일당의 정신적 기둥이다",
     "examType": "기타",
     "subject": {
@@ -671,7 +651,7 @@ export const quizzes: Quiz[] = [
     "difficulty": "어려움"
   },
   {
-    "id": 33,
+    "id": 32,
     "title": "조로는 단순한 ‘2인자’가 아니라 밀짚모자 일당의 정신적 기둥이다",
     "examType": "기타",
     "subject": {
@@ -690,5 +670,25 @@ export const quizzes: Quiz[] = [
       "약간의 결점 효과"
     ],
     "difficulty": "매우 어려움"
+  },
+  {
+    "id": 33,
+    "title": "test",
+    "examType": "기타",
+    "subject": {
+      "main": "국어",
+      "sub": ""
+    },
+    "date": "2025-08-21",
+    "fileUrl": "/files/%EA%B5%AD%EC%96%B4_test_%EB%B3%B4%ED%86%B5.pdf",
+    "jsonUrl": "/files/%EA%B5%AD%EC%96%B4_test_%EB%B3%B4%ED%86%B5.json",
+    "tags": [
+      "매체 의사소통",
+      "디지털 역량",
+      "국어 교육과정",
+      "언어생활 탐구",
+      "비판적 사고"
+    ],
+    "difficulty": "보통"
   }
 ];

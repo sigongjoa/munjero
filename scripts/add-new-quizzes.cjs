@@ -49,7 +49,7 @@ function processUploads(quizOrder) {
         fs.renameSync(path.join(UPLOADS_DIR, jsonFile), path.join(PUBLIC_FILES_DIR, jsonFile));
         fs.renameSync(path.join(UPLOADS_DIR, pdfFile), path.join(PUBLIC_FILES_DIR, pdfFile));
         
-        quizOrder.unshift(jsonFile); // Add to the beginning
+        quizOrder.push(jsonFile); // Add to the end
         newFilesInfo.push({ fileName: jsonFile, id: quizOrder.length - 1 }); // ID will be based on new length
         console.log(`Processed and moved: ${jsonFile}`);
     }
