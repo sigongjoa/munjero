@@ -50,11 +50,11 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
     };
 
     return (
-        <div className="bg-white p-6 rounded-lg shadow-sm flex items-start gap-6">
+        <div className="bg-white p-6 rounded-lg shadow-sm flex gap-6">
             <div className="w-24 h-24 bg-blue-100 flex-shrink-0 rounded-lg flex items-center justify-center">
                 <span className="material-icons text-blue-400 text-5xl">description</span>
             </div>
-            <div className="flex-grow">
+            <div className="flex-grow min-w-0">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2 ellipsis-2">{quiz.title}</h3>
                 <div className="flex items-center gap-2 mb-3 flex-wrap">
                     <span className={`${getDifficultyColor(quiz.difficulty)} text-xs font-medium px-2 py-0.5 rounded-full`}>{quiz.difficulty}</span>
@@ -63,13 +63,9 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
                         <span key={index} className="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-0.5 rounded-full">{tag}</span>
                     ))}
                 </div>
-                <div className="text-xs text-gray-500">
-                    <span>{quiz.size || 'N/A'}</span>
-                    <span className="mx-1">·</span>
-                    <span>{quiz.date}</span>
-                </div>
+                
             </div>
-            <div className="flex flex-col items-end gap-3">
+            <div className="flex flex-col items-end gap-3 flex-shrink-0">
                 <div className="flex items-center gap-3">
                     
                     <button onClick={() => onStartQuiz(quiz.id)} className="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600">문제 풀기</button>
