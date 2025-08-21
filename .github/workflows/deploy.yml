@@ -2,8 +2,11 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+    paths:
+      - 'public/files/**'
+      - '.github/workflows/**'
+  workflow_dispatch: {}
 
 permissions:
   pages: write        # allow publishing
