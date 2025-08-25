@@ -17,23 +17,32 @@ const QuizModal: React.FC<QuizModalProps> = ({ jsonUrl, onClose }) => {
   const [quizState, setQuizState] = useState<'solving' | 'finished'>('solving');
 
   useEffect(() => {
+    console.log('QuizModal received jsonUrl:', jsonUrl);
     const fetchQuizData = async () => {
       try {
         const response = await fetch(jsonUrl);
         if (!response.ok) {
+          const errorText = await response.text();
+          console.error(`HTTP error! Status: ${response.status}, Response: ${errorText}`);
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data: QuizData = await response.json();
+        console.log('Quiz data fetched successfully:', data);
         setQuizData(data);
         setUserAnswers(new Array(data.questionCount).fill(null));
       } catch (e) {
         setError('퀴즈 데이터를 불러오는 데 실패했습니다.');
-        console.error(e);
+        console.error('Error fetching quiz data:', e);
       } finally {
         setIsLoading(false);
       }
     };
-    fetchQuizData();
+    if (jsonUrl) {
+      fetchQuizData();
+    } else {
+      setError('퀴즈 URL이 제공되지 않았습니다.');
+      setIsLoading(false);
+    }
   }, [jsonUrl]);
 
   const handleSelectAnswer = (answerIndex: number) => {

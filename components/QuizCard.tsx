@@ -56,12 +56,15 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
             </div>
             <div className="flex-grow min-w-0">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2 ellipsis-2">{quiz.title}</h3>
-                <div className="flex items-center gap-2 mb-3 flex-wrap">
+                <div className="flex flex-row flex-wrap gap-1 mb-3 items-center">
                     <span className={`${getDifficultyColor(quiz.difficulty)} text-xs font-medium px-2 py-0.5 rounded-full`}>{quiz.difficulty}</span>
                     <span className="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-0.5 rounded-full">{typeof quiz.subject === 'object' ? quiz.subject.main : quiz.subject}</span>
-                    {quiz.tags && quiz.tags.map((tag, index) => (
+                    {quiz.tags && quiz.tags.slice(0, 2).map((tag, index) => ( // Show first 2 tags
                         <span key={index} className="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-0.5 rounded-full">{tag}</span>
                     ))}
+                    {quiz.tags && quiz.tags.length > 2 && ( // If more than 2 tags, show +N
+                        <span className="bg-gray-300 text-gray-800 px-2 py-0.5 rounded-full text-xs font-medium">+{quiz.tags.length - 2}</span>
+                    )}
                 </div>
                 
             </div>
@@ -92,10 +95,10 @@ const QuizCard: React.FC<{ quiz: Quiz; isSelected: boolean; onSelect: () => void
                                         return;
                                     }
                                     const data = await response.json();
-                                    if (data.shortsLink) {
-                                        window.open(data.shortsLink, '_blank');
+                                    if (data.short_link) {
+                                        window.open(data.short_link, '_blank');
                                     } else {
-                                        alert('JSON 파일에서 쇼츠 링크(shortsLink)를 찾을 수 없습니다. JSON 내용을 확인하세요.');
+                                        alert('JSON 파일에서 쇼츠 링크(short_link)를 찾을 수 없습니다. JSON 내용을 확인하세요.');
                                         console.log('Received JSON data:', data);
                                     }
                                 } catch (error) {
